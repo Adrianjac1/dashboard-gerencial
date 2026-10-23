@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Presupuestal — COMCEC · INTERCEC</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f0f4f8; font-family: 'Segoe UI', Roboto, sans-serif; font-size: 12px; color: #1e293b; }
+
+  /* ── Layout principal ─────────────────────────────── */
+  .layout { display: flex; min-height: 100vh; }
+
+  /* ── Sidebar ─────────────────────────────────────── */
+  .sidebar {
+    width: 88px; flex-shrink: 0;
+    background: #1e3a5f; color: #fff;
+    display: flex; flex-direction: column;
+    padding: 8px 0;
+  }
+  .sidebar .s-title {
+    font-size: 9.5px; font-weight: 800; text-transform: uppercase;
+    color: #90cdf4; padding: 6px 8px 4px; letter-spacing: .5px; line-height: 1.2;
+  }
+  .sidebar .cc-btn {
+    display: block; margin: 2px 6px; padding: 4px 5px;
+    border-radius: 4px; text-align: center; font-size: 9.5px;
+    font-weight: 700; cursor: pointer; text-decoration: none;
+    background: #2d5a87; color: #e2e8f0;
+    border: 1px solid #4a7faa; transition: background .15s;
+    line-height: 1.2;
+  }
+  .sidebar .cc-btn.active { background: #3b82f6; color: #fff; border-color: #60a5fa; }
+  .sidebar .cc-btn:hover  { background: #2563eb; }
+  .sidebar .s-sep { height: 1px; background: #2d5a87; margin: 8px 6px; }
+  .sidebar .tipo-btn {
+    display: block; margin: 2px 6px; padding: 4px 5px;
+    border-radius: 4px; font-size: 9.5px; font-weight: 700; cursor: pointer;
+    background: #2d5a87; color: #e2e8f0;
+    border: 1px solid #4a7faa; transition: background .15s; text-align: center;
+  }
+  .sidebar .tipo-btn.active { background: #059669; border-color: #34d399; }
+  .sidebar .tipo-btn:hover  { background: #047857; }
+
+  /* ── Contenido principal ─────────────────────────── */
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* ── Nav superior ────────────────────────────────── */
+  .top-nav {
+    background: #1e3a5f; padding: 5px 14px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: #90cdf4; font-size: 11px; font-weight: 700; text-decoration: none;
+  }
+  .back-link:hover { color: #fff; }
+  .page-label { font-size: 10px; color: #64748b; }
+
+  /* ── Título grande ───────────────────────────────── */
+  .header-banner {
+    background: #d1fae5; border-bottom: 2px solid #6ee7b7;
+    text-align: center; padding: 7px;
+    font-size: 16px; font-weight: 900; color: #064e3b; letter-spacing: .5px;
+  }
+
+  /* ── Área central ────────────────────────────────── */
+  .content { flex: 1; padding: 10px 12px; overflow-y: auto; }
+
+  /* ── Cabecera tabla ─────────────────────────────── */
+  .table-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .corte-badge {
+    background: #d1fae5; border: 1px solid #6ee7b7; border-radius: 6px;
+    padding: 4px 10px; font-size: 10px; font-weight: 800; color: #065f46;
+  }
+  .table-title {
+    font-size: 11.5px; font-weight: 800; color: #1e3a5f; text-align: center; flex: 1;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  .search-box input {
+    background: #fff; border: 1px solid #cbd5e1; border-radius: 5px;
+    padding: 5px 10px; font-size: 11px; width: 200px; outline: none;
+  }
+  .search-box input:focus { border-color: #3b82f6; }
+
+  /* ── Tabla ──────────────────────────────────────── */
+  .table-wrap { border: 1px solid #e2e8f0; border-radius: 6px; overflow: auto; max-height: 340px; }
+  table { width: 100%; border-collapse: collapse; font-size: 11px; }
+  thead th {
+    background: #f1f5f9; color: #475569; font-size: 9.5px; font-weight: 800;
+    text-transform: uppercase; padding: 6px 8px; border-bottom: 2px solid #e2e8f0;
+    position: sticky; top: 0; white-space: nowrap;
+  }
+  thead th.num { text-align: right; }
+  thead th.ctr { text-align: center; }
+  tbody td { padding: 5px 8px; border-bottom: 1px solid #f1f5f9; }
+  tbody tr:hover td { background: #f0fdf4; }
+  tbody tr.total-row td {
+    background: #f0fdf4; font-weight: 800; color: #065f46;
+    border-top: 2px solid #6ee7b7; font-size: 11.5px;
+  }
+  .num { text-align: right; font-family: monospace; }
+  .ctr { text-align: center; }
+  .cc-label { font-weight: 800; color: #1e3a5f; white-space: nowrap; }
+  .neg { color: #dc2626; }
+  .pos { color: #059669; }
+  .pct-badge {
+    display: inline-block; padding: 1px 6px; border-radius: 3px;
+    font-size: 9.5px; font-weight: 800;
+  }
+  .pct-ok  { background: #dcfce7; color: #15803d; }
+  .pct-hi  { background: #fee2e2; color: #b91c1c; }
+  .pct-med { background: #fef9c3; color: #854d0e; }
+
+  /* ── KPI Bar (verde, abajo) ──────────────────────── */
+  .kpi-bar {
+    background: #d1fae5; border-top: 2px solid #6ee7b7;
+    padding: 8px 14px;
+    display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+  }
+  .kpi-item { text-align: center; flex: 1; min-width: 110px; }
+  .kpi-item .kv {
+    font-size: clamp(12px, 1.1vw, 15px); font-weight: 900;
+    color: #064e3b; font-family: monospace; letter-spacing: -.5px;
+  }
+  .kpi-item .kl { font-size: 9px; font-weight: 700; color: #065f46; text-transform: uppercase; }
+  .kpi-item.pct .kv { font-size: clamp(14px, 1.4vw, 20px); color: #1e3a5f; }
+  .kpi-sep { width: 1px; height: 40px; background: #6ee7b7; flex-shrink: 0; }
+  .kpi-corte { text-align: center; }
+  .kpi-corte .corte-lbl { font-size: 8.5px; font-weight: 700; color: #065f46; }
+  .kpi-corte .corte-val { font-size: 11px; font-weight: 900; color: #064e3b; }
+
+  /* ── Gráficas ────────────────────────────────────── */
+  .charts-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    padding: 10px 12px 14px;
+  }
+  .chart-card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px;
+  }
+  .chart-ttl {
+    font-size: 11px; font-weight: 800; color: #1e3a5f; margin-bottom: 2px;
+  }
+  .chart-sub { font-size: 9.5px; color: #64748b; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ====== SIDEBAR ====== -->
+  <div class="sidebar" id="sidebar">
+    <div class="s-title">Cuenta de<br>Control</div>
+    <!-- Generado dinámicamente por JS -->
+    <div id="cc-filters"></div>
+    <div class="s-sep"></div>
+    <div class="s-title">Tipo de Costo</div>
+    <div id="tipo-filters"></div>
+  </div>
+
+  <!-- ====== MAIN ====== -->
+  <div class="main">
+
+    <div class="top-nav">
+      <a href="../index.html" class="back-link">← Hub de Dashboards</a>
+      <span class="page-label">Power BI: <b>Presupuestal_ab</b></span>
+    </div>
+
+    <div class="header-banner">PRESUPUESTAL</div>
+
+    <!-- ── Tabla principal ── -->
+    <div class="content">
+      <div class="table-header">
+        <div class="corte-badge" id="fechaCorte">FECHA DE CORTE<br>—</div>
+        <div class="table-title">CUENTAS DE CONTROL : ESTADO GENERAL</div>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Buscar CC o cuenta..." oninput="applyFilters()">
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Centro de Costo</th>
+              <th>Cuentas de Control</th>
+              <th class="num">Asignación<br>Presupuestal</th>
+              <th class="num">Tot. Vlr<br>Contratado</th>
+              <th class="num">Diferencia<br>(Asig. − Cont.)</th>
+              <th class="num">Tot. Vlr<br>Pagado</th>
+              <th class="ctr">% Contratado /<br>Asig. Presup.</th>
+              <th class="ctr">% Pagado /<br>Contratado</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr><td colspan="8" style="text-align:center;padding:20px;color:#94a3b8">Cargando...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /content -->
+
+    <!-- ── KPI Bar verde ── -->
+    <div class="kpi-bar">
+      <div class="kpi-corte">
+        <div class="corte-lbl">FECHA DE CORTE</div>
+        <div class="corte-val" id="kFecha">—</div>
+      </div>
+      <div class="kpi-sep"></div>
+      <div class="kpi-item">
+        <div class="kv" id="kAsig">$0</div>
+        <div class="kl">Asignación Presupuestal</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kv" id="kCont">$0</div>
+        <div class="kl">Valor Contratado</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kv" id="kPag">$0</div>
+        <div class="kl">Total Pagado</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kv" id="kPend">$0</div>
+        <div class="kl">Pendiente por Pagar</div>
+      </div>
+      <div class="kpi-sep"></div>
+      <div class="kpi-item pct">
+        <div class="kv" id="kPctCont">0%</div>
+        <div class="kl">Contratado / Asignación</div>
+      </div>
+      <div class="kpi-item pct">
+        <div class="kv" id="kPctPag">0%</div>
+        <div class="kl">Pagado / Contratado</div>
+      </div>
+    </div>
+
+    <!-- ── Gráficas ── -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-ttl">Total Pagado vs. Total Contratado</div>
+        <div class="chart-sub">Total Pagado, Total Contratado y Pendiente por Pagar</div>
+        <div id="chartPagCont" style="height:220px"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-ttl">Asignado vs. Contratado</div>
+        <div class="chart-sub">Asignación Presup., Contratado y Dif. (Asignado − Contratado)</div>
+        <div id="chartAsigCont" style="height:220px"></div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /layout -->
+
+<script src="../data/presupuesto.js"></script>
+<script src="../js/portal.js"></script>
+<script>
+  let allRows   = [];
+  let filteredCC   = new Set();  // CCs activos (vacío = todos)
+  let filteredTipo = new Set();  // Tipos activos
+  let chartA = null, chartB = null;
+
+  // ── Formateo monetario para gráficas (cifras completas o miles de millones claros) ──────────────────────
+  function fmtM(v) {
+    const n = Number(v);
+    if (Math.abs(n) >= 1e9) return '$' + (n/1e9).toFixed(2) + ' mil millones';
+    if (Math.abs(n) >= 1e6) return '$' + (n/1e6).toFixed(1) + ' millones';
+    return Formatter.currency(n);
+  }
+
+  // ── Colores por CC ────────────────────────────────────────
+  const CC_COLORS = [
+    '#1d4ed8','#0891b2','#0284c7','#059669','#16a34a',
+    '#d97706','#b45309','#dc2626','#9333ea','#7c3aed',
+    '#db2777','#0f766e','#15803d','#1e40af','#92400e','#065f46'
+  ];
+
+  // ── Inicialización ────────────────────────────────────────
+  async function init() {
+    const data = await loadData('presupuesto');
+    if (!data) return;
+
+    allRows = data.detalles || [];
+    const k = data.kpis;
+
+    // KPI bar
+    document.getElementById('kFecha').textContent = k.fecha_corte || '—';
+    document.getElementById('fechaCorte').innerHTML = 'FECHA DE CORTE<br>' + (k.fecha_corte || '—');
+    document.getElementById('kAsig').textContent = Formatter.currency(k.total_asignado);
+    document.getElementById('kCont').textContent = Formatter.currency(k.total_contratado);
+    document.getElementById('kPag').textContent  = Formatter.currency(k.total_pagado);
+    document.getElementById('kPend').textContent = Formatter.currency(k.total_pendiente);
+    document.getElementById('kPctCont').textContent = (k.pct_cont_asig || 0).toFixed(2).replace('.',',') + ' %';
+    document.getElementById('kPctPag').textContent  = (k.pct_pag_cont  || 0).toFixed(2).replace('.',',') + ' %';
+
+    // Sidebar CC buttons
+    const ccList = [...new Set(allRows.map(r => r.cc).filter(Boolean))].sort();
+    const ccDiv  = document.getElementById('cc-filters');
+    ccList.forEach((cc, i) => {
+      const btn = document.createElement('a');
+      btn.className = 'cc-btn';
+      btn.textContent = cc;
+      btn.style.borderLeftColor = CC_COLORS[i % CC_COLORS.length];
+      btn.addEventListener('click', () => toggleFilter('cc', cc, btn));
+      ccDiv.appendChild(btn);
+    });
+
+    // Sidebar Tipo buttons
+    const tipoList = [...new Set(allRows.map(r => r.tipo).filter(Boolean))].sort();
+    const tipoDiv  = document.getElementById('tipo-filters');
+    tipoList.forEach(t => {
+      const btn = document.createElement('a');
+      btn.className = 'tipo-btn';
+      btn.textContent = t.length > 12 ? t.slice(0,12) + '…' : t;
+      btn.title = t;
+      btn.addEventListener('click', () => toggleFilter('tipo', t, btn));
+      tipoDiv.appendChild(btn);
+    });
+
+    // Gráficas globales
+    renderPieCharts(k.total_pagado, k.total_contratado, k.total_pendiente,
+                    k.total_asignado, k.total_contratado);
+
+    applyFilters();
+  }
+
+  function toggleFilter(type, val, btn) {
+    const set = type === 'cc' ? filteredCC : filteredTipo;
+    if (set.has(val)) { set.delete(val); btn.classList.remove('active'); }
+    else              { set.add(val);    btn.classList.add('active');    }
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+    const filtered = allRows.filter(r => {
+      if (filteredCC.size   && !filteredCC.has(r.cc))    return false;
+      if (filteredTipo.size && !filteredTipo.has(r.tipo)) return false;
+      if (q && !r.cc.toLowerCase().includes(q) && !r.cuenta.toLowerCase().includes(q)) return false;
+      return true;
+    });
+    renderTable(filtered);
+  }
+
+  // ── Tabla ─────────────────────────────────────────────────
+  function renderTable(rows) {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+
+    let totAsig = 0, totCont = 0, totPag = 0, totPend = 0;
+
+    rows.forEach(r => {
+      totAsig += r.asignado  || 0;
+      totCont += r.contratado|| 0;
+      totPag  += r.pagado    || 0;
+      totPend += r.pendiente || 0;
+
+      const dif = r.diferencia;
+      const pctCC  = r.pct_cont_asig;
+      const pctPag = r.pct_pag_cont;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="cc-label">${r.cc}</td>
+        <td style="font-size:10.5px;color:#334155;max-width:260px">${r.cuenta}</td>
+        <td class="num">${Formatter.currency(r.asignado)}</td>
+        <td class="num">${Formatter.currency(r.contratado)}</td>
+        <td class="num ${dif < 0 ? 'neg' : 'pos'}">${dif < 0 ? '(' : ''}${Formatter.currency(Math.abs(dif))}${dif < 0 ? ')' : ''}</td>
+        <td class="num">${Formatter.currency(r.pagado)}</td>
+        <td class="ctr"><span class="pct-badge ${pctCC > 100 ? 'pct-hi' : pctCC >= 90 ? 'pct-ok' : 'pct-med'}">${pctCC.toFixed(2).replace('.',',')} %</span></td>
+        <td class="ctr"><span class="pct-badge ${pctPag >= 80 ? 'pct-ok' : pctPag >= 40 ? 'pct-med' : 'pct-hi'}">${pctPag.toFixed(2).replace('.',',')} %</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Fila total
+    const totDif   = totAsig - totCont;
+    const totPctCC = totAsig  ? (totCont / totAsig * 100) : 0;
+    const totPctPag= totCont  ? (totPag  / totCont * 100) : 0;
+    const trTot = document.createElement('tr');
+    trTot.className = 'total-row';
+    trTot.innerHTML = `
+      <td><b>Total</b></td>
+      <td></td>
+      <td class="num">${Formatter.currency(totAsig)}</td>
+      <td class="num">${Formatter.currency(totCont)}</td>
+      <td class="num ${totDif < 0 ? 'neg' : 'pos'}">${totDif < 0 ? '(' : ''}${Formatter.currency(Math.abs(totDif))}${totDif < 0 ? ')' : ''}</td>
+      <td class="num">${Formatter.currency(totPag)}</td>
+      <td class="ctr"><b>${totPctCC.toFixed(2).replace('.',',')} %</b></td>
+      <td class="ctr"><b>${totPctPag.toFixed(2).replace('.',',')} %</b></td>
+    `;
+    tbody.appendChild(trTot);
+  }
+
+  // ── Gráficas de torta (igual al BI) ──────────────────────
+  function renderPieCharts(pagado, contratado, pendiente, asignado, contratadoB) {
+    const difAsigCont = asignado - contratadoB;
+
+    // Gráfica 1: Total Pagado vs Contratado vs Pendiente
+    if (chartA) chartA.destroy();
+    chartA = new ApexCharts(document.querySelector('#chartPagCont'), {
+      chart: { type: 'pie', height: 220, toolbar: { show: false } },
+      series: [pagado, contratado, pendiente],
+      labels: ['Total Pagado', 'Total Contratado', 'Pendiente por Pagar'],
+      colors: ['#1d4ed8', '#059669', '#f59e0b'],
+      legend: { position: 'right', fontSize: '9.5px' },
+      dataLabels: {
+        formatter: (val, opts) => fmtM(opts.w.globals.series[opts.seriesIndex]) + '\n(' + val.toFixed(1) + '%)'
+      },
+      tooltip: { y: { formatter: v => Formatter.currency(v) } },
+      plotOptions: { pie: { dataLabels: { offset: -10 } } }
+    });
+    chartA.render();
+
+    // Gráfica 2: Asignado vs Contratado vs Diferencia
+    if (chartB) chartB.destroy();
+    chartB = new ApexCharts(document.querySelector('#chartAsigCont'), {
+      chart: { type: 'pie', height: 220, toolbar: { show: false } },
+      series: [asignado, contratadoB, Math.abs(difAsigCont)],
+      labels: ['Asignación Presup.', 'Contratado', 'Dif. (Asig. − Cont.)'],
+      colors: ['#0284c7', '#1d4ed8', '#dc2626'],
+      legend: { position: 'right', fontSize: '9.5px' },
+      dataLabels: {
+        formatter: (val, opts) => fmtM(opts.w.globals.series[opts.seriesIndex]) + '\n(' + val.toFixed(1) + '%)'
+      },
+      tooltip: { y: { formatter: v => Formatter.currency(v) } },
+      plotOptions: { pie: { dataLabels: { offset: -10 } } }
+    });
+    chartB.render();
+  }
+
+  init();
+</script>
+</body>
+</html>

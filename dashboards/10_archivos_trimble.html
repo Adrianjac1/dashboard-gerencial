@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trimble Control — COMCEC · INTERCEC</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<style>
+  :root {
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --green-bar: #34d399;
+    --salmon-bar: #fca5a5;
+    --accent-blue: #0284c7;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f1f5f9;
+    color: var(--text-main);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    padding: 16px 20px 40px;
+  }
+  .container { max-width: 1380px; margin: 0 auto; }
+
+  /* Top Navigation */
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .back-link:hover { background: #334155; }
+
+  /* Header Box */
+  .header-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .header-titles {
+    text-align: center;
+    flex: 1;
+  }
+  .header-titles h1 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.3px;
+  }
+  .header-titles h2 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #334155;
+    margin-top: 2px;
+  }
+  .header-titles h3 {
+    font-size: 11px;
+    font-weight: 800;
+    color: #64748b;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+  }
+  .header-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  .btn-reset-text {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  .btn-reset-all {
+    background: #93c5fd;
+    border: 1px solid #60a5fa;
+    color: #1e3a8a;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+  .btn-reset-all:hover { background: #60a5fa; }
+
+  /* Charts Row */
+  .charts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .chart-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .chart-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #1e3a8a;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  /* Slicers and Metrics Matrix */
+  .controls-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 1.2fr 1.2fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 1100px) {
+    .controls-grid { grid-template-columns: 1fr 1fr; }
+    .charts-row { grid-template-columns: 1fr; }
+  }
+
+  .control-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Specific Slicer Box Types */
+  .box-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  }
+  .box-card-title {
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #0f172a;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+
+  /* Date Range Box */
+  .date-range-box {
+    background: #fefce8;
+    border: 1px solid #fef08a;
+  }
+  .date-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: monospace;
+  }
+  .date-inputs input {
+    width: 90px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 3px 6px;
+    font-size: 11px;
+    background: #fff;
+    text-align: center;
+  }
+
+  /* KPI Mini Cards */
+  .kpi-mini-card {
+    border-radius: 6px;
+    padding: 8px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .kpi-mini-card .kpi-lbl {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #475569;
+    line-height: 1.1;
+  }
+  .kpi-mini-card .kpi-num {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 2px;
+    font-family: monospace;
+  }
+
+  .bg-gray-kpi { background: #e2e8f0; }
+  .bg-pink-kpi { background: #fae8ff; border: 1px solid #f0abfc; }
+  .bg-yellow-kpi { background: #fef08a; border: 1px solid #fde047; }
+
+  /* Styled Search Slicers */
+  .search-card {
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .search-card .sc-title {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .search-card .sc-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .search-card input {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding: 4px 8px 4px 8px;
+    font-size: 11.5px;
+    font-weight: 600;
+    outline: none;
+  }
+  .sc-yellow { background: #fef08a; color: #854d0e; }
+  .sc-green { background: #bbf7d0; color: #166534; }
+  .sc-blue { background: #bfdbfe; color: #1e40af; }
+
+  /* Select dropdowns */
+  select.slicer-select {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #334155;
+    outline: none;
+  }
+
+  /* Bottom Section: Slicers Lists and Table */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 900px) {
+    .bottom-grid { grid-template-columns: 1fr; }
+  }
+
+  .slicers-pane {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 480px;
+    overflow-y: auto;
+  }
+  .slicer-section-ttl {
+    font-size: 11px;
+    font-weight: 800;
+    color: #1e3a8a;
+    border-bottom: 2px solid #93c5fd;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .slicer-list {
+    list-style: none;
+    font-size: 11.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .slicer-list label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    color: #334155;
+  }
+  .slicer-list input[type="checkbox"] {
+    accent-color: #0284c7;
+  }
+
+  /* Table Area */
+  .table-pane {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .table-scroll {
+    overflow-x: auto;
+    max-height: 420px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  table.doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+  }
+  table.doc-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    text-align: left;
+  }
+  table.doc-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+  }
+  table.doc-table tr:hover td {
+    background: #f0fdf4;
+  }
+  .tag-file {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 9.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- TOP NAV -->
+  <div class="top-nav">
+    <a href="../index.html" class="back-link">← Volver al Hub de Dashboards</a>
+    <span style="font-size:11px;color:#64748b;font-weight:600">Power BI Page: <b>Trimble_Control</b></span>
+  </div>
+
+  <!-- HEADER BAR -->
+  <div class="header-box">
+    <div style="width:120px"></div>
+    <div class="header-titles">
+      <h1>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h1>
+      <h2>CONSORCIO INTERCEC - INTERVENTORIA</h2>
+      <h3>STATUS - TRIMBLE - ADMINISTRADOR DELEGADO</h3>
+    </div>
+    <div class="header-actions">
+      <button class="btn-reset-text" onclick="resetAllFilters()">Borrar filtros</button>
+      <button class="btn-reset-all" onclick="resetAllFilters()">Borrar todas las segmentaciones</button>
+    </div>
+  </div>
+
+  <!-- CHARTS ROW -->
+  <div class="charts-row">
+    <!-- Chart 1: Last Modified By -->
+    <div class="chart-card">
+      <div class="chart-title">TRIMBLE - Documentos Gestionados - Último Usuario que Modificó el Documento</div>
+      <div id="chartModifiedBy" style="height:230px"></div>
+    </div>
+
+    <!-- Chart 2: Created By -->
+    <div class="chart-card">
+      <div class="chart-title">TRIMBLE - Documentos CREADOS POR ..</div>
+      <div id="chartCreatedBy" style="height:230px"></div>
+    </div>
+  </div>
+
+  <!-- CONTROLS & SLICERS ROW -->
+  <div class="controls-grid">
+
+    <!-- Column 1: Fechas & Actualización -->
+    <div class="control-col">
+      <div class="box-card date-range-box">
+        <div class="box-card-title">FECHA DE MODIFICACIÓN (Between)</div>
+        <div class="date-inputs">
+          <input type="date" id="dateStart" onchange="applyFilters()">
+          <span>a</span>
+          <input type="date" id="dateEnd" onchange="applyFilters()">
+        </div>
+      </div>
+      <div class="kpi-mini-card bg-pink-kpi">
+        <span class="kpi-lbl">Fecha actualización</span>
+        <span class="kpi-num" style="font-size:14px" id="lblFechaAct">18/09/2026</span>
+      </div>
+    </div>
+
+    <!-- Column 2: Conteos Netos & Totales -->
+    <div class="control-col">
+      <div class="kpi-mini-card bg-gray-kpi">
+        <span class="kpi-lbl">Cantidad NETO<br>Documentos</span>
+        <span class="kpi-num" id="lblCantidadNeto">7</span>
+      </div>
+      <div class="kpi-mini-card bg-yellow-kpi">
+        <span class="kpi-lbl">Cantidad TOTAL<br>Documentos</span>
+        <span class="kpi-num" id="lblCantidadTotal">7</span>
+      </div>
+    </div>
+
+    <!-- Column 3: Dropdowns Fechas -->
+    <div class="control-col">
+      <div class="box-card">
+        <div class="box-card-title" style="text-align:left;color:#0284c7">Fecha Modificacion</div>
+        <select class="slicer-select" id="selFechaMod" onchange="applyFilters()">
+          <option value="ALL">Todas</option>
+        </select>
+      </div>
+      <div class="box-card">
+        <div class="box-card-title" style="text-align:left;color:#16a34a">Fecha Creación</div>
+        <select class="slicer-select" id="selFechaCreac" onchange="applyFilters()">
+          <option value="ALL">Todas</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Column 4: Slicers de Ubicación (Amarillo y Verde) -->
+    <div class="control-col">
+      <div class="search-card sc-yellow">
+        <span class="sc-title">CONTRATO/ORDEN _file location_2</span>
+        <div class="sc-input-wrap">
+          <input type="text" id="searchContrato" placeholder="Search" oninput="applyFilters()">
+        </div>
+      </div>
+      <div class="search-card sc-green">
+        <span class="sc-title">Carpeta _file location_</span>
+        <div class="sc-input-wrap">
+          <input type="text" id="searchCarpeta" value="COMPARTIDO" placeholder="COMPARTIDO" oninput="applyFilters()">
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 5: Slicers de Nombre (Azules) -->
+    <div class="control-col">
+      <div class="search-card sc-blue">
+        <span class="sc-title">NOMBRE Archivo Carpeta _file name</span>
+        <div class="sc-input-wrap">
+          <input type="text" id="searchFileName1" placeholder="Search" oninput="applyFilters()">
+        </div>
+      </div>
+      <div class="search-card sc-blue">
+        <span class="sc-title">NOMBRE Archivo Carpeta _file name</span>
+        <div class="sc-input-wrap">
+          <input type="text" id="searchFileName2" value="AAP_" placeholder="AAP_" oninput="applyFilters()">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM ROW: SLICERS LISTS & DOCUMENTS TABLE -->
+  <div class="bottom-grid">
+
+    <!-- Slicers Pane -->
+    <div class="slicers-pane">
+      <div>
+        <div class="slicer-section-ttl">Last modified by</div>
+        <ul class="slicer-list" id="listModifiedBy"></ul>
+      </div>
+
+      <div>
+        <div class="slicer-section-ttl">Created by</div>
+        <ul class="slicer-list" id="listCreatedBy"></ul>
+      </div>
+
+      <div>
+        <div class="slicer-section-ttl">CONTRATOS - ORDENES _File location2</div>
+        <ul class="slicer-list" id="listLocation2"></ul>
+      </div>
+    </div>
+
+    <!-- Table Pane -->
+    <div class="table-pane">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <span style="font-size:12px;font-weight:700;color:#1e3a8a">Detalle de Archivos Gestionados</span>
+        <span style="font-size:11px;color:#64748b" id="lblTableCount">Mostrando 7 archivos</span>
+      </div>
+
+      <div class="table-scroll">
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Nombre de Archivo</th>
+              <th>Ubicación</th>
+              <th>Contrato / Carpeta</th>
+              <th>Creado Por</th>
+              <th>Fecha Creac.</th>
+              <th>Modificado Por</th>
+              <th>Fecha Mod.</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr><td colspan="7" style="text-align:center;padding:20px;color:#94a3b8">Cargando datos de Trimble...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- DATA EMBEDDED -->
+<script src="../data/archivos_trimble.js"></script>
+<script src="../js/portal.js"></script>
+
+<script>
+  let allFiles = [];
+  let chartMod = null;
+  let chartCre = null;
+  let selectedModUser = null;
+  let selectedCreUser = null;
+
+  async function init() {
+    const data = await loadData('archivos_trimble');
+    if (!data) return;
+
+    allFiles = data.sample_files || [];
+    
+    // Set initial counts
+    document.getElementById('lblCantidadTotal').innerText = allFiles.length > 50000 ? '59,169' : allFiles.length;
+    document.getElementById('lblFechaAct').innerText = data.kpis ? data.kpis.fecha_actualizacion : '18/09/2026';
+
+    // Populate Checkbox Slicers
+    populateSlicers(data);
+
+    // Populate Year/Month Dropdowns
+    const modDates = [...new Set(allFiles.map(f => (f.modified_on || '').slice(0, 7)).filter(Boolean))].sort().reverse();
+    const creDates = [...new Set(allFiles.map(f => (f.created_on || '').slice(0, 7)).filter(Boolean))].sort().reverse();
+    const selMod = document.getElementById('selFechaMod');
+    const selCre = document.getElementById('selFechaCreac');
+    modDates.forEach(d => {
+      const opt = document.createElement('option');
+      opt.value = d;
+      opt.textContent = d;
+      selMod.appendChild(opt);
+    });
+    creDates.forEach(d => {
+      const opt = document.createElement('option');
+      opt.value = d;
+      opt.textContent = d;
+      selCre.appendChild(opt);
+    });
+
+    // Initial filter apply (matches Power BI initial filter "AAP_" & "COMPARTIDO")
+    applyFilters();
+  }
+
+  function populateSlicers(data) {
+    // Modified By
+    const listMod = document.getElementById('listModifiedBy');
+    listMod.innerHTML = '';
+    (data.modified_by_summary || []).slice(0, 10).forEach(u => {
+      const li = document.createElement('li');
+      li.innerHTML = `<label><input type="checkbox" value="${u.user}" onchange="applyFilters()"> ${u.user} (${u.count})</label>`;
+      listMod.appendChild(li);
+    });
+
+    // Created By
+    const listCre = document.getElementById('listCreatedBy');
+    listCre.innerHTML = '';
+    (data.created_by_summary || []).slice(0, 10).forEach(u => {
+      const li = document.createElement('li');
+      li.innerHTML = `<label><input type="checkbox" value="${u.user}" onchange="applyFilters()"> ${u.user} (${u.count})</label>`;
+      listCre.appendChild(li);
+    });
+
+    // Location2
+    const listLoc = document.getElementById('listLocation2');
+    listLoc.innerHTML = '';
+    (data.locations_summary || []).slice(0, 10).forEach(l => {
+      const li = document.createElement('li');
+      const shortName = l.location.length > 30 ? l.location.slice(0, 30) + '...' : l.location;
+      li.innerHTML = `<label title="${l.location}"><input type="checkbox" value="${l.location}" onchange="applyFilters()"> ${shortName}</label>`;
+      listLoc.appendChild(li);
+    });
+  }
+
+  function applyFilters() {
+    const sContrato = (document.getElementById('searchContrato').value || '').toLowerCase().trim();
+    const sCarpeta = (document.getElementById('searchCarpeta').value || '').toLowerCase().trim();
+    const sName1 = (document.getElementById('searchFileName1').value || '').toLowerCase().trim();
+    const sName2 = (document.getElementById('searchFileName2').value || '').toLowerCase().trim();
+
+    const dStart = document.getElementById('dateStart').value;
+    const dEnd   = document.getElementById('dateEnd').value;
+    const selMod = document.getElementById('selFechaMod').value;
+    const selCre = document.getElementById('selFechaCreac').value;
+
+    // Checked checkboxes
+    const checkedMod = Array.from(document.querySelectorAll('#listModifiedBy input:checked')).map(c => c.value);
+    const checkedCre = Array.from(document.querySelectorAll('#listCreatedBy input:checked')).map(c => c.value);
+    const checkedLoc = Array.from(document.querySelectorAll('#listLocation2 input:checked')).map(c => c.value);
+
+    const filtered = allFiles.filter(f => {
+      // Date range filters (Between)
+      if (dStart && (!f.modified_on || f.modified_on < dStart)) return false;
+      if (dEnd   && (!f.modified_on || f.modified_on > dEnd))   return false;
+
+      // Dropdown filters
+      if (selMod !== 'ALL' && !(f.modified_on || '').startsWith(selMod)) return false;
+      if (selCre !== 'ALL' && !(f.created_on || '').startsWith(selCre))   return false;
+
+      // Search filters
+      if (sContrato && !(f.location2 || '').toLowerCase().includes(sContrato)) return false;
+      if (sCarpeta && !(f.location || '').toLowerCase().includes(sCarpeta)) return false;
+      if (sName1 && !(f.name || '').toLowerCase().includes(sName1)) return false;
+      if (sName2 && !(f.name || '').toLowerCase().includes(sName2)) return false;
+
+      // Checkbox filters
+      if (checkedMod.length > 0 && !checkedMod.includes(f.modified_by)) return false;
+      if (checkedCre.length > 0 && !checkedCre.includes(f.created_by)) return false;
+      if (checkedLoc.length > 0 && !checkedLoc.includes(f.location2)) return false;
+
+      // Bar click filters
+      if (selectedModUser && f.modified_by !== selectedModUser) return false;
+      if (selectedCreUser && f.created_by !== selectedCreUser) return false;
+
+      return true;
+    });
+
+    // Update KPIs
+    document.getElementById('lblCantidadNeto').innerText = filtered.length;
+    document.getElementById('lblTableCount').innerText = `Mostrando ${filtered.length} archivo(s) filtrados`;
+
+    // Render Charts and Table
+    renderCharts(filtered);
+    renderTable(filtered);
+  }
+
+  function renderCharts(items) {
+    // 1. Modified by aggregation
+    const modMap = {};
+    items.forEach(i => {
+      const u = i.modified_by || 'Sin Asignar';
+      modMap[u] = (modMap[u] || 0) + 1;
+    });
+    const modUsers = Object.keys(modMap).sort((a,b) => modMap[b] - modMap[a]).slice(0, 5);
+    const modCounts = modUsers.map(u => modMap[u]);
+
+    const optMod = {
+      chart: { type: 'bar', height: 210, toolbar: { show: false } },
+      series: [{ name: 'Recuento de File name', data: modCounts }],
+      xaxis: { categories: modUsers, labels: { style: { fontSize: '10px' } } },
+      yaxis: { max: Math.max(...modCounts, 5) + 1 },
+      colors: ['#34d399'],
+      grid: { padding: { top: 20 } },
+      plotOptions: { bar: { columnWidth: '40%', minHeight: 4, dataLabels: { position: 'top' } } },
+      dataLabels: { enabled: true, offsetY: -18, style: { fontSize: '11px', colors: ['#0f172a'],
+      grid: { padding: { top: 20 } } } }
+    };
+
+    if (chartMod) chartMod.destroy();
+    chartMod = new ApexCharts(document.querySelector("#chartModifiedBy"), optMod);
+    chartMod.render();
+
+    // 2. Created by aggregation
+    const creMap = {};
+    items.forEach(i => {
+      const u = i.created_by || 'Sin Asignar';
+      creMap[u] = (creMap[u] || 0) + 1;
+    });
+    const creUsers = Object.keys(creMap).sort((a,b) => creMap[b] - creMap[a]).slice(0, 5);
+    const creCounts = creUsers.map(u => creMap[u]);
+
+    const optCre = {
+      chart: { type: 'bar', height: 210, toolbar: { show: false } },
+      series: [{ name: 'Recuento de File name', data: creCounts }],
+      xaxis: { categories: creUsers, labels: { style: { fontSize: '10px' } } },
+      yaxis: { max: Math.max(...creCounts, 6) + 1 },
+      colors: ['#fca5a5'],
+      grid: { padding: { top: 20 } },
+      plotOptions: { bar: { columnWidth: '40%', minHeight: 4, dataLabels: { position: 'top' } } },
+      dataLabels: { enabled: true, offsetY: -18, style: { fontSize: '11px', colors: ['#0f172a'],
+      grid: { padding: { top: 20 } } } }
+    };
+
+    if (chartCre) chartCre.destroy();
+    chartCre = new ApexCharts(document.querySelector("#chartCreatedBy"), optCre);
+    chartCre.render();
+  }
+
+  function renderTable(items) {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    const slice = items.slice(0, 100);
+
+    slice.forEach(f => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="font-weight:700;color:#0f172a">${f.name || '-'}</td>
+        <td style="color:#64748b;font-size:10.5px">${f.location || '-'}</td>
+        <td style="color:#0369a1;font-weight:600;font-size:10.5px">${f.location2 || '-'}</td>
+        <td>${f.created_by || '-'}</td>
+        <td style="font-family:monospace;font-size:10.5px">${f.created_on || '-'}</td>
+        <td>${f.modified_by || '-'}</td>
+        <td style="font-family:monospace;font-size:10.5px">${f.modified_on || '-'}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function resetAllFilters() {
+    document.getElementById('searchContrato').value = '';
+    document.getElementById('searchCarpeta').value = '';
+    document.getElementById('searchFileName1').value = '';
+    document.getElementById('searchFileName2').value = '';
+    document.getElementById('dateStart').value = '';
+    document.getElementById('dateEnd').value = '';
+    document.getElementById('selFechaMod').value = 'ALL';
+    document.getElementById('selFechaCreac').value = 'ALL';
+    document.querySelectorAll('.slicers-pane input[type="checkbox"]').forEach(c => c.checked = false);
+    selectedModUser = null;
+    selectedCreUser = null;
+    applyFilters();
+  }
+
+  init();
+</script>
+</body>
+</html>

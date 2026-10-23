@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fondo Rotatorio — COMCEC · INTERCEC</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<style>
+  :root {
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f1f5f9;
+    color: var(--text-main);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    padding: 16px 20px 40px;
+  }
+  .container { max-width: 1400px; margin: 0 auto; }
+  .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #ffffff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  .back-link:hover { background: #334155; }
+
+  .header-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .header-titles { text-align: center; flex: 1; }
+  .header-titles h1 { font-size: 14px; font-weight: 800; color: #0f172a; }
+  .header-titles h2 { font-size: 12px; font-weight: 700; color: #334155; }
+  .btn-reset-text { background: none; border: none; color: #ef4444; font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; }
+
+  /* KPI Grid */
+  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .kpi-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; text-align: center; }
+  .kpi-box .lbl { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
+  .kpi-box .val { font-size: clamp(13px, 1.4vw, 17px); font-weight: 800; color: #0f172a; margin-top: 2px; font-family: monospace; letter-spacing: -0.5px; }
+  .bg-pink { background: #fdf2f8; border-color: #fbcfe8; }
+  .bg-yellow { background: #fefce8; border-color: #fef08a; }
+  .bg-blue { background: #eff6ff; border-color: #bfdbfe; }
+  .bg-green { background: #f0fdf4; border-color: #bbf7d0; }
+
+  /* Filter Toggles Sections */
+  .filters-container { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .filter-row { display: flex; flex-direction: column; gap: 4px; }
+  .filter-row-title { font-size: 10px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; }
+  .filter-toggles { display: flex; flex-wrap: wrap; gap: 4px; }
+  .f-toggle {
+    padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.12); background: #f1f5f9; color: #334155; transition: all .15s;
+    user-select: none;
+  }
+  .f-toggle.active { background: #3b82f6; color: #fff; border-color: #2563eb; }
+  .f-toggle:hover:not(.active) { background: #e2e8f0; }
+
+  /* Slicers Grid */
+  .slicers-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 12px; }
+  .search-card { border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; }
+  .search-card .sc-title { font-size: 9.5px; font-weight: 800; text-transform: uppercase; }
+  .search-card input { width: 100%; background: #ffffff; border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; padding: 4px 8px; font-size: 11.5px; font-weight: 600; outline: none; }
+  .sc-yellow { background: #fef08a; color: #854d0e; }
+  .sc-green { background: #bbf7d0; color: #166534; }
+  .sc-blue { background: #bfdbfe; color: #1e40af; }
+  .sc-pink { background: #fbcfe8; color: #831843; }
+  .sc-purple { background: #e9d5ff; color: #6b21a8; }
+
+  /* Date Range Slicers */
+  .date-filters-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .date-card { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; }
+  .date-card-title { font-size: 9.5px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 6px; }
+  .date-inputs { display: flex; gap: 6px; align-items: center; }
+  .date-inputs input[type="date"] {
+    flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 11px; outline: none;
+  }
+  .date-inputs .sep { font-size: 11px; color: #94a3b8; font-weight: 700; }
+
+  /* Main Panels */
+  .panel-grid { display: grid; grid-template-columns: 320px 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 900px) { .panel-grid { grid-template-columns: 1fr; } }
+  .card-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+  .card-ttl { font-size: 12px; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; }
+
+  .table-scroll { overflow-x: auto; max-height: 440px; border: 1px solid var(--border); border-radius: 6px; }
+  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  table.pbi-table th { background: #f8fafc; color: #475569; font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid var(--border); position: sticky; top: 0; text-align: left; }
+  table.pbi-table td { padding: 6px 10px; border-bottom: 1px solid #f1f5f9; }
+  table.pbi-table tr:hover td { background: #f0fdf4; }
+  .num { text-align: right; font-family: monospace; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- TOP NAV -->
+  <div class="top-nav">
+    <a href="../index.html" class="back-link">← Volver al Hub de Dashboards</a>
+    <span style="font-size:11px;color:#64748b;font-weight:600">Power BI Page: <b>FONDO ROTATORIO</b></span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header-box">
+    <div style="width:100px"></div>
+    <div class="header-titles">
+      <h1>FONDO ROTATORIO - ESTADO DE PAGO CONTRATOS Y ORDENES DE SERVICIO</h1>
+      <h2>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h2>
+    </div>
+    <button class="btn-reset-text" onclick="resetFilters()">Borrar filtros</button>
+  </div>
+
+  <!-- KPIS ROW -->
+  <div class="kpi-row">
+    <div class="kpi-box bg-yellow">
+      <div class="lbl">Total Facturado</div>
+      <div class="val" id="kpiFacturado">$0</div>
+    </div>
+    <div class="kpi-box bg-green">
+      <div class="lbl">Valor Neto FR</div>
+      <div class="val" id="kpiNetoFR">$0</div>
+    </div>
+    <div class="kpi-box bg-pink">
+      <div class="lbl">Total Anticipos</div>
+      <div class="val" id="kpiAnticipos">$0</div>
+    </div>
+    <div class="kpi-box bg-blue">
+      <div class="lbl">Cantidad Registros</div>
+      <div class="val" id="kpiRegistros">0</div>
+    </div>
+    <div class="kpi-box">
+      <div class="lbl">Fecha de Corte</div>
+      <div class="val" id="kpiFechaCorte" style="font-size:14px">20/09/2026</div>
+    </div>
+  </div>
+
+  <!-- BASIC SLICERS (Toggle Buttons como en Power BI) -->
+  <div class="filters-container">
+    <div class="filter-row">
+      <div class="filter-row-title">ESTADO DE PAGO CONTRATOS Y ÓRDENES (Slicer PBIX)</div>
+      <div class="filter-toggles" id="togglesEstadoPago"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-row-title">ESTADO FR (Slicer PBIX)</div>
+      <div class="filter-toggles" id="togglesEstadoFR"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-row-title">FUENTE DE RECURSOS / PAGO (Slicer PBIX)</div>
+      <div class="filter-toggles" id="togglesFuentePago"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-row-title">EN REVISIÓN POR (Slicer PBIX)</div>
+      <div class="filter-toggles" id="togglesRevision"></div>
+    </div>
+  </div>
+
+  <!-- TEXT SEARCH SLICERS ROW -->
+  <div class="slicers-bar">
+    <div class="search-card sc-yellow">
+      <span class="sc-title">CODIGO CONTRATO (CONT/ORD)</span>
+      <input type="text" id="filterContrato" placeholder="Buscar código..." oninput="applyFilters()">
+    </div>
+    <div class="search-card sc-green">
+      <span class="sc-title">CENTRO DE COSTO</span>
+      <input type="text" id="filterCC" placeholder="Buscar CC..." oninput="applyFilters()">
+    </div>
+    <div class="search-card sc-blue">
+      <span class="sc-title">Nombre Contratista (Tercero)</span>
+      <input type="text" id="filterTercero" placeholder="Buscar contratista..." oninput="applyFilters()">
+    </div>
+    <div class="search-card sc-pink">
+      <span class="sc-title">DOC REEMB #</span>
+      <input type="text" id="filterReemb" placeholder="Buscar documento..." oninput="applyFilters()">
+    </div>
+    <div class="search-card sc-purple">
+      <span class="sc-title">DESCRIPCION</span>
+      <input type="text" id="filterDesc" placeholder="Buscar en descripción..." oninput="applyFilters()">
+    </div>
+  </div>
+
+  <!-- DATE RANGE SLICERS (Between Slicers de Power BI) -->
+  <div class="date-filters-bar">
+    <div class="date-card">
+      <div class="date-card-title">Fecha Pago FR (Between)</div>
+      <div class="date-inputs">
+        <input type="date" id="pagoDesde" onchange="applyFilters()">
+        <span class="sep">a</span>
+        <input type="date" id="pagoHasta" onchange="applyFilters()">
+      </div>
+    </div>
+    <div class="date-card">
+      <div class="date-card-title">Fecha Radicado Certificado (Between)</div>
+      <div class="date-inputs">
+        <input type="date" id="radDesde" onchange="applyFilters()">
+        <span class="sep">a</span>
+        <input type="date" id="radHasta" onchange="applyFilters()">
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="panel-grid">
+    <!-- Resumen Estado de Pagos -->
+    <div class="card-panel">
+      <div class="card-ttl">ESTADO GENERAL DE PAGOS</div>
+      <div id="chartEstados" style="height:260px"></div>
+    </div>
+
+    <!-- Table -->
+    <div class="card-panel">
+      <div class="card-ttl" style="display:flex;justify-content:space-between">
+        <span>Movimientos y Facturación Fondo Rotatorio</span>
+        <span style="color:#64748b;font-size:11px" id="lblCount">Mostrando registros</span>
+      </div>
+      <div class="table-scroll">
+        <table class="pbi-table">
+          <thead>
+            <tr>
+              <th>Reg #</th>
+              <th>Contrato / Orden</th>
+              <th>Tercero / Contratista</th>
+              <th>Descripción</th>
+              <th>Doc Reembolso</th>
+              <th class="num">Total Factura</th>
+              <th class="num">Neto FR</th>
+              <th>Estado Pago</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr><td colspan="8" style="text-align:center;padding:20px;color:#94a3b8">Cargando datos...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="../data/fondo_rotatorio.js"></script>
+<script src="../js/portal.js"></script>
+<script>
+  let allMovs = [];
+  let chartInstance = null;
+
+  // Filtros activos tipo Basic (Sets para multiselección)
+  const selEstadoPago = new Set();
+  const selEstadoFR   = new Set();
+  const selFuentePago = new Set();
+  const selRevision   = new Set();
+
+  async function init() {
+    const data = await loadData('fondo_rotatorio');
+    if (!data) return;
+
+    allMovs = data.movimientos || [];
+    const k = data.kpis;
+    if (k.fecha_corte) document.getElementById('kpiFechaCorte').innerText = k.fecha_corte;
+
+    // Generar botones dinámicos para slicers Basic
+    const estadosPago = [...new Set(allMovs.map(m => m.estado_pago).filter(Boolean))].sort();
+    const estadosFR   = [...new Set(allMovs.map(m => m.estado_fr).filter(Boolean))].sort();
+    const fuentesPago = [...new Set(allMovs.map(m => m.fuente_pago).filter(Boolean))].sort();
+    const revisiones  = [...new Set(allMovs.map(m => m.estado_revision).filter(Boolean))].sort();
+
+    renderToggles('togglesEstadoPago', estadosPago, selEstadoPago);
+    renderToggles('togglesEstadoFR',   estadosFR,   selEstadoFR);
+    renderToggles('togglesFuentePago', fuentesPago, selFuentePago);
+    renderToggles('togglesRevision',   revisiones,  selRevision);
+
+    applyFilters();
+  }
+
+  function renderToggles(containerId, list, targetSet) {
+    const cont = document.getElementById(containerId);
+    cont.innerHTML = '';
+    list.forEach(val => {
+      const btn = document.createElement('div');
+      btn.className = 'f-toggle';
+      btn.textContent = val;
+      btn.addEventListener('click', () => {
+        if (targetSet.has(val)) {
+          targetSet.delete(val);
+          btn.classList.remove('active');
+        } else {
+          targetSet.add(val);
+          btn.classList.add('active');
+        }
+        applyFilters();
+      });
+      cont.appendChild(btn);
+    });
+  }
+
+  function applyFilters() {
+    const sCont   = (document.getElementById('filterContrato').value || '').toLowerCase().trim();
+    const sCC     = (document.getElementById('filterCC').value || '').toLowerCase().trim();
+    const sTerc   = (document.getElementById('filterTercero').value || '').toLowerCase().trim();
+    const sReemb  = (document.getElementById('filterReemb').value || '').toLowerCase().trim();
+    const sDesc   = (document.getElementById('filterDesc').value || '').toLowerCase().trim();
+
+    const pDesde = document.getElementById('pagoDesde').value;
+    const pHasta = document.getElementById('pagoHasta').value;
+    const rDesde = document.getElementById('radDesde').value;
+    const rHasta = document.getElementById('radHasta').value;
+
+    const filtered = allMovs.filter(m => {
+      // Basic slicer sets
+      if (selEstadoPago.size && !selEstadoPago.has(m.estado_pago)) return false;
+      if (selEstadoFR.size   && !selEstadoFR.has(m.estado_fr)) return false;
+      if (selFuentePago.size && !selFuentePago.has(m.fuente_pago)) return false;
+      if (selRevision.size   && !selRevision.has(m.estado_revision)) return false;
+
+      // Text searches
+      if (sCont  && !(m.contrato_orden || '').toLowerCase().includes(sCont)) return false;
+      if (sCC    && !(m.ccosto || '').toLowerCase().includes(sCC)) return false;
+      if (sTerc  && !(m.tercero || '').toLowerCase().includes(sTerc)) return false;
+      if (sReemb && !(m.doc_reembolso || '').toLowerCase().includes(sReemb)) return false;
+      if (sDesc  && !(m.descripcion || '').toLowerCase().includes(sDesc)) return false;
+
+      // Date ranges (Between)
+      if (pDesde && (!m.fecha_pago || m.fecha_pago < pDesde)) return false;
+      if (pHasta && (!m.fecha_pago || m.fecha_pago > pHasta)) return false;
+      if (rDesde && (!m.fecha_radicado || m.fecha_radicado < rDesde)) return false;
+      if (rHasta && (!m.fecha_radicado || m.fecha_radicado > rHasta)) return false;
+
+      return true;
+    });
+
+    // Actualizar KPIs según filtros
+    const totFact = filtered.reduce((acc, m) => acc + (m.valor_factura || 0), 0);
+    const totNeto = filtered.reduce((acc, m) => acc + (m.valor_neto_fr || 0), 0);
+    const totAnt  = filtered.reduce((acc, m) => acc + (m.anticipo || 0), 0);
+
+    document.getElementById('kpiFacturado').innerText = Formatter.currency(totFact);
+    document.getElementById('kpiNetoFR').innerText    = Formatter.currency(totNeto);
+    document.getElementById('kpiAnticipos').innerText = Formatter.currency(totAnt);
+    document.getElementById('kpiRegistros').innerText = Formatter.number(filtered.length);
+
+    document.getElementById('lblCount').innerText = `Mostrando ${filtered.length} de ${allMovs.length} registros`;
+
+    renderChart(filtered);
+    renderTable(filtered);
+  }
+
+  function renderChart(items) {
+    const grp = {};
+    items.forEach(i => {
+      const ep = i.estado_pago || 'Revisado';
+      grp[ep] = (grp[ep] || 0) + (i.valor_neto_fr || 0);
+    });
+
+    const labels = Object.keys(grp);
+    const series = Object.values(grp);
+
+    const options = {
+      chart: { type: 'pie', height: 260 },
+      labels: labels,
+      series: series.length > 0 ? series : [0],
+      colors: ['#22c55e', '#f59e0b', '#0ea5e9', '#f43f5e', '#8b5cf6'],
+      grid: { padding: { top: 20 } },
+      legend: { position: 'bottom', fontSize: '11px' },
+      tooltip: { y: { formatter: v => Formatter.currency(v) } }
+    };
+
+    if (chartInstance) chartInstance.destroy();
+    chartInstance = new ApexCharts(document.querySelector("#chartEstados"), options);
+    chartInstance.render();
+  }
+
+  function renderTable(items) {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    const slice = items.slice(0, 100);
+
+    slice.forEach(m => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="font-family:monospace;font-weight:700;color:#0284c7">${m.registro_no || '-'}</td>
+        <td style="font-weight:600">${m.contrato_orden || '-'}</td>
+        <td style="font-weight:600;color:#0f172a">${m.tercero || '-'}</td>
+        <td style="color:#64748b;font-size:11px">${m.descripcion || '-'}</td>
+        <td style="font-family:monospace;font-size:11px">${m.doc_reembolso || '-'}</td>
+        <td class="num">${Formatter.currency(m.valor_factura)}</td>
+        <td class="num" style="color:#16a34a;font-weight:700">${Formatter.currency(m.valor_neto_fr)}</td>
+        <td><span style="background:#dcfce7;color:#166534;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">${m.estado_pago || 'Revisado'}</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function resetFilters() {
+    selEstadoPago.clear();
+    selEstadoFR.clear();
+    selFuentePago.clear();
+    selRevision.clear();
+    document.querySelectorAll('.f-toggle.active').forEach(b => b.classList.remove('active'));
+
+    document.getElementById('filterContrato').value = '';
+    document.getElementById('filterCC').value       = '';
+    document.getElementById('filterTercero').value  = '';
+    document.getElementById('filterReemb').value    = '';
+    document.getElementById('filterDesc').value     = '';
+
+    document.getElementById('pagoDesde').value = '';
+    document.getElementById('pagoHasta').value = '';
+    document.getElementById('radDesde').value  = '';
+    document.getElementById('radHasta').value  = '';
+
+    applyFilters();
+  }
+
+  init();
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+{
+  "kpis": {
+    "total_horas_lluvia": 936,
+    "total_dias_afectados": 267.4,
+    "mes_mayor_afectacion": "Oct-25"
+  },
+  "historico": [
+    {
+      "periodo": "Ene-25",
+      "horas_lluvia": 12,
+      "dias_afectados": 3.4,
+      "nivel_impacto": "Bajo"
+    },
+    {
+      "periodo": "Feb-25",
+      "horas_lluvia": 18,
+      "dias_afectados": 5.1,
+      "nivel_impacto": "Bajo"
+    },
+    {
+      "periodo": "Mar-25",
+      "horas_lluvia": 25,
+      "dias_afectados": 7.1,
+      "nivel_impacto": "Bajo"
+    },
+    {
+      "periodo": "Abr-25",
+      "horas_lluvia": 42,
+      "dias_afectados": 12.0,
+      "nivel_impacto": "Medio"
+    },
+    {
+      "periodo": "May-25",
+      "horas_lluvia": 68,
+      "dias_afectados": 19.4,
+      "nivel_impacto": "Alto"
+    },
+    {
+      "periodo": "Jun-25",
+      "horas_lluvia": 55,
+      "dias_afectados": 15.7,
+      "nivel_impacto": "Alto"
+    },
+    {
+      "periodo": "Jul-25",
+      "horas_lluvia": 30,
+      "dias_afectados": 8.6,
+      "nivel_impacto": "Medio"
+    },
+    {
+      "periodo": "Ago-25",
+      "horas_lluvia": 48,
+      "dias_afectados": 13.7,
+      "nivel_impacto": "Medio"
+    },
+    {
+      "periodo": "Sep-25",
+      "horas_lluvia": 62,
+      "dias_afectados": 17.7,
+      "nivel_impacto": "Alto"
+    },
+    {
+      "periodo": "Oct-25",
+      "horas_lluvia": 85,
+      "dias_afectados": 24.3,
+      "nivel_impacto": "Alto"
+    },
+    {
+      "periodo": "Nov-25",
+      "horas_lluvia": 74,
+      "dias_afectados": 21.1,
+      "nivel_impacto": "Alto"
+    },
+    {
+      "periodo": "Dic-25",
+      "horas_lluvia": 22,
+      "dias_afectados": 6.3,
+      "nivel_impacto": "Bajo"
+    },
+    {
+      "periodo": "Ene-26",
+      "horas_lluvia": 15,
+      "dias_afectados": 4.3,
+      "nivel_impacto": "Bajo"
+    },
+    {
+      "periodo": "Feb-26",
+      "horas_lluvia": 20,
+      "dias_afectados": 5.7,
+      "nivel_impacto": "Bajo"
+    },
+    {
+      "periodo": "Mar-26",
+      "horas_lluvia": 35,
+      "dias_afectados": 10.0,
+      "nivel_impacto": "Medio"
+    },
+    {
+      "periodo": "Abr-26",
+      "horas_lluvia": 58,
+      "dias_afectados": 16.6,
+      "nivel_impacto": "Alto"
+    },
+    {
+      "periodo": "May-26",
+      "horas_lluvia": 72,
+      "dias_afectados": 20.6,
+      "nivel_impacto": "Alto"
+    },
+    {
+      "periodo": "Jun-26",
+      "horas_lluvia": 60,
+      "dias_afectados": 17.1,
+      "nivel_impacto": "Alto"
+    },
+    {
+      "periodo": "Jul-26",
+      "horas_lluvia": 45,
+      "dias_afectados": 12.9,
+      "nivel_impacto": "Medio"
+    },
+    {
+      "periodo": "Ago-26",
+      "horas_lluvia": 50,
+      "dias_afectados": 14.3,
+      "nivel_impacto": "Medio"
+    },
+    {
+      "periodo": "Sep-26",
+      "horas_lluvia": 40,
+      "dias_afectados": 11.4,
+      "nivel_impacto": "Medio"
+    }
+  ]
+}

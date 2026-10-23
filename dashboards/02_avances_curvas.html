@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Avances % — COMCEC · INTERCEC</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<style>
+  :root { --bg-main: #f8fafc; --card-bg: #ffffff; --text-main: #1e293b; --border: #e2e8f0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f1f5f9; color: var(--text-main); font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; padding: 16px 20px 40px; }
+  .container { max-width: 1400px; margin: 0 auto; }
+  .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #ffffff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  .back-link:hover { background: #334155; }
+
+  .header-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .header-titles { text-align: center; flex: 1; }
+  .header-titles h1 { font-size: 14px; font-weight: 800; color: #0f172a; }
+  .header-titles h2 { font-size: 12px; font-weight: 700; color: #334155; }
+  .btn-reset-text { background: none; border: none; color: #ef4444; font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; }
+
+  /* Main Project Progress Cards */
+  .kpi-row-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .kpi-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; text-align: center; }
+  .kpi-box .lbl { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
+  .kpi-box .val { font-size: 22px; font-weight: 800; color: #0f172a; margin-top: 2px; font-family: monospace; }
+  .bg-blue { background: #eff6ff; border-color: #bfdbfe; }
+  .bg-green { background: #f0fdf4; border-color: #bbf7d0; }
+  .bg-yellow { background: #fefce8; border-color: #fef08a; }
+
+  /* Slicers Container */
+  .filters-container { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .filter-row { display: flex; flex-direction: column; gap: 4px; }
+  .filter-row-title { font-size: 10px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; }
+  .filter-toggles { display: flex; flex-wrap: wrap; gap: 4px; max-height: 120px; overflow-y: auto; }
+  .f-toggle {
+    padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.12); background: #f1f5f9; color: #334155; transition: all .15s;
+    user-select: none;
+  }
+  .f-toggle.active { background: #3b82f6; color: #fff; border-color: #2563eb; }
+  .f-toggle:hover:not(.active) { background: #e2e8f0; }
+
+  /* Date Range Slicers */
+  .date-filters-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .date-card { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; }
+  .date-card-title { font-size: 9.5px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 6px; }
+  .date-inputs { display: flex; gap: 6px; align-items: center; }
+  .date-inputs input[type="date"] {
+    flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 11px; outline: none;
+  }
+  .date-inputs .sep { font-size: 11px; color: #94a3b8; font-weight: 700; }
+
+  /* Sub-chapters Row */
+  .sub-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .sub-card { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; }
+  .sub-card .sc-name { font-size: 11px; font-weight: 800; color: #1e3a8a; }
+  .sub-card .sc-vals { display: flex; gap: 12px; font-size: 11.5px; font-family: monospace; font-weight: 700; }
+
+  .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 900px) { .charts-grid { grid-template-columns: 1fr; } }
+  .card-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 16px; }
+  .card-ttl { font-size: 12px; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; }
+
+  /* Table */
+  .table-scroll { overflow-x: auto; max-height: 380px; border: 1px solid var(--border); border-radius: 6px; }
+  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  table.pbi-table th { background: #f8fafc; color: #475569; font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid var(--border); position: sticky; top: 0; text-align: left; }
+  table.pbi-table td { padding: 6px 10px; border-bottom: 1px solid #f1f5f9; }
+  table.pbi-table tr:hover td { background: #f0fdf4; }
+  .num { text-align: center; font-family: monospace; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="top-nav">
+    <a href="../index.html" class="back-link">← Volver al Hub de Dashboards</a>
+    <span style="font-size:11px;color:#64748b;font-weight:600">Power BI Page: <b>Avances %</b></span>
+  </div>
+
+  <div class="header-box">
+    <div style="width:100px"></div>
+    <div class="header-titles">
+      <h1>TOTAL PROYECTO - % PROGRAMADO VS. % EJECUTADO (CORTE SEMANAL)</h1>
+      <h2>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h2>
+    </div>
+    <button class="btn-reset-text" onclick="resetFilters()">Borrar filtros</button>
+  </div>
+
+  <!-- SLICERS POWER BI -->
+  <div class="date-filters-bar">
+    <div class="date-card">
+      <div class="date-card-title">Fecha de Corte (Between Slicer PBIX)</div>
+      <div class="date-inputs">
+        <input type="date" id="corteDesde" onchange="applyFilters()">
+        <span class="sep">a</span>
+        <input type="date" id="corteHasta" onchange="applyFilters()">
+      </div>
+    </div>
+  </div>
+
+  <div class="filters-container">
+    <div class="filter-row">
+      <div class="filter-row-title">INFORME SEMANAL / CORTE (Slicer PBIX - inf sem)</div>
+      <div class="filter-toggles" id="togglesSemanas"></div>
+    </div>
+  </div>
+
+  <!-- MAIN KPIS -->
+  <div class="kpi-row-main">
+    <div class="kpi-box bg-blue">
+      <div class="lbl">PROYECTO % Programado</div>
+      <div class="val" id="kpiPlan" style="color:#0284c7">0%</div>
+    </div>
+    <div class="kpi-box bg-green">
+      <div class="lbl">PROYECTO % Ejecutado</div>
+      <div class="val" id="kpiReal" style="color:#16a34a">0%</div>
+    </div>
+    <div class="kpi-box bg-yellow">
+      <div class="lbl">Desviación de Cronograma (SV %)</div>
+      <div class="val" id="kpiDesv" style="color:#d97706">0%</div>
+    </div>
+    <div class="kpi-box">
+      <div class="lbl">Índice SPI (%ejec / %prog)</div>
+      <div class="val" id="kpiSPI" style="color:#0f172a">0.00</div>
+    </div>
+  </div>
+
+  <!-- SUBCHAPTERS -->
+  <div class="sub-kpi-grid">
+    <div class="sub-card">
+      <span class="sc-name">1.1 Preliminares</span>
+      <div class="sc-vals">
+        <span style="color:#0284c7" id="valPrelimProg">Prog: —</span>
+        <span style="color:#16a34a" id="valPrelimEjec">Ejec: —</span>
+      </div>
+    </div>
+    <div class="sub-card">
+      <span class="sc-name">1.2 Subcontrataciones</span>
+      <div class="sc-vals">
+        <span style="color:#0284c7" id="valSubProg">Prog: —</span>
+        <span style="color:#16a34a" id="valSubEjec">Ejec: —</span>
+      </div>
+    </div>
+    <div class="sub-card">
+      <span class="sc-name">1.3 Construcción</span>
+      <div class="sc-vals">
+        <span style="color:#0284c7" id="valConstProg">Prog: —</span>
+        <span style="color:#16a34a" id="valConstEjec">Ejec: —</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="charts-grid">
+    <div class="card-panel">
+      <div class="card-ttl">TOTAL PROYECTO - % Programado vs.% Ejecutado (Curva S)</div>
+      <div id="chartCurvaS" style="height:260px"></div>
+    </div>
+    <div class="card-panel">
+      <div class="card-ttl">TOTAL PROYECTO EJECUCION FISICA - Indice SPI por CORTE SEMANAL</div>
+      <div id="chartSPI" style="height:260px"></div>
+    </div>
+  </div>
+
+  <!-- CONTRACTORS PROGRESS -->
+  <div class="sub-kpi-grid">
+    <div class="sub-card"><span class="sc-name">COVECO (DINACOL)</span><div class="sc-vals"><span style="color:#0284c7" id="vCovecoProg">Prog: —</span><span style="color:#16a34a" id="vCovecoEjec">Ejec: —</span></div></div>
+    <div class="sub-card"><span class="sc-name">INGECOL</span><div class="sc-vals"><span style="color:#0284c7" id="vIngecolProg">Prog: —</span><span style="color:#16a34a" id="vIngecolEjec">Ejec: —</span></div></div>
+    <div class="sub-card"><span class="sc-name">MOSEL</span><div class="sc-vals"><span style="color:#0284c7" id="vMoselProg">Prog: —</span><span style="color:#16a34a" id="vMoselEjec">Ejec: —</span></div></div>
+    <div class="sub-card"><span class="sc-name">CH PEREIRA</span><div class="sc-vals"><span style="color:#0284c7" id="vPereiraProg">Prog: —</span><span style="color:#16a34a" id="vPereiraEjec">Ejec: —</span></div></div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="card-panel">
+    <div class="card-ttl" style="display:flex;justify-content:space-between">
+      <span>PORCENTAJES DE AVANCE - Histórico de Cortes Semanales</span>
+      <span style="color:#64748b;font-size:11px" id="lblCount">Mostrando semanas</span>
+    </div>
+    <div class="table-scroll">
+      <table class="pbi-table">
+        <thead>
+          <tr>
+            <th>Semana</th>
+            <th>Corte Semanal</th>
+            <th class="num">Plan % Acum</th>
+            <th class="num">Real % Acum</th>
+            <th class="num">Preliminares %</th>
+            <th class="num">Subcontrataciones %</th>
+            <th class="num">Construcción %</th>
+            <th class="num">SPI</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="8" style="text-align:center;padding:20px;color:#94a3b8">Cargando avances...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="../data/avances_curvas.js"></script>
+<script src="../js/portal.js"></script>
+<script>
+  let allCurvas = [];
+  let chartCurvaS = null;
+  let chartSPI = null;
+  const selSemanas = new Set();
+
+  async function init() {
+    const data = await loadData('avances_curvas');
+    if (!data) return;
+
+    allCurvas = data.curvas_semanales || [];
+
+    // Generar toggles de semanas
+    const semList = allCurvas.map(c => c.semana || c.corte).filter(Boolean);
+    renderToggles('togglesSemanas', semList, selSemanas);
+
+    applyFilters();
+  }
+
+  function renderToggles(containerId, list, targetSet) {
+    const cont = document.getElementById(containerId);
+    cont.innerHTML = '';
+    list.forEach(val => {
+      const btn = document.createElement('div');
+      btn.className = 'f-toggle';
+      btn.textContent = `Sem ${val}`;
+      btn.addEventListener('click', () => {
+        if (targetSet.has(val)) {
+          targetSet.delete(val);
+          btn.classList.remove('active');
+        } else {
+          targetSet.add(val);
+          btn.classList.add('active');
+        }
+        applyFilters();
+      });
+      cont.appendChild(btn);
+    });
+  }
+
+  function applyFilters() {
+    const cDesde = document.getElementById('corteDesde').value;
+    const cHasta = document.getElementById('corteHasta').value;
+
+    const filtered = allCurvas.filter(c => {
+      if (selSemanas.size && !selSemanas.has(c.semana) && !selSemanas.has(c.corte)) return false;
+      if (cDesde && (!c.corte || c.corte < cDesde)) return false;
+      if (cHasta && (!c.corte || c.corte > cHasta)) return false;
+      return true;
+    });
+
+    const dataset = filtered.length > 0 ? filtered : allCurvas;
+    const ultimo = dataset[dataset.length - 1] || {};
+
+    // Actualizar KPIs principales
+    const plan = Formatter.percent((ultimo.plan_acumulado || ultimo.prog_revisado || 0) * 100);
+    const real = Formatter.percent((ultimo.real_acumulado || ultimo.ejec_revisado || 0) * 100);
+    const desv = Formatter.percent(((ultimo.real_acumulado || ultimo.ejec_revisado || 0) - (ultimo.plan_acumulado || ultimo.prog_revisado || 0)) * 100);
+    const spi  = (ultimo.spi || 1.0).toFixed(2);
+
+    document.getElementById('kpiPlan').innerText = plan;
+    document.getElementById('kpiReal').innerText = real;
+    document.getElementById('kpiDesv').innerText = desv;
+    document.getElementById('kpiSPI').innerText  = spi;
+
+    // Subcapítulos
+    document.getElementById('valPrelimProg').innerText = `Prog: ${Formatter.percent((ultimo.prog_preliminares || 0) * 100)}`;
+    document.getElementById('valPrelimEjec').innerText = `Ejec: ${Formatter.percent((ultimo.ejec_preliminares || 0) * 100)}`;
+    document.getElementById('valSubProg').innerText    = `Prog: ${Formatter.percent((ultimo.prog_subcontrataciones || 0) * 100)}`;
+    document.getElementById('valSubEjec').innerText    = `Ejec: ${Formatter.percent((ultimo.ejec_subcontrataciones || 0) * 100)}`;
+    document.getElementById('valConstProg').innerText  = `Prog: ${Formatter.percent((ultimo.prog_construccion || 0) * 100)}`;
+    document.getElementById('valConstEjec').innerText  = `Ejec: ${Formatter.percent((ultimo.ejec_construccion || 0) * 100)}`;
+
+    // Contratistas
+    document.getElementById('vCovecoProg').innerText  = `Prog: ${Formatter.percent((ultimo.coveco_prog || 0) * 100)}`;
+    document.getElementById('vCovecoEjec').innerText  = `Ejec: ${Formatter.percent((ultimo.coveco_ejec || 0) * 100)}`;
+    document.getElementById('vIngecolProg').innerText = `Prog: ${Formatter.percent((ultimo.ingecol_prog || 0) * 100)}`;
+    document.getElementById('vIngecolEjec').innerText = `Ejec: ${Formatter.percent((ultimo.ingecol_ejec || 0) * 100)}`;
+    document.getElementById('vMoselProg').innerText   = `Prog: ${Formatter.percent((ultimo.mosel_prog || 0) * 100)}`;
+    document.getElementById('vMoselEjec').innerText   = `Ejec: ${Formatter.percent((ultimo.mosel_ejec || 0) * 100)}`;
+    document.getElementById('vPereiraProg').innerText = `Prog: ${Formatter.percent((ultimo.ch_pereira_prog || 0) * 100)}`;
+    document.getElementById('vPereiraEjec').innerText = `Ejec: ${Formatter.percent((ultimo.ch_pereira_ejec || 0) * 100)}`;
+
+    document.getElementById('lblCount').innerText = `Mostrando ${dataset.length} de ${allCurvas.length} semanas`;
+
+    renderCharts(dataset);
+    renderTable(dataset);
+  }
+
+  function renderCharts(items) {
+    const cats = items.map(c => `Sem ${c.semana || ''}`);
+    const dataPlan = items.map(c => Math.round((c.plan_acumulado || c.prog_revisado || 0) * 1000) / 10);
+    const dataReal = items.map(c => c.real_acumulado !== null ? Math.round((c.real_acumulado || c.ejec_revisado || 0) * 1000) / 10 : null);
+    const dataSPI  = items.map(c => c.spi || 1.0);
+
+    const optCurva = {
+      chart: { type: 'line', height: 260, toolbar: { show: false } },
+      series: [
+        { name: '% Programado', data: dataPlan },
+        { name: '% Ejecutado', data: dataReal }
+      ],
+      xaxis: { categories: cats, labels: { style: { fontSize: '8.5px' }, rotate: -45 } },
+      yaxis: { max: 100, labels: { formatter: v => `${v}%` } },
+      colors: ['#0284c7', '#16a34a'],
+      stroke: { width: [2.5, 3], curve: 'smooth' },
+      grid: { padding: { top: 10 } },
+      tooltip: { y: { formatter: v => `${v}%` } }
+    };
+    if (chartCurvaS) chartCurvaS.destroy();
+    chartCurvaS = new ApexCharts(document.querySelector("#chartCurvaS"), optCurva);
+    chartCurvaS.render();
+
+    const optSPI = {
+      chart: { type: 'area', height: 260, toolbar: { show: false } },
+      series: [{ name: 'SPI', data: dataSPI }],
+      xaxis: { categories: cats, labels: { style: { fontSize: '8.5px' }, rotate: -45 } },
+      yaxis: { min: 0.5, max: 1.5, labels: { formatter: v => v.toFixed(2) } },
+      colors: ['#d97706'],
+      stroke: { width: 2, curve: 'smooth' },
+      fill: { type: 'gradient', gradient: { opacityFrom: 0.4, opacityTo: 0.05 } },
+      grid: { padding: { top: 10 } }
+    };
+    if (chartSPI) chartSPI.destroy();
+    chartSPI = new ApexCharts(document.querySelector("#chartSPI"), optSPI);
+    chartSPI.render();
+  }
+
+  function renderTable(items) {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    const slice = [...items].reverse();
+
+    slice.forEach(c => {
+      const tr = document.createElement('tr');
+      const plan = c.plan_acumulado !== null ? `${(c.plan_acumulado * 100).toFixed(1)}%` : '—';
+      const real = c.real_acumulado !== null ? `${(c.real_acumulado * 100).toFixed(1)}%` : '—';
+      const prel = c.ejec_preliminares !== null ? `${(c.ejec_preliminares * 100).toFixed(1)}%` : '—';
+      const subc = c.ejec_subcontrataciones !== null ? `${(c.ejec_subcontrataciones * 100).toFixed(1)}%` : '—';
+      const cons = c.ejec_construccion !== null ? `${(c.ejec_construccion * 100).toFixed(1)}%` : '—';
+      const spi  = c.spi ? Number(c.spi).toFixed(2) : '1.00';
+
+      tr.innerHTML = `
+        <td style="font-weight:700;color:#0284c7">Sem ${c.semana || '—'}</td>
+        <td style="font-family:monospace;font-size:11px">${c.corte || '—'}</td>
+        <td class="num" style="color:#0284c7">${plan}</td>
+        <td class="num" style="color:#16a34a">${real}</td>
+        <td class="num">${prel}</td>
+        <td class="num">${subc}</td>
+        <td class="num">${cons}</td>
+        <td class="num" style="color:#d97706">${spi}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function resetFilters() {
+    selSemanas.clear();
+    document.querySelectorAll('.f-toggle.active').forEach(b => b.classList.remove('active'));
+    document.getElementById('corteDesde').value = '';
+    document.getElementById('corteHasta').value = '';
+    applyFilters();
+  }
+
+  init();
+</script>
+</body>
+</html>

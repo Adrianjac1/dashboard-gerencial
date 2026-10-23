@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WorkPlan — COMCEC · INTERCEC</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #eef2f6; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11.5px; color: #1e293b; padding: 10px 16px 40px; }
+  .container { max-width: 1520px; margin: 0 auto; }
+
+  /* ── Barra de Navegación ─────────────────────────── */
+  .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .back-link { display: inline-flex; align-items: center; gap: 5px; color: #1e3a8a; font-size: 11px; font-weight: 700; text-decoration: none; }
+  .back-link:hover { text-decoration: underline; }
+
+  /* ── Header Banner ───────────────────────────────── */
+  .header-banner {
+    display: flex; align-items: center; justify-content: space-between;
+    background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px;
+    padding: 6px 14px; margin-bottom: 10px;
+  }
+  .corte-chip {
+    background: #dcfce7; border: 1px solid #86efac; border-radius: 4px;
+    padding: 4px 10px; font-size: 10px; font-weight: 800; color: #15803d; text-align: center;
+  }
+  .header-title {
+    font-size: 16px; font-weight: 900; color: #0f172a; letter-spacing: 1px; text-align: center; flex: 1;
+  }
+  .btn-reset {
+    background: #2563eb; color: #ffffff; border: none; border-radius: 4px;
+    padding: 6px 14px; font-size: 11px; font-weight: 700; cursor: pointer; transition: background .15s;
+  }
+  .btn-reset:hover { background: #1d4ed8; }
+
+  /* ── Layout de Fila 1: Tabla Matriz + Slicer EDT.2 Vertical ── */
+  .row-top { display: grid; grid-template-columns: 1fr 140px; gap: 10px; margin-bottom: 12px; }
+
+  .table-box { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; overflow: hidden; }
+  .table-scroll { overflow: auto; max-height: 380px; }
+  
+  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+  table.pbi-table thead th {
+    background: #f1f5f9; color: #334155; font-size: 9.5px; font-weight: 800;
+    text-transform: uppercase; padding: 6px 8px; border-bottom: 2px solid #cbd5e1;
+    position: sticky; top: 0; z-index: 1; white-space: nowrap; text-align: left;
+  }
+  table.pbi-table thead th.num { text-align: right; }
+  table.pbi-table thead th.ctr { text-align: center; }
+  table.pbi-table tbody td { padding: 4.5px 8px; border-bottom: 1px solid #f1f5f9; white-space: nowrap; }
+  table.pbi-table tbody tr:hover td { background: #f8fafc; }
+  table.pbi-table tbody tr.total-row td {
+    background: #f1f5f9; font-weight: 800; color: #0f172a; border-top: 2px solid #cbd5e1; font-size: 11px;
+  }
+  
+  .num { text-align: right; font-family: monospace; }
+  .ctr { text-align: center; }
+  .neg { color: #dc2626; }
+  .pos { color: #059669; }
+
+  /* ── Slicer Vertical EDT.2 ───────────────────────── */
+  .slicer-card { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px; }
+  .slicer-card .s-ttl {
+    font-size: 9.5px; font-weight: 800; color: #854d0e; background: #fef9c3;
+    padding: 3px 6px; border-radius: 3px; text-align: center; margin-bottom: 6px;
+  }
+  .slicer-grid-v { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; max-height: 330px; overflow-y: auto; }
+  .s-btn {
+    display: block; padding: 4px 2px; text-align: center; font-size: 9.5px; font-weight: 700;
+    background: #1e293b; color: #ffffff; border-radius: 3px; cursor: pointer; user-select: none;
+  }
+  .s-btn.active { background: #2563eb; color: #ffffff; }
+  .s-btn:hover { background: #334155; }
+
+  /* ── Segmentadores Horizontales (Fila Media) ─────── */
+  .slicers-bar {
+    display: grid; grid-template-columns: 80px 200px 1fr; gap: 10px; margin-bottom: 10px;
+  }
+  .slicer-pill-box { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 8px; }
+  .slicer-pill-box .sp-ttl { font-size: 9.5px; font-weight: 800; color: #64748b; margin-bottom: 4px; text-transform: uppercase; }
+  .pill-grid { display: flex; flex-wrap: wrap; gap: 4px; }
+  .pill-btn {
+    padding: 3px 8px; border-radius: 3px; font-size: 9.5px; font-weight: 700;
+    background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; cursor: pointer;
+  }
+  .pill-btn.active { background: #1e293b; color: #ffffff; border-color: #1e293b; }
+  .pill-btn:hover { background: #e2e8f0; }
+
+  /* ── Tabla Inferior Rosada (Detalle) ─────────────── */
+  table.pbi-table-pink thead th {
+    background: #fce7f3; color: #831843; border-bottom: 2px solid #fbcfe8;
+  }
+  table.pbi-table-pink tbody tr.total-row td {
+    background: #fdf2f8; color: #831843; border-top: 2px solid #f472b6;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="top-nav">
+    <a href="../index.html" class="back-link">← Volver al Hub de Dashboards</a>
+    <span style="font-size:10.5px;color:#64748b;font-weight:600">Power BI: <b>WorKPlan</b></span>
+  </div>
+
+  <!-- ====== HEADER ====== -->
+  <div class="header-banner">
+    <div class="corte-chip">
+      CORTE<br><span id="corteLabel">20/09/2026</span>
+    </div>
+    <div class="header-title">WORKPLAN</div>
+    <button class="btn-reset" onclick="resetFilters()">Borrar todas las segmentaciones</button>
+  </div>
+
+  <!-- ====== FILA 1: TABLA MATRIZ + SLICER EDT.2 VERTICAL ====== -->
+  <div class="row-top">
+    
+    <!-- Tabla Superior -->
+    <div class="table-box">
+      <div class="table-scroll">
+        <table class="pbi-table" id="tableTop">
+          <thead>
+            <tr>
+              <th>Centro de Costos</th>
+              <th class="ctr">EDT.2</th>
+              <th class="ctr">EDT.3</th>
+              <th class="ctr">EDT.4</th>
+              <th>Actividad</th>
+              <th class="num">Vlr. Presupuesto Base</th>
+              <th class="num">Vlr. Proyección Presupuesto</th>
+              <th class="num">Vlr. Total Contratado</th>
+              <th class="num">Adiciones y Sustracciones</th>
+              <th class="num">Valor Contratos</th>
+              <th class="num">Valor Órdenes</th>
+            </tr>
+          </thead>
+          <tbody id="bodyTop">
+            <tr><td colspan="11" style="text-align:center;padding:20px;color:#94a3b8">Cargando WorkPlan...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Slicer EDT.2 Vertical -->
+    <div class="slicer-card">
+      <div class="s-ttl">EDT.2 - CAPITULOS</div>
+      <div class="slicer-grid-v" id="slicerEDT2_v">
+        <!-- Generado dinámicamente -->
+      </div>
+    </div>
+
+  </div><!-- /row-top -->
+
+  <!-- ====== FILA 2: SEGMENTADORES HORIZONTALES ====== -->
+  <div class="slicers-bar">
+    
+    <!-- EDT.1 -->
+    <div class="slicer-pill-box">
+      <div class="sp-ttl">EDT.1</div>
+      <div class="pill-grid" id="slicerEDT1">
+        <div class="pill-btn active" onclick="toggleFilter('edt1', 1, this)">1</div>
+      </div>
+    </div>
+
+    <!-- EDT.2 Rango -->
+    <div class="slicer-pill-box">
+      <div class="sp-ttl" style="display:flex;justify-content:space-between">
+        <span>EDT.2 - CAPÍTULOS</span>
+        <span id="rangeVal" style="font-weight:700;color:#2563eb">1 — 16</span>
+      </div>
+      <input type="range" min="1" max="16" value="16" id="rangeEDT2" style="width:100%;margin-top:6px" oninput="handleRange(this.value)">
+    </div>
+
+    <!-- EDT.3 -->
+    <div class="slicer-pill-box">
+      <div class="sp-ttl">EDT.3</div>
+      <div class="pill-grid" id="slicerEDT3">
+        <!-- Generado dinámicamente -->
+      </div>
+    </div>
+
+  </div><!-- /slicers-bar -->
+
+  <!-- ====== FILA 3: SLICER EDT.4 ====== -->
+  <div class="slicer-pill-box" style="margin-bottom:12px">
+    <div class="sp-ttl">EDT.4</div>
+    <div class="pill-grid" id="slicerEDT4">
+      <!-- Generado dinámicamente -->
+    </div>
+  </div>
+
+  <!-- ====== FILA 4: TABLA INFERIOR ROSADA (DETALLE) ====== -->
+  <div class="table-box">
+    <div class="table-scroll">
+      <table class="pbi-table pbi-table-pink" id="tableBottom">
+        <thead>
+          <tr>
+            <th class="ctr">EDT.2</th>
+            <th>Centro de Costos</th>
+            <th>Actividad</th>
+            <th class="num">Valor Presupuesto Base</th>
+            <th class="num">Valor Proyección Presupuesto</th>
+            <th class="num">Valor Total Contratado</th>
+            <th class="num">Adiciones y Sustracciones a los Centros de Costos</th>
+          </tr>
+        </thead>
+        <tbody id="bodyBottom">
+          <tr><td colspan="7" style="text-align:center;padding:20px;color:#94a3b8">Cargando detalle...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="../data/workplan.js"></script>
+<script src="../js/portal.js"></script>
+<script>
+  let allItems = [];
+  let fEDT2 = null; // null = todos, número = específico
+  let fEDT3 = null;
+  let fEDT4 = null;
+  let maxEDT2 = 16;
+
+  async function init() {
+    const data = await loadData('workplan');
+    if (!data) return;
+
+    allItems = data.items || [];
+    document.getElementById('corteLabel').innerText = (data.kpis && data.kpis.fecha_corte) ? data.kpis.fecha_corte : '20/09/2026';
+
+    renderSlicers();
+    applyFilters();
+  }
+
+  function renderSlicers() {
+    // Slicer EDT.2 Vertical
+    const vGrid = document.getElementById('slicerEDT2_v');
+    vGrid.innerHTML = '';
+    
+    // Botón (En blanco)
+    const btnBlank = document.createElement('div');
+    btnBlank.className = 's-btn';
+    btnBlank.innerText = '(En blanco)';
+    btnBlank.onclick = () => selectEDT2(null, btnBlank);
+    vGrid.appendChild(btnBlank);
+
+    const orderEDT2 = [10, 1, 11, 2, 12, 3, 13, 4, 14, 5, 15, 6, 16, 7, 8, 9];
+    orderEDT2.forEach(n => {
+      const b = document.createElement('div');
+      b.className = 's-btn';
+      b.innerText = n;
+      b.onclick = () => selectEDT2(n, b);
+      vGrid.appendChild(b);
+    });
+
+    // Slicer EDT.3
+    const grid3 = document.getElementById('slicerEDT3');
+    grid3.innerHTML = '';
+    const b3Blank = document.createElement('div');
+    b3Blank.className = 'pill-btn';
+    b3Blank.innerText = '(En blanco)';
+    b3Blank.onclick = () => selectEDT3(null, b3Blank);
+    grid3.appendChild(b3Blank);
+
+    const edt3Vals = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    edt3Vals.forEach(n => {
+      const b = document.createElement('div');
+      b.className = 'pill-btn';
+      b.innerText = n;
+      b.onclick = () => selectEDT3(n, b);
+      grid3.appendChild(b);
+    });
+
+    // Slicer EDT.4
+    const grid4 = document.getElementById('slicerEDT4');
+    grid4.innerHTML = '';
+    const b4Blank = document.createElement('div');
+    b4Blank.className = 'pill-btn';
+    b4Blank.innerText = '(En blanco)';
+    b4Blank.onclick = () => selectEDT4(null, b4Blank);
+    grid4.appendChild(b4Blank);
+
+    const edt4Vals = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    edt4Vals.forEach(n => {
+      const b = document.createElement('div');
+      b.className = 'pill-btn';
+      b.innerText = n;
+      b.onclick = () => selectEDT4(n, b);
+      grid4.appendChild(b);
+    });
+  }
+
+  function selectEDT2(val, btn) {
+    document.querySelectorAll('#slicerEDT2_v .s-btn').forEach(b => b.classList.remove('active'));
+    if (fEDT2 === val) {
+      fEDT2 = null;
+    } else {
+      fEDT2 = val;
+      if (btn) btn.classList.add('active');
+    }
+    applyFilters();
+  }
+
+  function selectEDT3(val, btn) {
+    document.querySelectorAll('#slicerEDT3 .pill-btn').forEach(b => b.classList.remove('active'));
+    if (fEDT3 === val) {
+      fEDT3 = null;
+    } else {
+      fEDT3 = val;
+      if (btn) btn.classList.add('active');
+    }
+    applyFilters();
+  }
+
+  function selectEDT4(val, btn) {
+    document.querySelectorAll('#slicerEDT4 .pill-btn').forEach(b => b.classList.remove('active'));
+    if (fEDT4 === val) {
+      fEDT4 = null;
+    } else {
+      fEDT4 = val;
+      if (btn) btn.classList.add('active');
+    }
+    applyFilters();
+  }
+
+  function handleRange(val) {
+    maxEDT2 = Number(val);
+    document.getElementById('rangeVal').innerText = `1 — ${maxEDT2}`;
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const filtered = allItems.filter(i => {
+      if (fEDT2 !== null && i.edt2 !== fEDT2) return false;
+      if (i.edt2 !== null && i.edt2 > maxEDT2) return false;
+      if (fEDT3 !== null && i.edt3 !== fEDT3) return false;
+      if (fEDT4 !== null && i.edt4 !== fEDT4) return false;
+      return true;
+    });
+
+    renderTableTop(filtered);
+    renderTableBottom(filtered);
+  }
+
+  function renderTableTop(items) {
+    const tbody = document.getElementById('bodyTop');
+    tbody.innerHTML = '';
+
+    // Filtrar para vista general (excluye fila 0 CC013-1 pura si se muestran capítulos)
+    const rows = items.filter(i => i.ccosto && i.ccosto !== 'CC013-1');
+
+    let sumBase = 0, sumProy = 0, sumCont = 0, sumAdic = 0, sumVCont = 0, sumVOrd = 0;
+
+    // Calcular totales sobre los capítulos EDT.2 (para no duplicar subniveles)
+    const capRows = items.filter(i => i.edt2 !== null && i.edt3 === null && i.edt4 === null);
+    capRows.forEach(c => {
+      sumBase += c.valor_base || 0;
+      sumProy += c.valor_proyeccion || 0;
+      sumCont += c.valor_total_contratado || 0;
+      sumAdic += c.adiciones_sustracciones || 0;
+      sumVCont += c.valor_contrato || 0;
+      sumVOrd += c.valor_ordenes || 0;
+    });
+
+    rows.forEach(r => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="font-weight:700;color:#1e3a8a">${r.ccosto || '-'}</td>
+        <td class="ctr">${r.edt2 !== null ? r.edt2 : ''}</td>
+        <td class="ctr">${r.edt3 !== null ? r.edt3 : ''}</td>
+        <td class="ctr">${r.edt4 !== null ? r.edt4 : ''}</td>
+        <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis" title="${r.actividad || ''}">${r.actividad || '-'}</td>
+        <td class="num">${r.valor_base ? Formatter.currency(r.valor_base) : '0,00'}</td>
+        <td class="num">${r.valor_proyeccion ? Formatter.currency(r.valor_proyeccion) : '0,00'}</td>
+        <td class="num">${r.valor_total_contratado ? Formatter.currency(r.valor_total_contratado) : '0,00'}</td>
+        <td class="num ${r.adiciones_sustracciones < 0 ? 'neg' : ''}">${r.adiciones_sustracciones ? Formatter.currency(r.adiciones_sustracciones) : '0,00'}</td>
+        <td class="num">${r.valor_contrato ? Formatter.currency(r.valor_contrato) : '0,00'}</td>
+        <td class="num">${r.valor_ordenes ? Formatter.currency(r.valor_ordenes) : '0,00'}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    // Fila Total
+    const trTot = document.createElement('tr');
+    trTot.className = 'total-row';
+    trTot.innerHTML = `
+      <td><b>Total</b></td>
+      <td></td><td></td><td></td><td></td>
+      <td class="num">${Formatter.currency(sumBase)}</td>
+      <td class="num">${Formatter.currency(sumProy)}</td>
+      <td class="num">${Formatter.currency(sumCont)}</td>
+      <td class="num ${sumAdic < 0 ? 'neg' : ''}">${Formatter.currency(sumAdic)}</td>
+      <td class="num">${Formatter.currency(sumVCont)}</td>
+      <td class="num">${Formatter.currency(sumVOrd)}</td>
+    `;
+    tbody.appendChild(trTot);
+  }
+
+  function renderTableBottom(items) {
+    const tbody = document.getElementById('bodyBottom');
+    tbody.innerHTML = '';
+
+    const rows = items.filter(i => i.ccosto && i.ccosto !== 'CC013-1');
+
+    let sumBase = 0, sumProy = 0, sumCont = 0, sumAdic = 0;
+    const capRows = items.filter(i => i.edt2 !== null && i.edt3 === null && i.edt4 === null);
+    capRows.forEach(c => {
+      sumBase += c.valor_base || 0;
+      sumProy += c.valor_proyeccion || 0;
+      sumCont += c.valor_total_contratado || 0;
+      sumAdic += c.adiciones_sustracciones || 0;
+    });
+
+    rows.forEach(r => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td class="ctr" style="font-weight:700">${r.edt2 !== null ? r.edt2 : ''}</td>
+        <td style="font-weight:700;color:#1e3a8a">${r.ccosto || '-'}</td>
+        <td style="max-width:340px;overflow:hidden;text-overflow:ellipsis" title="${r.actividad || ''}">${r.actividad || '-'}</td>
+        <td class="num">${r.valor_base ? Formatter.currency(r.valor_base) : '0,00'}</td>
+        <td class="num">${r.valor_proyeccion ? Formatter.currency(r.valor_proyeccion) : '0,00'}</td>
+        <td class="num">${r.valor_total_contratado ? Formatter.currency(r.valor_total_contratado) : '0,00'}</td>
+        <td class="num ${r.adiciones_sustracciones < 0 ? 'neg' : ''}">${r.adiciones_sustracciones ? Formatter.currency(r.adiciones_sustracciones) : '0,00'}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    const trTot = document.createElement('tr');
+    trTot.className = 'total-row';
+    trTot.innerHTML = `
+      <td><b>Total</b></td>
+      <td></td><td></td>
+      <td class="num">${Formatter.currency(sumBase)}</td>
+      <td class="num">${Formatter.currency(sumProy)}</td>
+      <td class="num">${Formatter.currency(sumCont)}</td>
+      <td class="num ${sumAdic < 0 ? 'neg' : ''}">${Formatter.currency(sumAdic)}</td>
+    `;
+    tbody.appendChild(trTot);
+  }
+
+  function resetFilters() {
+    fEDT2 = null;
+    fEDT3 = null;
+    fEDT4 = null;
+    maxEDT2 = 16;
+    document.getElementById('rangeEDT2').value = 16;
+    document.getElementById('rangeVal').innerText = '1 — 16';
+    document.querySelectorAll('.s-btn, .pill-btn').forEach(b => b.classList.remove('active'));
+    applyFilters();
+  }
+
+  init();
+</script>
+</body>
+</html>

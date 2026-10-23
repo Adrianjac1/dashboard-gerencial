@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PDT - Hitos — COMCEC · INTERCEC</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<style>
+  :root { --bg-main: #f8fafc; --card-bg: #ffffff; --text-main: #1e293b; --border: #e2e8f0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f1f5f9; color: var(--text-main); font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; padding: 16px 20px 40px; }
+  .container { max-width: 1400px; margin: 0 auto; }
+  .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #ffffff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  .back-link:hover { background: #334155; }
+
+  .header-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .header-titles { text-align: center; flex: 1; }
+  .header-titles h1 { font-size: 14px; font-weight: 800; color: #0f172a; }
+  .header-titles h2 { font-size: 12px; font-weight: 700; color: #334155; }
+  .btn-reset-text { background: none; border: none; color: #ef4444; font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; }
+
+  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .kpi-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; text-align: center; }
+  .kpi-box .lbl { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
+  .kpi-box .val { font-size: 20px; font-weight: 800; color: #0f172a; margin-top: 2px; font-family: monospace; }
+  .bg-green { background: #f0fdf4; border-color: #bbf7d0; }
+  .bg-yellow { background: #fefce8; border-color: #fef08a; }
+  .bg-blue { background: #eff6ff; border-color: #bfdbfe; }
+
+  .slicers-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .search-card { border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; background: #ffffff; border: 1px solid var(--border); }
+  .search-card .sc-title { font-size: 9.5px; font-weight: 800; text-transform: uppercase; color: #1e3a8a; }
+  .search-card input, .search-card select { width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; font-size: 11.5px; outline: none; }
+
+  .card-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+  .card-ttl { font-size: 12px; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; }
+
+  .table-scroll { overflow-x: auto; max-height: 520px; border: 1px solid var(--border); border-radius: 6px; }
+  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  table.pbi-table th { background: #f8fafc; color: #475569; font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid var(--border); position: sticky; top: 0; text-align: left; }
+  table.pbi-table td { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; }
+  table.pbi-table tr:hover td { background: #f0fdf4; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="top-nav">
+    <a href="../index.html" class="back-link">← Volver al Hub de Dashboards</a>
+    <span style="font-size:11px;color:#64748b;font-weight:600">Power BI Page: <b>PDT - HITOS</b></span>
+  </div>
+
+  <div class="header-box">
+    <div style="width:100px"></div>
+    <div class="header-titles">
+      <h1>CONTROL HITOS CRONOGRAMA MAESTRO</h1>
+      <h2>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h2>
+    </div>
+    <button class="btn-reset-text" onclick="resetFilters()">Borrar filtros</button>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi-box bg-blue">
+      <div class="lbl">Total Hitos</div>
+      <div class="val" id="kpiTotal">0</div>
+    </div>
+    <div class="kpi-box bg-green">
+      <div class="lbl">Hitos Cumplidos</div>
+      <div class="val" id="kpiCumplidos" style="color:#16a34a">0</div>
+    </div>
+    <div class="kpi-box bg-yellow">
+      <div class="lbl">Hitos En Ruta</div>
+      <div class="val" id="kpiEnRuta" style="color:#d97706">0</div>
+    </div>
+    <div class="kpi-box">
+      <div class="lbl">Fecha de corte</div>
+      <div class="val" style="font-size:14px">20/09/2026</div>
+    </div>
+  </div>
+
+  <div class="slicers-bar">
+    <div class="search-card">
+      <span class="sc-title">Buscar Hito / Actividad</span>
+      <input type="text" id="filterText" placeholder="Buscar por nombre o ID..." oninput="applyFilters()">
+    </div>
+    <div class="search-card">
+      <span class="sc-title">Estado del Hito</span>
+      <select id="filterEstado" onchange="applyFilters()">
+        <option value="ALL">Todos los Estados</option>
+        <option value="Cumplido">Cumplidos</option>
+        <option value="En Ruta">En Ruta</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card-panel">
+    <div class="card-ttl" style="display:flex;justify-content:space-between">
+      <span>CONTROL HITOS CROGRAMA MAESTRO (WBS)</span>
+      <span style="color:#64748b;font-size:11px" id="lblCount">Mostrando hitos</span>
+    </div>
+    <div class="table-scroll">
+      <table class="pbi-table">
+        <thead>
+          <tr>
+            <th>Activity ID</th>
+            <th>Activity Name / Hito</th>
+            <th>WBS / Paquete</th>
+            <th>BL Project Start</th>
+            <th>BL Project Finish</th>
+            <th>Fecha Real Fin</th>
+            <th style="text-align:center">% Físico</th>
+            <th style="text-align:center">Estado</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="8" style="text-align:center;padding:20px;color:#94a3b8">Cargando hitos del cronograma maestro...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="../data/hitos_pdt.js"></script>
+<script src="../js/portal.js"></script>
+<script>
+  let allHitos = [];
+
+  async function init() {
+    const data = await loadData('hitos_pdt');
+    if (!data) return;
+
+    allHitos = data.hitos || [];
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const sTxt = (document.getElementById('filterText').value || '').toLowerCase().trim();
+    const sEst = document.getElementById('filterEstado').value;
+
+    const filtered = allHitos.filter(h => {
+      const isDone = h.status === 'Completed' || h.pct_complete === 100;
+      const estadoStr = isDone ? 'Cumplido' : 'En Ruta';
+
+      if (sEst !== 'ALL' && estadoStr !== sEst) return false;
+      if (sTxt && !(h.name || '').toLowerCase().includes(sTxt) && !(h.id || '').toLowerCase().includes(sTxt) && !(h.wbs_name || '').toLowerCase().includes(sTxt)) return false;
+
+      return true;
+    });
+
+    const cumplidos = filtered.filter(h => h.status === 'Completed' || h.pct_complete === 100).length;
+    const enRuta = filtered.length - cumplidos;
+
+    document.getElementById('kpiTotal').innerText     = filtered.length;
+    document.getElementById('kpiCumplidos').innerText = cumplidos;
+    document.getElementById('kpiEnRuta').innerText    = enRuta;
+    document.getElementById('lblCount').innerText     = `Mostrando ${filtered.length} de ${allHitos.length} hitos`;
+
+    renderTable(filtered);
+  }
+
+  function renderTable(items) {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+
+    items.forEach(h => {
+      const isDone = h.status === 'Completed' || h.pct_complete === 100;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="font-family:monospace;font-weight:700;color:#0284c7">${h.id || '-'}</td>
+        <td style="font-weight:700;color:#0f172a">${h.name || '-'}</td>
+        <td style="color:#64748b;font-size:11px">${h.wbs_name || 'Hito Principal'}</td>
+        <td style="font-family:monospace;font-size:11px">${h.planned_start || '-'}</td>
+        <td style="font-family:monospace;font-size:11px">${h.planned_finish || '-'}</td>
+        <td style="font-family:monospace;font-size:11px;color:#0284c7;font-weight:700">${h.finish || h.planned_finish || '-'}</td>
+        <td style="text-align:center;font-weight:700">${h.pct_complete || (isDone ? 100 : 0)}%</td>
+        <td style="text-align:center"><span style="background:${isDone ? '#dcfce7' : '#fef3c7'};color:${isDone ? '#166534' : '#92400e'};padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700">${isDone ? 'Cumplido' : 'En Ruta'}</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function resetFilters() {
+    document.getElementById('filterText').value = '';
+    document.getElementById('filterEstado').value = 'ALL';
+    applyFilters();
+  }
+
+  init();
+</script>
+</body>
+</html>

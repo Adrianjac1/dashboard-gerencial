@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Registro Lluvias — COMCEC · INTERCEC</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<style>
+  :root { --bg-main: #f8fafc; --card-bg: #ffffff; --text-main: #1e293b; --border: #e2e8f0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f1f5f9; color: var(--text-main); font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; padding: 16px 20px 40px; }
+  .container { max-width: 1400px; margin: 0 auto; }
+  .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .back-link { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #ffffff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  .back-link:hover { background: #334155; }
+
+  .header-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .header-titles { text-align: center; flex: 1; }
+  .header-titles h1 { font-size: 14px; font-weight: 800; color: #0f172a; }
+  .header-titles h2 { font-size: 12px; font-weight: 700; color: #334155; }
+  .btn-reset-text { background: none; border: none; color: #ef4444; font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; }
+
+  /* Slicers Date Range */
+  .date-filters-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .date-card { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; }
+  .date-card-title { font-size: 9.5px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 6px; }
+  .date-inputs { display: flex; gap: 6px; align-items: center; }
+  .date-inputs input[type="text"], .date-inputs select {
+    flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; font-size: 11px; outline: none;
+  }
+  .date-inputs .sep { font-size: 11px; color: #94a3b8; font-weight: 700; }
+
+  .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 900px) { .charts-grid { grid-template-columns: 1fr; } }
+  .card-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
+  .card-ttl { font-size: 12px; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; }
+
+  .table-scroll { overflow-x: auto; max-height: 440px; border: 1px solid var(--border); border-radius: 6px; }
+  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+  table.pbi-table th { background: #f8fafc; color: #475569; font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid var(--border); position: sticky; top: 0; text-align: left; }
+  table.pbi-table td { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="top-nav">
+    <a href="../index.html" class="back-link">← Volver al Hub de Dashboards</a>
+    <span style="font-size:11px;color:#64748b;font-weight:600">Power BI Page: <b>Registro Lluvias</b></span>
+  </div>
+
+  <div class="header-box">
+    <div style="width:100px"></div>
+    <div class="header-titles">
+      <h1>REGISTRO LLUVIAS - TOTAL HORAS AFECTACIÓN POR FECHA</h1>
+      <h2>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h2>
+    </div>
+    <button class="btn-reset-text" onclick="resetFilters()">Borrar filtros</button>
+  </div>
+
+  <!-- SLICER FECHA EVENTO (Between) -->
+  <div class="date-filters-bar">
+    <div class="date-card">
+      <div class="date-card-title">Fecha Evento / Período (Between Slicer PBIX)</div>
+      <div class="date-inputs">
+        <select id="selDesde" onchange="applyFilters()">
+          <option value="">Desde el inicio</option>
+        </select>
+        <span class="sep">hasta</span>
+        <select id="selHasta" onchange="applyFilters()">
+          <option value="">Hasta el final</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="card-panel">
+      <div class="card-ttl">REGISTRO LLUVIAS - TOTAL HORAS por FECHA (Columnas)</div>
+      <div id="chartColLluvias" style="height:260px"></div>
+    </div>
+    <div class="card-panel">
+      <div class="card-ttl">REGISTRO LLUVIAS - TOTAL HORAS por FECHA (Treemap)</div>
+      <div id="chartTreeMap" style="height:260px"></div>
+    </div>
+  </div>
+
+  <div class="card-panel">
+    <div class="card-ttl" style="display:flex;justify-content:space-between">
+      <span>Detalle de Afectación por Período / Fecha</span>
+      <span style="color:#64748b;font-size:11px" id="lblCount">Mostrando períodos</span>
+    </div>
+    <div class="table-scroll">
+      <table class="pbi-table">
+        <thead>
+          <tr>
+            <th>Fecha / Período</th>
+            <th style="text-align:center">Total Horas Afectadas</th>
+            <th style="text-align:center">Días Estimados</th>
+            <th style="text-align:center">Nivel de Impacto</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="4" style="text-align:center;padding:20px;color:#94a3b8">Cargando registros de lluvia...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<script src="../data/registro_lluvias.js"></script>
+<script src="../js/portal.js"></script>
+<script>
+  let allHist = [];
+  let chartCol = null;
+  let chartTree = null;
+
+  async function init() {
+    const data = await loadData('registro_lluvias');
+    if (!data) return;
+
+    allHist = data.historico || [];
+
+    // Poblar selects de período desde/hasta
+    const selD = document.getElementById('selDesde');
+    const selH = document.getElementById('selHasta');
+    allHist.forEach((h, idx) => {
+      const opt1 = document.createElement('option');
+      opt1.value = idx;
+      opt1.textContent = h.periodo;
+      selD.appendChild(opt1);
+
+      const opt2 = document.createElement('option');
+      opt2.value = idx;
+      opt2.textContent = h.periodo;
+      selH.appendChild(opt2);
+    });
+
+    applyFilters();
+  }
+
+  function applyFilters() {
+    const idxD = document.getElementById('selDesde').value !== '' ? parseInt(document.getElementById('selDesde').value) : 0;
+    const idxH = document.getElementById('selHasta').value !== '' ? parseInt(document.getElementById('selHasta').value) : (allHist.length - 1);
+
+    const start = Math.min(idxD, idxH);
+    const end   = Math.max(idxD, idxH);
+
+    const filtered = allHist.slice(start, end + 1);
+
+    document.getElementById('lblCount').innerText = `Mostrando ${filtered.length} de ${allHist.length} períodos`;
+
+    renderCharts(filtered);
+    renderTable(filtered);
+  }
+
+  function renderCharts(items) {
+    const categories = items.map(h => h.periodo);
+    const hours = items.map(h => h.horas_lluvia);
+
+    // 1. Column chart
+    const optCol = {
+      chart: { type: 'bar', height: 260, toolbar: { show: false } },
+      series: [{ name: 'Total Horas', data: hours }],
+      xaxis: { categories: categories, labels: { style: { fontSize: '9.5px' }, rotate: -45 } },
+      colors: ['#0284c7'],
+      grid: { padding: { top: 20 } }
+    };
+    if (chartCol) chartCol.destroy();
+    chartCol = new ApexCharts(document.querySelector("#chartColLluvias"), optCol);
+    chartCol.render();
+
+    // 2. Treemap
+    const treeData = items.map(h => ({ x: h.periodo, y: h.horas_lluvia }));
+    const optTree = {
+      chart: { type: 'treemap', height: 260, toolbar: { show: false } },
+      series: [{ data: treeData }],
+      colors: ['#0369a1', '#0ea5e9', '#38bdf8'],
+      grid: { padding: { top: 20 } }
+    };
+    if (chartTree) chartTree.destroy();
+    chartTree = new ApexCharts(document.querySelector("#chartTreeMap"), optTree);
+    chartTree.render();
+  }
+
+  function renderTable(items) {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    items.forEach(h => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="font-weight:700;color:#0f172a">${h.periodo}</td>
+        <td style="text-align:center;font-family:monospace;font-weight:700;color:#0284c7">${h.horas_lluvia} hrs</td>
+        <td style="text-align:center;font-family:monospace">${h.dias_afectados} días</td>
+        <td style="text-align:center"><span style="background:#e0f2fe;color:#0369a1;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700">${h.nivel_impacto}</span></td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function resetFilters() {
+    document.getElementById('selDesde').value = '';
+    document.getElementById('selHasta').value = '';
+    applyFilters();
+  }
+
+  init();
+</script>
+</body>
+</html>
