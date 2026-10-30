@@ -1,0 +1,42 @@
+name: Actualización Automática de Dashboards
+
+on:
+  schedule:
+    # 11:00 UTC = 6:00 AM Colombia / 23:00 UTC = 6:00 PM Colombia
+    - cron: '0 11,23 * * *'
+  workflow_dispatch:
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          pip install pandas openpyxl numpy requests gdown
+
+      - name: Descargar Excels desde Google Drive
+        run: |
+          python scripts/descargar_de_drive.py
+
+      - name: Procesar datos y generar dashboards
+        run: |
+          python scripts/actualizar_datos.py
+
+      - name: Guardar y publicar cambios en GitHub
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto: Actualización de datos desde Google Drive [skip ci]" && git push)
