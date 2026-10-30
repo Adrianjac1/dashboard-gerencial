@@ -6,39 +6,147 @@
 <title>Registro Lluvias — COMCEC · INTERCEC</title>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <style>
-  :root { --bg-main: #f8fafc; --card-bg: #ffffff; --text-main: #1e293b; --border: #e2e8f0; }
+  :root {
+    --bg-main: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --color-pbi: #39AEAC;
+    --color-pbi-dark: #2a8381;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #f1f5f9; color: var(--text-main); font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; padding: 16px 20px 40px; }
-  .container { max-width: 1400px; margin: 0 auto; }
+  body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    padding: 16px 24px 48px;
+  }
+  .container { max-width: 1360px; margin: 0 auto; }
+
+  /* Top Navigation */
   .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-  .back-link { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #ffffff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #1e293b; color: #ffffff; padding: 6px 14px;
+    border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600;
+  }
   .back-link:hover { background: #334155; }
 
-  .header-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-  .header-titles { text-align: center; flex: 1; }
-  .header-titles h1 { font-size: 14px; font-weight: 800; color: #0f172a; }
-  .header-titles h2 { font-size: 12px; font-weight: 700; color: #334155; }
-  .btn-reset-text { background: none; border: none; color: #ef4444; font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; }
-
-  /* Slicers Date Range */
-  .date-filters-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 16px; }
-  .date-card { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; }
-  .date-card-title { font-size: 9.5px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 6px; }
-  .date-inputs { display: flex; gap: 6px; align-items: center; }
-  .date-inputs input[type="text"], .date-inputs select {
-    flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; font-size: 11px; outline: none;
+  /* Header Box (Matching PBI Title) */
+  .header-box {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
-  .date-inputs .sep { font-size: 11px; color: #94a3b8; font-weight: 700; }
+  .header-titles { text-align: center; flex: 1; }
+  .header-titles h1 { font-size: 15px; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.3px; }
+  .header-titles h2 { font-size: 12px; font-weight: 700; color: #475569; margin-top: 3px; }
+  .btn-reset-text {
+    background: none; border: 1px solid #fecaca; color: #dc2626;
+    font-size: 11px; font-weight: 700; cursor: pointer; padding: 6px 12px;
+    border-radius: 6px; background-color: #fef2f2; transition: all 0.2s;
+  }
+  .btn-reset-text:hover { background-color: #fee2e2; }
 
-  .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  @media (max-width: 900px) { .charts-grid { grid-template-columns: 1fr; } }
-  .card-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
-  .card-ttl { font-size: 12px; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; }
+  /* Slicer Card: Fecha Evento (Between Mode) */
+  .slicer-panel {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 18px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .slicer-header {
+    display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+  }
+  .slicer-title {
+    font-size: 11px; font-weight: 800; color: #0f172a; text-transform: uppercase;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .slicer-title-badge {
+    background: #e0f2fe; color: #0369a1; font-size: 9.5px; padding: 2px 6px;
+    border-radius: 4px; font-weight: 700;
+  }
+  .slicer-inputs {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .slicer-input-group {
+    display: flex; align-items: center; gap: 6px;
+    background: #ebf1e3; border: 1px solid #cbd5e1; border-radius: 6px;
+    padding: 4px 10px;
+  }
+  .slicer-input-group label {
+    font-size: 11px; font-weight: 700; color: #334155;
+  }
+  .slicer-input-group input[type="date"] {
+    border: none; background: transparent; font-size: 12px; font-weight: 700;
+    color: #0f172a; font-family: inherit; outline: none; cursor: pointer;
+  }
+  .btn-quick {
+    background: #f8fafc; border: 1px solid #cbd5e1; color: #475569;
+    font-size: 11px; font-weight: 600; padding: 5px 10px; border-radius: 6px;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .btn-quick:hover { background: #e2e8f0; color: #0f172a; }
+  .btn-quick.active { background: #39AEAC; color: #ffffff; border-color: #39AEAC; }
 
-  .table-scroll { overflow-x: auto; max-height: 440px; border: 1px solid var(--border); border-radius: 6px; }
-  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
-  table.pbi-table th { background: #f8fafc; color: #475569; font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid var(--border); position: sticky; top: 0; text-align: left; }
-  table.pbi-table td { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; }
+  /* KPIs Bar */
+  .kpi-row {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-bottom: 16px;
+  }
+  .kpi-card {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 12px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .kpi-label { font-size: 10.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+  .kpi-val { font-size: 22px; font-weight: 800; color: #0f172a; margin-top: 4px; font-family: 'Segoe UI', monospace; }
+  .kpi-sub { font-size: 10px; color: #64748b; margin-top: 2px; }
+
+  /* Layout Grid: Chart + Pivot Table */
+  .main-grid {
+    display: grid; grid-template-columns: 1.6fr 1.1fr; gap: 16px;
+  }
+  @media (max-width: 992px) {
+    .main-grid { grid-template-columns: 1fr; }
+  }
+
+  .panel {
+    background: #ffffff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); display: flex; flex-direction: column;
+  }
+  .panel-title {
+    font-size: 12px; font-weight: 800; color: #0f172a; text-transform: uppercase;
+    border-bottom: 2px solid #39AEAC; padding-bottom: 6px; margin-bottom: 12px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .panel-subtitle { font-size: 10px; font-weight: 600; color: #64748b; }
+
+  /* Pivot Table Styling (Matches Power BI PivotTable Visual) */
+  .table-scroll {
+    overflow-x: auto; max-height: 520px; border: 1px solid var(--border); border-radius: 6px;
+  }
+  table.pbi-table {
+    width: 100%; border-collapse: collapse; font-size: 11.5px; text-align: left;
+  }
+  table.pbi-table thead th {
+    background: #f8fafc; color: #334155; font-size: 10.5px; text-transform: uppercase;
+    font-weight: 800; padding: 10px 14px; border-bottom: 2px solid var(--border);
+    position: sticky; top: 0; z-index: 2;
+  }
+  table.pbi-table tbody td {
+    padding: 8px 14px; border-bottom: 1px solid #f1f5f9; color: #1e293b;
+  }
+  table.pbi-table tbody tr:hover { background-color: #f8fafc; }
+  table.pbi-table tfoot td {
+    background: #f1f5f9; font-weight: 800; padding: 10px 14px;
+    border-top: 2px solid var(--border); position: sticky; bottom: 0; z-index: 2;
+  }
+  .badge-rain {
+    background: #ccfbf1; color: #0f766e; padding: 2px 8px; border-radius: 4px;
+    font-weight: 700; font-family: monospace; font-size: 11px;
+  }
+  .badge-dry {
+    color: #94a3b8; font-family: monospace; font-size: 11px;
+  }
 </style>
 </head>
 <body>
@@ -53,58 +161,98 @@
   <div class="header-box">
     <div style="width:100px"></div>
     <div class="header-titles">
-      <h1>REGISTRO LLUVIAS - TOTAL HORAS AFECTACIÓN POR FECHA</h1>
-      <h2>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h2>
+      <h1>CONSORCIO INTERCEC - INTERVENTORIA / ESTATUS DE LLUVIAS</h1>
+      <h2>PROYECTO CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO</h2>
     </div>
-    <button class="btn-reset-text" onclick="resetFilters()">Borrar filtros</button>
+    <button class="btn-reset-text" onclick="resetToPbiDefault()">Restablecer filtros</button>
   </div>
 
-  <!-- SLICER FECHA EVENTO (Between) -->
-  <div class="date-filters-bar">
-    <div class="date-card">
-      <div class="date-card-title">Fecha Evento / Período (Between Slicer PBIX)</div>
-      <div class="date-inputs">
-        <select id="selDesde" onchange="applyFilters()">
-          <option value="">Desde el inicio</option>
-        </select>
-        <span class="sep">hasta</span>
-        <select id="selHasta" onchange="applyFilters()">
-          <option value="">Hasta el final</option>
-        </select>
+  <!-- Slicer: Fecha Evento (Between) -->
+  <div class="slicer-panel">
+    <div class="slicer-header">
+      <div class="slicer-title">
+        Fecha Evento
+        <span class="slicer-title-badge">Segmentador Between (PBIX)</span>
+      </div>
+      <div style="display:flex;gap:6px">
+        <button class="btn-quick" id="btnPbiRange" onclick="setPbiDefaultRange()">Rango PBI (10-Sep a 04-Oct)</button>
+        <button class="btn-quick" onclick="setLast30Days()">Últimos 30 días</button>
+        <button class="btn-quick" onclick="setAllRange()">Ver Histórico Completo</button>
       </div>
     </div>
+    <div class="slicer-inputs">
+      <div class="slicer-input-group">
+        <label for="fechaDesde">Desde:</label>
+        <input type="date" id="fechaDesde" onchange="applyFilters()">
+      </div>
+      <div class="slicer-input-group">
+        <label for="fechaHasta">Hasta:</label>
+        <input type="date" id="fechaHasta" onchange="applyFilters()">
+      </div>
+      <span style="font-size:11px;color:#64748b" id="lblRangoInfo"></span>
+    </div>
   </div>
 
-  <div class="charts-grid">
-    <div class="card-panel">
-      <div class="card-ttl">REGISTRO LLUVIAS - TOTAL HORAS por FECHA (Columnas)</div>
-      <div id="chartColLluvias" style="height:260px"></div>
+  <!-- Dynamic KPIs (Recalculate with filters) -->
+  <div class="kpi-row">
+    <div class="kpi-card">
+      <div class="kpi-label">Suma de Total Horas</div>
+      <div class="kpi-val" id="kpiHoras" style="color:#39AEAC">—</div>
+      <div class="kpi-sub" id="kpiHorasSub">Horas registradas de afectación</div>
     </div>
-    <div class="card-panel">
-      <div class="card-ttl">REGISTRO LLUVIAS - TOTAL HORAS por FECHA (Treemap)</div>
-      <div id="chartTreeMap" style="height:260px"></div>
+    <div class="kpi-card">
+      <div class="kpi-label">Días con Afectación por Lluvia</div>
+      <div class="kpi-val" id="kpiDiasLluvia">—</div>
+      <div class="kpi-sub" id="kpiDiasLluviaSub">Eventos registrados con horas > 0</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Promedio Horas / Evento</div>
+      <div class="kpi-val" id="kpiPromedio">—</div>
+      <div class="kpi-sub">Horas por cada día de lluvia en el rango</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Días Calendario en Rango</div>
+      <div class="kpi-val" id="kpiTotalDias">—</div>
+      <div class="kpi-sub" id="kpiRangoFechas">Período seleccionado</div>
     </div>
   </div>
 
-  <div class="card-panel">
-    <div class="card-ttl" style="display:flex;justify-content:space-between">
-      <span>Detalle de Afectación por Período / Fecha</span>
-      <span style="color:#64748b;font-size:11px" id="lblCount">Mostrando períodos</span>
+  <!-- Main Grid: Column Chart + Pivot Table -->
+  <div class="main-grid">
+    <!-- Visual 2: Column Chart (REGISTRO LLUVIAS - TOTAL HORAS por FECHA) -->
+    <div class="panel">
+      <div class="panel-title">
+        <span>REGISTRO LLUVIAS - TOTAL HORAS por FECHA</span>
+        <span class="panel-subtitle">Suma de TOTAL HORAS (Eje Y)</span>
+      </div>
+      <div id="chartLluvias" style="min-height: 480px; flex: 1;"></div>
     </div>
-    <div class="table-scroll">
-      <table class="pbi-table">
-        <thead>
-          <tr>
-            <th>Fecha / Período</th>
-            <th style="text-align:center">Total Horas Afectadas</th>
-            <th style="text-align:center">Días Estimados</th>
-            <th style="text-align:center">Nivel de Impacto</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <tr><td colspan="4" style="text-align:center;padding:20px;color:#94a3b8">Cargando registros de lluvia...</td></tr>
-        </tbody>
-      </table>
+
+    <!-- Visual 3: PivotTable (REGISTRO LLUVIA - DETALLE) -->
+    <div class="panel">
+      <div class="panel-title">
+        <span>REGISTRO LLUVIA - DETALLE</span>
+        <span class="panel-subtitle" id="lblTableRows">0 registros</span>
+      </div>
+      <div class="table-scroll">
+        <table class="pbi-table">
+          <thead>
+            <tr>
+              <th>FECHA - REGISTRO</th>
+              <th style="text-align:right">TOTAL HORAS</th>
+            </tr>
+          </thead>
+          <tbody id="pivotTableBody">
+            <tr><td colspan="2" style="text-align:center;padding:20px;color:#94a3b8">Cargando datos...</td></tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Total</td>
+              <td style="text-align:right;font-family:monospace;color:#39AEAC" id="tblFootTotal">0.00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -113,97 +261,192 @@
 <script src="../data/registro_lluvias.js"></script>
 <script src="../js/portal.js"></script>
 <script>
-  let allHist = [];
-  let chartCol = null;
-  let chartTree = null;
+  let rawData = null;
+  let allRegistros = [];
+  let chart = null;
+
+  // Rango por defecto del PBIX
+  const PBI_DEFAULT_DESDE = "2026-09-10";
+  const PBI_DEFAULT_HASTA = "2026-10-04";
 
   async function init() {
     const data = await loadData('registro_lluvias');
     if (!data) return;
 
-    allHist = data.historico || [];
+    rawData = data;
+    allRegistros = data.registros || [];
 
-    // Poblar selects de período desde/hasta
-    const selD = document.getElementById('selDesde');
-    const selH = document.getElementById('selHasta');
-    allHist.forEach((h, idx) => {
-      const opt1 = document.createElement('option');
-      opt1.value = idx;
-      opt1.textContent = h.periodo;
-      selD.appendChild(opt1);
+    // Fechas mín y máx del dataset
+    const inputDesde = document.getElementById('fechaDesde');
+    const inputHasta = document.getElementById('fechaHasta');
 
-      const opt2 = document.createElement('option');
-      opt2.value = idx;
-      opt2.textContent = h.periodo;
-      selH.appendChild(opt2);
-    });
+    inputDesde.min = data.kpis.fecha_min;
+    inputDesde.max = data.kpis.fecha_max;
+    inputHasta.min = data.kpis.fecha_min;
+    inputHasta.max = data.kpis.fecha_max;
+
+    // Configurar rango inicial por defecto exacto de Power BI
+    inputDesde.value = data.kpis.default_desde || PBI_DEFAULT_DESDE;
+    inputHasta.value = data.kpis.default_hasta || PBI_DEFAULT_HASTA;
 
     applyFilters();
   }
 
   function applyFilters() {
-    const idxD = document.getElementById('selDesde').value !== '' ? parseInt(document.getElementById('selDesde').value) : 0;
-    const idxH = document.getElementById('selHasta').value !== '' ? parseInt(document.getElementById('selHasta').value) : (allHist.length - 1);
+    const dVal = document.getElementById('fechaDesde').value;
+    const hVal = document.getElementById('fechaHasta').value;
 
-    const start = Math.min(idxD, idxH);
-    const end   = Math.max(idxD, idxH);
+    let filtered = allRegistros;
+    if (dVal) {
+      filtered = filtered.filter(r => r.fecha >= dVal);
+    }
+    if (hVal) {
+      filtered = filtered.filter(r => r.fecha <= hVal);
+    }
 
-    const filtered = allHist.slice(start, end + 1);
+    // Actualizar botones rápidos
+    updateQuickButtons(dVal, hVal);
 
-    document.getElementById('lblCount').innerText = `Mostrando ${filtered.length} de ${allHist.length} períodos`;
+    // Calcular KPIs
+    const totalHoras = filtered.reduce((acc, r) => acc + (r.total_horas || 0), 0);
+    const diasConLluvia = filtered.filter(r => (r.total_horas || 0) > 0).length;
+    const prom = diasConLluvia > 0 ? (totalHoras / diasConLluvia).toFixed(2) : '0.00';
 
-    renderCharts(filtered);
-    renderTable(filtered);
+    document.getElementById('kpiHoras').innerText = totalHoras.toFixed(2) + ' h';
+    document.getElementById('kpiDiasLluvia').innerText = diasConLluvia;
+    document.getElementById('kpiPromedio').innerText = prom + ' h';
+    document.getElementById('kpiTotalDias').innerText = filtered.length;
+
+    document.getElementById('lblRangoInfo').innerText = `${filtered.length} días entre ${dVal || 'inicio'} y ${hVal || 'fin'}`;
+    document.getElementById('lblTableRows').innerText = `${filtered.length} filas`;
+
+    renderChart(filtered);
+    renderPivotTable(filtered, totalHoras);
   }
 
-  function renderCharts(items) {
-    const categories = items.map(h => h.periodo);
-    const hours = items.map(h => h.horas_lluvia);
+  function renderChart(items) {
+    // Si hay muchos registros, mostramos los que tienen lluvia o una muestra si es todo el rango
+    // En Power BI el eje X tiene las fechas y el eje Y Sum(TOTAL HORAS)
+    const categories = items.map(r => r.fecha);
+    const seriesData = items.map(r => r.total_horas);
 
-    // 1. Column chart
-    const optCol = {
-      chart: { type: 'bar', height: 260, toolbar: { show: false } },
-      series: [{ name: 'Total Horas', data: hours }],
-      xaxis: { categories: categories, labels: { style: { fontSize: '9.5px' }, rotate: -45 } },
-      colors: ['#0284c7'],
-      grid: { padding: { top: 20 } }
+    const options = {
+      chart: {
+        type: 'bar',
+        height: 480,
+        toolbar: { show: true, tools: { download: true, selection: false, zoom: true, zoomin: true, zoomout: true, pan: true, reset: true } }
+      },
+      series: [{
+        name: 'Suma de TOTAL HORAS',
+        data: seriesData
+      }],
+      colors: ['#39AEAC'], // Color institucional del PBIX
+      plotOptions: {
+        bar: {
+          columnWidth: items.length > 60 ? '90%' : '50%',
+          borderRadius: 2,
+          dataLabels: {
+            position: 'top'
+          }
+        }
+      },
+      dataLabels: {
+        enabled: items.length <= 40,
+        formatter: val => val > 0 ? val.toFixed(1) : '',
+        offsetY: -16,
+        style: { fontSize: '9.5px', colors: ['#0f172a'], fontWeight: '700' }
+      },
+      xaxis: {
+        categories: categories,
+        labels: {
+          rotate: -45,
+          rotateAlways: items.length > 15,
+          style: { fontSize: '10px' },
+          hideOverlappingLabels: true
+        },
+        axisBorder: { show: true, color: '#cbd5e1' }
+      },
+      yaxis: {
+        title: { text: 'Suma de TOTAL HORAS', style: { fontSize: '11px', fontWeight: 700, color: '#475569' } },
+        labels: {
+          formatter: val => val.toFixed(1)
+        }
+      },
+      tooltip: {
+        y: {
+          formatter: val => `${val.toFixed(2)} horas`
+        }
+      },
+      grid: {
+        borderColor: '#f1f5f9',
+        padding: { top: 20, right: 15, left: 15 }
+      }
     };
-    if (chartCol) chartCol.destroy();
-    chartCol = new ApexCharts(document.querySelector("#chartColLluvias"), optCol);
-    chartCol.render();
 
-    // 2. Treemap
-    const treeData = items.map(h => ({ x: h.periodo, y: h.horas_lluvia }));
-    const optTree = {
-      chart: { type: 'treemap', height: 260, toolbar: { show: false } },
-      series: [{ data: treeData }],
-      colors: ['#0369a1', '#0ea5e9', '#38bdf8'],
-      grid: { padding: { top: 20 } }
-    };
-    if (chartTree) chartTree.destroy();
-    chartTree = new ApexCharts(document.querySelector("#chartTreeMap"), optTree);
-    chartTree.render();
+    if (chart) chart.destroy();
+    chart = new ApexCharts(document.querySelector("#chartLluvias"), options);
+    chart.render();
   }
 
-  function renderTable(items) {
-    const tbody = document.getElementById('tableBody');
+  function renderPivotTable(items, totalHoras) {
+    const tbody = document.getElementById('pivotTableBody');
     tbody.innerHTML = '';
-    items.forEach(h => {
+
+    // En Power BI el orden por defecto es FECHA - REGISTRO Descendente
+    const sorted = [...items].sort((a, b) => b.fecha.localeCompare(a.fecha));
+
+    sorted.forEach(r => {
       const tr = document.createElement('tr');
+      const hasRain = r.total_horas > 0;
       tr.innerHTML = `
-        <td style="font-weight:700;color:#0f172a">${h.periodo}</td>
-        <td style="text-align:center;font-family:monospace;font-weight:700;color:#0284c7">${h.horas_lluvia} hrs</td>
-        <td style="text-align:center;font-family:monospace">${h.dias_afectados} días</td>
-        <td style="text-align:center"><span style="background:#e0f2fe;color:#0369a1;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700">${h.nivel_impacto}</span></td>
+        <td style="font-weight:600;font-family:monospace">${r.fecha}</td>
+        <td style="text-align:right">
+          ${hasRain ? `<span class="badge-rain">${r.total_horas.toFixed(2)}</span>` : `<span class="badge-dry">0.00</span>`}
+        </td>
       `;
       tbody.appendChild(tr);
     });
+
+    document.getElementById('tblFootTotal').innerText = totalHoras.toFixed(2);
   }
 
-  function resetFilters() {
-    document.getElementById('selDesde').value = '';
-    document.getElementById('selHasta').value = '';
+  function setPbiDefaultRange() {
+    document.getElementById('fechaDesde').value = PBI_DEFAULT_DESDE;
+    document.getElementById('fechaHasta').value = PBI_DEFAULT_HASTA;
     applyFilters();
+  }
+
+  function setLast30Days() {
+    if (!rawData) return;
+    const maxDate = new Date(rawData.kpis.fecha_max);
+    const minDate = new Date(maxDate);
+    minDate.setDate(maxDate.getDate() - 30);
+
+    document.getElementById('fechaDesde').value = minDate.toISOString().slice(0, 10);
+    document.getElementById('fechaHasta').value = rawData.kpis.fecha_max;
+    applyFilters();
+  }
+
+  function setAllRange() {
+    if (!rawData) return;
+    document.getElementById('fechaDesde').value = rawData.kpis.fecha_min;
+    document.getElementById('fechaHasta').value = rawData.kpis.fecha_max;
+    applyFilters();
+  }
+
+  function resetToPbiDefault() {
+    setPbiDefaultRange();
+  }
+
+  function updateQuickButtons(desde, hasta) {
+    const btnPbi = document.getElementById('btnPbiRange');
+    if (btnPbi) {
+      if (desde === PBI_DEFAULT_DESDE && hasta === PBI_DEFAULT_HASTA) {
+        btnPbi.classList.add('active');
+      } else {
+        btnPbi.classList.remove('active');
+      }
+    }
   }
 
   init();

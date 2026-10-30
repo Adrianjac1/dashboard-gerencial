@@ -1,16 +1,17 @@
 {
   "kpis": {
-    "total_contratos": 579,
-    "total_compromiso": 58001326995.116516,
-    "total_obligado_pagado": 36194587666.0,
-    "saldo_total": 21806739329.12,
-    "pct_ejecucion_pagos": 62.4,
-    "fecha_corte": "20/09/2026"
+    "total_contratos": 598,
+    "total_compromiso": 58759807405.79652,
+    "total_obligado_pagado": 38019861586.0,
+    "saldo_total": 20739945819.8,
+    "pct_ejecucion_pagos": 64.7,
+    "fecha_corte": "2026-10-11"
   },
   "filtros": {
     "estados": [
       "Anulado",
       "Cerrado",
+      "EN EJECUCIÓN",
       "En ejecución",
       "En legalización",
       "En liquidación",
@@ -45,24 +46,7 @@
   },
   "subcontratos": [
     {
-      "codigo": null,
-      "contratista": "CIVILCO SAS",
-      "objeto": "ADMINISTRACIÓN DELEGADA",
-      "estado": "En ejecución",
-      "tipo": "GASTOS FINANCIEROS",
-      "ccosto": "CC013-1.16",
-      "detalle_ccosto": "CC013-1.16.1.1",
-      "fecha_inicio": "2024-02-08",
-      "fecha_fin": "2026-10-31",
-      "valor_compromiso": 71446353.0,
-      "valor_pagado": 72897968.0,
-      "pct_ejecutado": null,
-      "pct_facturado": 1.0,
-      "saldo_por_pagar": -1451615.0,
-      "pct_pagado": 102.0
-    },
-    {
-      "codigo": null,
+      "codigo": "CAJA MENOR",
       "contratista": "CIVILCO SAS",
       "objeto": "ADMINISTRACIÓN DELEGADA",
       "estado": "En ejecución",
@@ -79,7 +63,24 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "GASTOS FINANCIEROS",
+      "contratista": "CIVILCO SAS",
+      "objeto": "ADMINISTRACIÓN DELEGADA",
+      "estado": "En ejecución",
+      "tipo": "GASTOS FINANCIEROS",
+      "ccosto": "CC013-1.16",
+      "detalle_ccosto": "CC013-1.16.1.1",
+      "fecha_inicio": "2024-02-08",
+      "fecha_fin": "2026-10-31",
+      "valor_compromiso": 72585742.0,
+      "valor_pagado": 74037357.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 1.0,
+      "saldo_por_pagar": -1451615.0,
+      "pct_pagado": 102.0
+    },
+    {
+      "codigo": "CAJA MENOR AFT",
       "contratista": "AFT INGENIEROS CONSULTORES S.A.S.",
       "objeto": "Pago de Tiquetes aereos de visitas tecnicas",
       "estado": "En ejecución",
@@ -96,7 +97,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-01-2024",
       "contratista": "AGZ DISEÑO, CONSTRUCCIÓN E INNOVACIÓN S.A.S.",
       "objeto": "Coordinación BIM",
       "estado": "En ejecución",
@@ -113,7 +114,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-02-2024",
       "contratista": "5D INGENIERÍA S.A.S.",
       "objeto": "Topografía",
       "estado": "En ejecución",
@@ -121,7 +122,7 @@
       "ccosto": "Admn delegada",
       "detalle_ccosto": "Admn delegada",
       "fecha_inicio": "2024-02-05",
-      "fecha_fin": "2026-10-04",
+      "fecha_fin": "2027-01-04",
       "valor_compromiso": 0.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
@@ -130,7 +131,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-03-2024",
       "contratista": "FEBCON S.A.S",
       "objeto": "Cerramiento provisional",
       "estado": "Cerrado",
@@ -147,7 +148,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-04-2024",
       "contratista": "COVECO DE COLOMBIA S.A.S.",
       "objeto": "Construcción del carril de desaceleración, acceso principal, escaleras y rampas",
       "estado": "En liquidación",
@@ -164,7 +165,7 @@
       "pct_pagado": 78.3
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-05-2024",
       "contratista": "BANDA ECO-AMBIENTAL SAS",
       "objeto": "Gestion forestal",
       "estado": "Cerrado",
@@ -181,7 +182,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-06-2024",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Suministro e instalacion de señalizacion de transito verticales, horizontales y canalizadores viales  segun el PMT del proyecto",
       "estado": "Cerrado",
@@ -198,7 +199,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-07-2024",
       "contratista": "EQUITERRA SAS",
       "objeto": "Demoliciones Bloque6 y Bloque 7",
       "estado": "Cerrado",
@@ -215,7 +216,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-08-2024",
       "contratista": "HECO INGENIERÍA SAS",
       "objeto": "Red provisional",
       "estado": "Cerrado",
@@ -232,7 +233,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-09-2024",
       "contratista": "INGENIERÍA Y GESTIONES DE COLOMBIA S.A.S.",
       "objeto": "Terraceo del Tribilín",
       "estado": "Cerrado",
@@ -249,7 +250,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-10-2024",
       "contratista": "CAZA FUMIGADORA",
       "objeto": "Gestion forestal PT 2",
       "estado": "Cerrado",
@@ -266,7 +267,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-11-2024",
       "contratista": "C.H. PEREIRA & CIA. S.A.S.",
       "objeto": "Pilotaje",
       "estado": "Cerrado",
@@ -283,24 +284,24 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-12-2024",
       "contratista": "MOSEL SAS",
       "objeto": "Estructura Bloques 1,2 y 9 y Muro de Contención",
-      "estado": "En ejecución",
+      "estado": "En liquidación",
       "tipo": "SUBCONTRATO",
       "ccosto": "CC013-1.4",
       "detalle_ccosto": "CC013-1.4.X",
       "fecha_inicio": "2025-01-30",
       "fecha_fin": "2026-09-12",
-      "valor_compromiso": 9912531360.0,
+      "valor_compromiso": 9719674445.0,
       "valor_pagado": 9510582490.0,
       "pct_ejecutado": 0.9914,
-      "pct_facturado": 0.9595,
-      "saldo_por_pagar": 401948870.0,
-      "pct_pagado": 95.9
+      "pct_facturado": 1.0,
+      "saldo_por_pagar": 209091955.0,
+      "pct_pagado": 97.8
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-13-2024",
       "contratista": "314 GROUP CONTAINERS ENGINEERING SOLUTIONS S.A.S.",
       "objeto": "Sumnistro de Oficinas Administrativas y batería sanitaria para campamento de obra",
       "estado": "Cerrado",
@@ -317,7 +318,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-14-2024",
       "contratista": "MCS COLOMBIA S.A.S",
       "objeto": "ALQUILER DE 1 TORRE GRUA CON OPERADOR",
       "estado": "Cerrado",
@@ -334,7 +335,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-01-2025",
       "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "Movimiento de tierras en zona de Tribilín",
       "estado": "Cerrado",
@@ -351,7 +352,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-02-2025",
       "contratista": "INERCE S.A.S.",
       "objeto": "RED ELÉCTRICA DE ILUMINACIÓN EXTERIOR Y DE COMUNICACIÓN PARA EL CARRIL DE DESACELERACIÓN Y ACCESO PRINCIPAL",
       "estado": "En liquidación",
@@ -368,7 +369,7 @@
       "pct_pagado": 69.4
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-03-2025",
       "contratista": "PROSEGUR VIGILANCIA Y SEGURIDAD PRIVADA LTDA",
       "objeto": "SERVICIO DE VIGILANCIA Y SEGURIDAD PRIVADA PARA EL PROYECTO FENIX FASE 1",
       "estado": "En ejecución",
@@ -377,15 +378,15 @@
       "detalle_ccosto": "CC013-1.15.3.31",
       "fecha_inicio": "2025-07-01",
       "fecha_fin": "2026-11-30",
-      "valor_compromiso": 486285729.0,
+      "valor_compromiso": 601536778.0,
       "valor_pagado": 405156201.0,
-      "pct_ejecutado": 1.0,
-      "pct_facturado": 1.0,
-      "saldo_por_pagar": 81129528.0,
-      "pct_pagado": 83.3
+      "pct_ejecutado": 0.81,
+      "pct_facturado": 0.9394,
+      "saldo_por_pagar": 196380577.0,
+      "pct_pagado": 67.4
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-04-2025",
       "contratista": "C.H. PEREIRA & CIA. S.A.S.",
       "objeto": "Pilotaje II",
       "estado": "Cerrado",
@@ -402,58 +403,41 @@
       "pct_pagado": 101.1
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-05-2025_1.1",
       "contratista": "MITSUBISHI ELECTRIC DE COLOMBIA LIMITADA",
       "objeto": "Suministro, instalacion y puesta en funcionamiento Ascensor Bloque 1",
-      "estado": "Suspendido",
+      "estado": "En ejecución",
       "tipo": "SUBCONTRATO",
       "ccosto": "CC013-1.13",
       "detalle_ccosto": "CC013-1.13.1.1",
       "fecha_inicio": "2025-09-19",
       "fecha_fin": "2026-11-20",
-      "valor_compromiso": 161834050.0,
+      "valor_compromiso": 110215000.0,
       "valor_pagado": 110215000.0,
       "pct_ejecutado": 0.78,
-      "pct_facturado": 0.681,
-      "saldo_por_pagar": 51619050.0,
-      "pct_pagado": 68.1
+      "pct_facturado": 1.0,
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-05-2025_1.2",
       "contratista": "MITSUBISHI ELECTRIC DE COLOMBIA LIMITADA",
       "objeto": "Suministro, instalacion y puesta en funcionamiento Ascensor Bloque 2",
-      "estado": "Suspendido",
+      "estado": "En ejecución",
       "tipo": "SUBCONTRATO",
       "ccosto": "CC013-1.13",
       "detalle_ccosto": "CC013-1.13.2.1",
       "fecha_inicio": "2025-09-19",
       "fecha_fin": "2026-11-20",
-      "valor_compromiso": 161834050.0,
+      "valor_compromiso": 110215000.0,
       "valor_pagado": 110215000.0,
       "pct_ejecutado": 0.78,
-      "pct_facturado": 0.681,
-      "saldo_por_pagar": 51619050.0,
-      "pct_pagado": 68.1
+      "pct_facturado": 1.0,
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
-      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
-      "objeto": "LA CONSTRUCCIÓN Y RELLENO DE MURO PERIMETRAL DE CERRAMIENTO Y OBRAS DE CANALIZACIÓN",
-      "estado": "Cerrado",
-      "tipo": "SUBCONTRATO",
-      "ccosto": "CC013-1.3",
-      "detalle_ccosto": "CC013-1.3.2.2",
-      "fecha_inicio": "2025-09-16",
-      "fecha_fin": "2025-12-29",
-      "valor_compromiso": 133693055.864275,
-      "valor_pagado": 134193828.0,
-      "pct_ejecutado": 1.0124,
-      "pct_facturado": 1.0037,
-      "saldo_por_pagar": -500772.14,
-      "pct_pagado": 100.4
-    },
-    {
-      "codigo": null,
+      "codigo": "CV-CEC-06-2025_1.16",
       "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "LA CONSTRUCCIÓN Y RELLENO DE MURO PERIMETRAL DE CERRAMIENTO Y OBRAS DE CANALIZACIÓN (Muro proteccion estudiante)",
       "estado": "Cerrado",
@@ -470,7 +454,24 @@
       "pct_pagado": 93.5
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-06-2025_1.3",
+      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
+      "objeto": "LA CONSTRUCCIÓN Y RELLENO DE MURO PERIMETRAL DE CERRAMIENTO Y OBRAS DE CANALIZACIÓN",
+      "estado": "Cerrado",
+      "tipo": "SUBCONTRATO",
+      "ccosto": "CC013-1.3",
+      "detalle_ccosto": "CC013-1.3.2.2",
+      "fecha_inicio": "2025-09-16",
+      "fecha_fin": "2025-12-29",
+      "valor_compromiso": 133693055.864275,
+      "valor_pagado": 134193828.0,
+      "pct_ejecutado": 1.0124,
+      "pct_facturado": 1.0037,
+      "saldo_por_pagar": -500772.14,
+      "pct_pagado": 100.4
+    },
+    {
+      "codigo": "CV-CEC-07-2025",
       "contratista": "SOLUCIONES REALES INTEGRALES - S.R.I. S.A.S.",
       "objeto": "LA CONSTRUCCIÓN DEL SISTEMA DE ILUMINACIÓN Y PARA RAYOS PROVISIONAL DE LA FASE 1 DEL PROYECTO FÉNIX",
       "estado": "Cerrado",
@@ -487,7 +488,7 @@
       "pct_pagado": 101.7
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-08-2025",
       "contratista": "JALIMA VALETA PAZ",
       "objeto": "Contrato de arrendamiento de vivienda",
       "estado": "Cerrado",
@@ -504,7 +505,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-09-2025",
       "contratista": "CARMELO ALVIS S.A.S.",
       "objeto": "LA CONSTRUCCIÓN DE LAS REDES HIDRO SANITARIAS DE LOS BLOQUES 1, 2 Y 9, CUARTO TÉCNICO Y ENFERMERÍA, Y MUROS DE CONTENCIÓN",
       "estado": "En ejecución",
@@ -512,16 +513,16 @@
       "ccosto": "CC013-1.11",
       "detalle_ccosto": "",
       "fecha_inicio": "2025-10-01",
-      "fecha_fin": "2026-09-30",
+      "fecha_fin": "2026-11-30",
       "valor_compromiso": 1054767059.0,
-      "valor_pagado": 335063304.0,
+      "valor_pagado": 345462269.0,
       "pct_ejecutado": 0.714,
-      "pct_facturado": 0.3177,
-      "saldo_por_pagar": 719703755.0,
-      "pct_pagado": 31.8
+      "pct_facturado": 0.3275,
+      "saldo_por_pagar": 709304790.0,
+      "pct_pagado": 32.8
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-10-2025",
       "contratista": "CARMELO ALVIS S.A.S.",
       "objeto": "LA CONSTRUCCIÓN DE LAS REDES CONTRAINCENDIOS DE LOS BLOQUES 1, 2 Y 9",
       "estado": "En ejecución",
@@ -529,33 +530,33 @@
       "ccosto": "CC013-1.12",
       "detalle_ccosto": "",
       "fecha_inicio": "2025-10-01",
-      "fecha_fin": "2026-09-30",
+      "fecha_fin": "2026-11-30",
       "valor_compromiso": 700194342.0,
-      "valor_pagado": 383867399.0,
+      "valor_pagado": 424442744.0,
       "pct_ejecutado": 0.6465,
       "pct_facturado": 0.6062,
-      "saldo_por_pagar": 316326943.0,
-      "pct_pagado": 54.8
+      "saldo_por_pagar": 275751598.0,
+      "pct_pagado": 60.6
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-11-2025",
       "contratista": "COVECO DE COLOMBIA S.A.S.",
       "objeto": "LA CONSTRUCCIÓN DE MAMPOSTERÍA Y PAÑETES PARA LOS BLOQUES 1, 2 y 9",
-      "estado": "En ejecución",
+      "estado": "En liquidación",
       "tipo": "SUBCONTRATO",
       "ccosto": "CC013-1.5",
       "detalle_ccosto": "",
       "fecha_inicio": "2025-10-01",
       "fecha_fin": "2026-09-30",
       "valor_compromiso": 1736709449.0,
-      "valor_pagado": 1052534239.0,
+      "valor_pagado": 1257384422.0,
       "pct_ejecutado": 0.8506,
-      "pct_facturado": 0.6061,
-      "saldo_por_pagar": 684175210.0,
-      "pct_pagado": 60.6
+      "pct_facturado": 0.724,
+      "saldo_por_pagar": 479325027.0,
+      "pct_pagado": 72.4
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-12-2025",
       "contratista": "INGENIERÍA, CONSTRUCCIONES Y SERVICIOS I.C.S. S.A.S.",
       "objeto": "LA CONSTRUCCIÓN DE LAS REDES ELÉCTRICAS, ILUMINACIÓN Y DE COMUNICACIONES DE LOS BLOQUES 1, 2 y 9",
       "estado": "En ejecución",
@@ -563,16 +564,16 @@
       "ccosto": "CC013-1.10",
       "detalle_ccosto": "",
       "fecha_inicio": "2025-10-01",
-      "fecha_fin": "2026-09-30",
-      "valor_compromiso": 2623743114.0,
-      "valor_pagado": 1748690374.0,
+      "fecha_fin": "2026-11-24",
+      "valor_compromiso": 2709702796.0,
+      "valor_pagado": 1791160465.0,
       "pct_ejecutado": 0.461,
-      "pct_facturado": 0.6827,
-      "saldo_por_pagar": 875052740.0,
-      "pct_pagado": 66.6
+      "pct_facturado": 0.661,
+      "saldo_por_pagar": 918542331.0,
+      "pct_pagado": 66.1
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-13-2025",
       "contratista": "DITRONICA S.A.S",
       "objeto": "suministro, instalación y puesta en funcionamiento del sistema de control peatonal de acceso para el proyecto Fénix – Ciudad Escolar Comfenalco Fase 1",
       "estado": "En liquidación",
@@ -580,7 +581,7 @@
       "ccosto": "CC013-1.2",
       "detalle_ccosto": "CC013-1.2.8.4",
       "fecha_inicio": "2025-12-10",
-      "fecha_fin": "2026-03-09",
+      "fecha_fin": "2026-08-30",
       "valor_compromiso": 182605864.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": 0.75,
@@ -589,7 +590,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-14-2025",
       "contratista": "CLIMATEC SERVICIOS S.A.S.",
       "objeto": "PARA LA CONSTRUCCIÓN DE LAS INSTALACIONES HVAC PARA LOS BLOQUES 1, 2 en el marco de la ejecución del proyecto Fénix – Ciudad Escolar Comfenalco Fase 1, por el sistema de precio unitario fijo, sin fórmula de reajuste.",
       "estado": "En ejecución",
@@ -597,16 +598,16 @@
       "ccosto": "CC013-1.14",
       "detalle_ccosto": "",
       "fecha_inicio": "2025-11-26",
-      "fecha_fin": "2026-10-01",
+      "fecha_fin": "2026-11-30",
       "valor_compromiso": 5134195774.0,
-      "valor_pagado": 2444607383.0,
+      "valor_pagado": 2954549995.0,
       "pct_ejecutado": 0.5627,
-      "pct_facturado": 0.4761,
-      "saldo_por_pagar": 2689588391.0,
-      "pct_pagado": 47.6
+      "pct_facturado": 0.5755,
+      "saldo_por_pagar": 2179645779.0,
+      "pct_pagado": 57.5
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-15-2025",
       "contratista": "CELVIMETALES S.A.S.",
       "objeto": "PARA LA CONSTRUCCIÓN DE LAS ESTRUCTURA METÁLICA PARA PÉRGOLAS, CUBIERTA Y CERRAMIENTO EN LINDERO SOBRE Tv50 en el marco de la ejecución del proyecto Fénix – Ciudad Escolar Comfenalco Fase 1, por el sistema de precio unitario fijo, sin fórmula de reajuste.",
       "estado": "En liquidación",
@@ -623,24 +624,24 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-16-2025",
       "contratista": "REPLANTEATE S.A.S.",
       "objeto": "SUMINISTRO, SIEMBRA Y MANTENIMIENTO DE ESPECIES VEGETALES PARA PAISAJISMO DE ACCESO PRINCIPAL, en el marco de\nla ejecución del proyecto Fénix – Ciudad Escolar Comfenalco Fase 1, por el sistema de precio unitario fijo, sin fórmula de reajuste.",
-      "estado": "En ejecución",
+      "estado": "En liquidación",
       "tipo": "SUBCONTRATO",
       "ccosto": "CC013-1.2",
       "detalle_ccosto": "CC013-1.2.10.1",
       "fecha_inicio": "2025-12-15",
       "fecha_fin": "2026-09-18",
-      "valor_compromiso": 258387714.0,
+      "valor_compromiso": 327668557.0,
       "valor_pagado": 98176109.0,
       "pct_ejecutado": 0.712,
-      "pct_facturado": 0.38,
-      "saldo_por_pagar": 160211605.0,
-      "pct_pagado": 38.0
+      "pct_facturado": 0.2996,
+      "saldo_por_pagar": 229492448.0,
+      "pct_pagado": 30.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-01-2026",
       "contratista": "VENTANAR S.A.S.",
       "objeto": "LA FABRICACIÓN, EL SUMINISTRO E INSTALACIÓN DE\nCARPINTERÍA DE ALUMINIO Y VIDRIO PARA LOS BLOQUES 1 Y 2",
       "estado": "En ejecución",
@@ -648,16 +649,16 @@
       "ccosto": "CC013-1.9",
       "detalle_ccosto": "",
       "fecha_inicio": "2026-02-12",
-      "fecha_fin": "2026-09-27",
-      "valor_compromiso": 1211137293.0,
+      "fecha_fin": "2026-12-18",
+      "valor_compromiso": 1215995340.0,
       "valor_pagado": 455315663.0,
       "pct_ejecutado": 0.3358,
-      "pct_facturado": 0.3759,
-      "saldo_por_pagar": 755821630.0,
-      "pct_pagado": 37.6
+      "pct_facturado": 0.3744,
+      "saldo_por_pagar": 760679677.0,
+      "pct_pagado": 37.4
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-02-2026",
       "contratista": "MAS CONSTRUCTORES S.A.S.",
       "objeto": "EL SUMINISTRO, FABRICACIÓN E INSTALACIÓN DE BARANDAS METÁLICAS EN ACCESOS PEATONALES, INCLUYENDO\nPASAMANOS, SOPORTES VERTICALES Y ELEMENTOS DE FIJACIÓN",
       "estado": "En liquidación",
@@ -674,7 +675,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-03-2026",
       "contratista": "CIMENTACIONES INTEGRALES SAS",
       "objeto": "LA CONSTRUCCIÓN DE PILOTES PARA RAMPA DE ACCESO Y CORTINA DE PILOTES",
       "estado": "En liquidación",
@@ -685,13 +686,13 @@
       "fecha_fin": "2026-08-16",
       "valor_compromiso": 340093722.0,
       "valor_pagado": 340093722.0,
-      "pct_ejecutado": 0.218,
+      "pct_ejecutado": 1.0,
       "pct_facturado": 1.0,
       "saldo_por_pagar": 0.0,
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-04-2026",
       "contratista": "BARCAST S.A.S",
       "objeto": "Instalacion de pisos y enchapes en granito bloques 1, 2  y 9",
       "estado": "En ejecución",
@@ -701,14 +702,14 @@
       "fecha_inicio": "2026-04-27",
       "fecha_fin": "2026-11-15",
       "valor_compromiso": 1008108064.0,
-      "valor_pagado": 238009874.0,
-      "pct_ejecutado": 0.0643,
+      "valor_pagado": 363040624.0,
+      "pct_ejecutado": 0.36,
       "pct_facturado": 0.3601,
-      "saldo_por_pagar": 770098190.0,
-      "pct_pagado": 23.6
+      "saldo_por_pagar": 645067440.0,
+      "pct_pagado": 36.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-05-2026",
       "contratista": "GALAN CONSTRUCTORES SAS",
       "objeto": "EL SUMINISTRO Y LA CONSTRUCCIÓN DE LOS MUROS LIVIANOS EN POLIESTIRENO EXPANDIDO CON MALLA DE ALAMBRÓN, PAÑETADO – SISTEMA DURAPANEL, BLOQUES 1, 2 y 9",
       "estado": "En ejecución",
@@ -718,14 +719,14 @@
       "fecha_inicio": "2026-06-30",
       "fecha_fin": "2026-10-29",
       "valor_compromiso": 1643233228.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 141311811.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.0,
-      "saldo_por_pagar": 1643233228.0,
-      "pct_pagado": 0.0
+      "pct_facturado": 0.086,
+      "saldo_por_pagar": 1501921417.0,
+      "pct_pagado": 8.6
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-06-2026",
       "contratista": "INGENIERÍA, CONSTRUCCIONES Y SERVICIOS I.C.S. S.A.S.",
       "objeto": "INSTALACIONES ESPECIALES: VOZ Y DATO, DETECCIÓN DE INCENDIOS, CCTV y AUDIOVISUALESDE LOS BLOQUES 1, 2 y 9",
       "estado": "En ejecución",
@@ -733,33 +734,33 @@
       "ccosto": "CC013-1.10",
       "detalle_ccosto": "CC013-1.10.2.3.0 al CC013-1.10.2.3.30",
       "fecha_inicio": "2026-05-21",
-      "fecha_fin": "2026-09-20",
-      "valor_compromiso": 1145287554.0,
-      "valor_pagado": 170022260.0,
+      "fecha_fin": "2026-11-30",
+      "valor_compromiso": 1245066036.8,
+      "valor_pagado": 452143967.0,
       "pct_ejecutado": 0.0199,
-      "pct_facturado": 0.3948,
-      "saldo_por_pagar": 975265294.0,
-      "pct_pagado": 14.8
+      "pct_facturado": 0.3631,
+      "saldo_por_pagar": 792922069.8,
+      "pct_pagado": 36.3
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-07-2026",
       "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "PARA CONSTRUCCIÓN DE MURO DE ANTEPECHO DE FACHADAS, EN CONCRETO REFORZADO, SEGÚN DESCRIPCIÓN DEL ALCANCE DE ESTE DOCUMENTO",
-      "estado": "En ejecución",
+      "estado": "En liquidación",
       "tipo": "SUBCONTRATO",
       "ccosto": "CC013-1.4",
       "detalle_ccosto": "CC013-1.4.1.30.1 al CC013-1.4.1.30.4",
       "fecha_inicio": "2026-06-09",
       "fecha_fin": "2026-09-06",
-      "valor_compromiso": 409388872.12,
-      "valor_pagado": 185715876.0,
+      "valor_compromiso": 406691684.0,
+      "valor_pagado": 406691684.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.9934,
-      "saldo_por_pagar": 223672996.12,
-      "pct_pagado": 45.4
+      "pct_facturado": 1.0,
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-08-2026",
       "contratista": "TECNOSOLUCIONES LTDA",
       "objeto": "PARA SUMINISTRO E INSTALACIÓN DE SISTEMAS DE IMPERMEABILIZACIÓN DE CUBIERTAS DE BLOQUES 1, 2, 9, PLAZOLETAS, SUBESTACIÓN Y TANQUE",
       "estado": "En ejecución",
@@ -776,7 +777,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-09-2026",
       "contratista": "MAS CONSTRUCTORES S.A.S.",
       "objeto": "PARA EL SUMINISTRO Y LA INSTALACIÓN DE BARANDAS Y PASAMANOS EN BLOQUES 1, 2, 9 Y EN EL PAISAJISMO",
       "estado": "En ejecución",
@@ -793,7 +794,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-10-2026",
       "contratista": "INERCE S.A.S.",
       "objeto": "PARA LA CONSTRUCCIÓN DE LA RED DE MEDIA TENSIÓN DEFINITIVA PARA PREESCOLAR",
       "estado": "En ejecución",
@@ -810,7 +811,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-11-2026",
       "contratista": "J. P. S. S.A.S. BIC",
       "objeto": "PARA LA CONSTRUCCIÓN DE ESTRUCTURAS DE PASARELA, GRADAS, MUROS Y OBRA COMPLEMENTARIA",
       "estado": "En ejecución",
@@ -827,7 +828,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-12-2026",
       "contratista": "ICONI INGENIERIA Y CONSTRUCCIONES INTEGRAL SAS",
       "objeto": "PARA LA CONSTRUCCIÓN DE CIMENTACIÓN, ESTRUCTURA Y VÍA DE ACCESO A SUBESTACIÓN ELÉCTRICA N°2",
       "estado": "En ejecución",
@@ -844,7 +845,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-13-2026",
       "contratista": "JA&T CONSTRUCTORES SAS",
       "objeto": "PARA EL SUMINISTRO E INSTALACIÓN DE CIELO RASOSDE LOS BLOQUES 1, 2",
       "estado": "En ejecución",
@@ -861,7 +862,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-14-2026",
       "contratista": "JA&T CONSTRUCTORES SAS",
       "objeto": "PARA EL SUMINISTRO Y APLICACIÓN DE ESTUCOS Y PINTURAS PARA BLOQUES 1, 2, 9 y SEE II",
       "estado": "En ejecución",
@@ -878,7 +879,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-15-2026",
       "contratista": "CESAR GOMEZ G. CONSTRUCCIONES CIVILES S.A.S",
       "objeto": "LA CONSTRUCCIÓN DE MUROS DE MAMPOSTERÍA Y OBRA COMPLEMENTARIA.",
       "estado": "En ejecución",
@@ -895,7 +896,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-16-2026",
       "contratista": "MOSEL SAS",
       "objeto": "LA CONSTRUCCIÓN DE MURO DE EN\nCONCRETO T4 CONEXIÓN DE VÍA Y ACCESO EN EL PROYECTO FENIX, FASE 1\nEN LA CIUDAD ESCOLAR COMFENALCO",
       "estado": "En ejecución",
@@ -912,15 +913,15 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-17-2026",
       "contratista": "HBJ INGENIERIA SAS",
       "objeto": "LA CONSTRUCCIÓN DE EMPALME TRAMO 0 – PREESCOLAR: PRELIMINARES, MOVIMIENTO DE TIERRAS, CIMENTACIONES, MUROS DE CONTENCIÓN, MAMPOSTERÍA, PISOS EXTERIORES Y CERRAMIENTOS",
-      "estado": "Sin iniciar",
+      "estado": "En ejecución",
       "tipo": "SUBCONTRATO",
-      "ccosto": "CC013-1.5",
-      "detalle_ccosto": "CC013-1.5.1 - CC013-1.5.22",
-      "fecha_inicio": null,
-      "fecha_fin": "2026-11-05",
+      "ccosto": "CC013-1.4",
+      "detalle_ccosto": "CC013-1.4.5.1 - CC013-1.4.5.22",
+      "fecha_inicio": "2026-09-28",
+      "fecha_fin": "2026-11-26",
       "valor_compromiso": 296428313.75,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
@@ -929,15 +930,15 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-18-2026",
       "contratista": "CELVIMETALES S.A.S.",
       "objeto": "LA CONSTRUCCIÓN DE LAS ESTRUCTURAS METÁLICAS PARA MARQUESINAS EN LOS BLOQUES 1 Y 2 DEL PROYECTO FENIX",
-      "estado": "En legalización",
+      "estado": "En ejecución",
       "tipo": "SUBCONTRATO",
       "ccosto": "CC013-1.9",
       "detalle_ccosto": "CC013-1.9.4.2.1; CC013-1.9.4.2.2",
-      "fecha_inicio": null,
-      "fecha_fin": "2026-10-28",
+      "fecha_inicio": "2026-10-05",
+      "fecha_fin": "2026-11-18",
       "valor_compromiso": 161044734.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
@@ -946,7 +947,24 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "CV-CEC-19-2026",
+      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
+      "objeto": "LA CONSTRUCCIÓN DE MUROS DE MAMPOSTERÍA Y OBRA COMPLEMENTARIA.",
+      "estado": "En legalización",
+      "tipo": "SUBCONTRATO",
+      "ccosto": "CC013-1.5",
+      "detalle_ccosto": "",
+      "fecha_inicio": null,
+      "fecha_fin": "2026-12-23",
+      "valor_compromiso": 334448391.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 334448391.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2024_004",
       "contratista": "STECKERL ACEROS",
       "objeto": "Material cerramiento",
       "estado": "Cerrado",
@@ -963,7 +981,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_007",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "Revisión de los diseños eléctricos",
       "estado": "Cerrado",
@@ -980,7 +998,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_008",
       "contratista": "CONSULTING PLANET S.A.S.",
       "objeto": "Estudio faunístico",
       "estado": "Cerrado",
@@ -997,7 +1015,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_009",
       "contratista": "E-GLOBAL SOLUTIONS SAS",
       "objeto": "Equipos computos",
       "estado": "Cerrado",
@@ -1014,7 +1032,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_010",
       "contratista": "INERCE S.A.S.",
       "objeto": "Compra de tablero provisional",
       "estado": "Cerrado",
@@ -1031,7 +1049,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_011",
       "contratista": "INERCE S.A.S.",
       "objeto": "Reubicacion de redes de CCTV",
       "estado": "Cerrado",
@@ -1048,7 +1066,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_012",
       "contratista": "CAJA DE COMPENSACION FAMILIAR DE FENALCO",
       "objeto": "Refrigerios para evento de socializacion del proyecto",
       "estado": "Cerrado",
@@ -1065,7 +1083,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_013",
       "contratista": "COMPULAGO",
       "objeto": "Impresora",
       "estado": "Cerrado",
@@ -1082,7 +1100,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_014",
       "contratista": "VENEPLAST LTDA",
       "objeto": "Papeleria",
       "estado": "Cerrado",
@@ -1099,7 +1117,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_015",
       "contratista": "INERCE S.A.S.",
       "objeto": "Desmonte de redes de Bloque 6",
       "estado": "Cerrado",
@@ -1116,7 +1134,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_016",
       "contratista": "TINCORP COLOMBIA SAS",
       "objeto": "Licencias Microsoft Office",
       "estado": "Cerrado",
@@ -1133,7 +1151,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_017",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Elementos para estrategia de comunicacion del proyecto",
       "estado": "Cerrado",
@@ -1150,7 +1168,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_018",
       "contratista": "JCAD SAS",
       "objeto": "Licencia Revit",
       "estado": "Cerrado",
@@ -1167,7 +1185,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_019",
       "contratista": "INERCE S.A.S.",
       "objeto": "Desmonte de redes de Bloque 7",
       "estado": "Cerrado",
@@ -1184,7 +1202,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_020",
       "contratista": "GAVIRIA FERNANDEZ JUAN FERNANDO",
       "objeto": "Insumos plan de emergencia",
       "estado": "Cerrado",
@@ -1201,7 +1219,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_021",
       "contratista": "AZURIO DIGITALIZA TU MUNDO",
       "objeto": "Licencia Project",
       "estado": "Cerrado",
@@ -1218,7 +1236,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_022",
       "contratista": "AMI",
       "objeto": "Area protegida",
       "estado": "En ejecución",
@@ -1230,12 +1248,12 @@
       "valor_compromiso": 14998100.0,
       "valor_pagado": 12975300.0,
       "pct_ejecutado": 0.95,
-      "pct_facturado": 0.8651,
+      "pct_facturado": 0.8988,
       "saldo_por_pagar": 2022800.0,
       "pct_pagado": 86.5
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_023",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -1252,7 +1270,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_024",
       "contratista": "SODIMAC COLOMBIA S.A.",
       "objeto": "Suministro de mobiliarios para campamentos del personal de ADMINISTRACION DELEGADA, INTERVENTORIA, KER y COMFENALCO",
       "estado": "Cerrado",
@@ -1269,7 +1287,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_027",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -1286,7 +1304,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_028",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Elementos para estrategia de comunicacion del proyecto",
       "estado": "Cerrado",
@@ -1303,7 +1321,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_030_1.2",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -1320,7 +1338,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_030_1.3",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -1337,7 +1355,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_031",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -1354,7 +1372,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_035",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero",
       "estado": "Cerrado",
@@ -1371,7 +1389,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_037",
       "contratista": "PEMEL S.A.S.",
       "objeto": "BombaElectricaSumergible",
       "estado": "Cerrado",
@@ -1388,7 +1406,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_038",
       "contratista": "FUNDACIÓN MAPACHE COLOMBIA",
       "objeto": "CapacitacionManejoDeFauna",
       "estado": "Cerrado",
@@ -1405,7 +1423,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_039",
       "contratista": "ICC COLOMBIA - INGENIERIA, CONSULTORIA Y CAPACITACION COLOMBIA S.A.S",
       "objeto": "Arquímedes",
       "estado": "Cerrado",
@@ -1422,7 +1440,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_040",
       "contratista": "MANDALA VERDE",
       "objeto": "ElementosManejoDeFauna",
       "estado": "Cerrado",
@@ -1439,7 +1457,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_041",
       "contratista": "DIRIMPEX SAS",
       "objeto": "HerramientasEnsayos Concreto",
       "estado": "Cerrado",
@@ -1456,7 +1474,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_042",
       "contratista": "AZURIO",
       "objeto": "LicenciaProject",
       "estado": "Cerrado",
@@ -1473,7 +1491,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_043",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "CONCRETO MR45",
       "estado": "Cerrado",
@@ -1490,7 +1508,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_044",
       "contratista": "FUNDACION UNIVERSITARIA TECNOLOGICO COMFENALCO - CARTAGENA",
       "objeto": "Contenedores",
       "estado": "Cerrado",
@@ -1507,7 +1525,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_045",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -1524,7 +1542,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_046",
       "contratista": "EV INGENIERIA S.A.S.",
       "objeto": "EnsayosDeDensidad",
       "estado": "Cerrado",
@@ -1541,7 +1559,7 @@
       "pct_pagado": 95.5
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_047",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "Concreto",
       "estado": "Cerrado",
@@ -1558,7 +1576,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_048",
       "contratista": "314 GROUP CONTAINERS ENGINEERING SOLUTIONS S.A.S.",
       "objeto": "TrasladoDeContenedores",
       "estado": "Cerrado",
@@ -1575,7 +1593,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_049",
       "contratista": "SGS COLOMBIA SAS",
       "objeto": "EnsayosDeCalidad",
       "estado": "En ejecución",
@@ -1592,7 +1610,7 @@
       "pct_pagado": 60.7
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_050",
       "contratista": "EV INGENIERIA S.A.S.",
       "objeto": "EnsayosDeDensidad",
       "estado": "Cerrado",
@@ -1609,7 +1627,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_051",
       "contratista": "INERCE S.A.S.",
       "objeto": "ConexiónBombas",
       "estado": "Cerrado",
@@ -1626,7 +1644,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_052",
       "contratista": "STECKERL ACEROS",
       "objeto": "Acero",
       "estado": "Cerrado",
@@ -1643,7 +1661,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_053",
       "contratista": "FUNDACIÓN MAPACHE COLOMBIA",
       "objeto": "Manejo de Fauna",
       "estado": "Cerrado",
@@ -1660,7 +1678,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_054",
       "contratista": "314 GROUP CONTAINERS ENGINEERING SOLUTIONS S.A.S.",
       "objeto": "AdecuaciónÁreaCampamento",
       "estado": "Cerrado",
@@ -1677,7 +1695,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_055",
       "contratista": "DISPRO SAS",
       "objeto": "Papeleria",
       "estado": "Cerrado",
@@ -1694,7 +1712,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_056",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Construcción de cerramiento provisional para campamento de obra y otras obras preliminares",
       "estado": "Cerrado",
@@ -1711,7 +1729,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_057",
       "contratista": "MAC CENTER COLOMBIA SAS",
       "objeto": "Dispositivos tecnológicos para uso del personal de infraestructura de Comfenalco e interventoría.",
       "estado": "Cerrado",
@@ -1728,7 +1746,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_058",
       "contratista": "GESTIÓN ESTRATÉGICA DE ASESORÍAS Y CONSULTORÍAS SAS",
       "objeto": "Cuantificación de la intensidad de ruido en obra",
       "estado": "Cerrado",
@@ -1745,7 +1763,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_059",
       "contratista": "GUILLIAM BARBOZA MIRANDA",
       "objeto": "Visita técnica con objetivo de seguimiento y verificación durante los procesos constructivos; con la visita se entrega informe correspondiente.",
       "estado": "Cerrado",
@@ -1762,7 +1780,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_060",
       "contratista": "PEMEL S.A.S.",
       "objeto": "Suministro de MANTO ALUMANTO AUTOADHESIVO",
       "estado": "Cerrado",
@@ -1779,7 +1797,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_061",
       "contratista": "HECO INGENIERÍA SAS",
       "objeto": "Conexión de agua potable para el campo de softball y almacén.",
       "estado": "Cerrado",
@@ -1796,7 +1814,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_062",
       "contratista": "EQUITERRA SAS",
       "objeto": "OBRAS CIVILES DE REPARCHEO EN CIUDAD ESCOLAR COMFENALCO. CARTAGENA, COLOMBIA",
       "estado": "Cerrado",
@@ -1813,7 +1831,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_063",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "INSTALACIÓN DE AVISOS Y SEÑALES INFORMATIVAS",
       "estado": "Cerrado",
@@ -1830,7 +1848,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_064",
       "contratista": "INERCE S.A.S.",
       "objeto": "Conexión MT Preescolar",
       "estado": "Cerrado",
@@ -1847,7 +1865,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_065",
       "contratista": "DINACOL S.A.S.",
       "objeto": "Tablestacado",
       "estado": "Cerrado",
@@ -1864,7 +1882,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_066",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Cerramiento cuarto de bombas",
       "estado": "Cerrado",
@@ -1881,7 +1899,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_067",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Perfiles CERRAMIENTO",
       "estado": "Cerrado",
@@ -1898,7 +1916,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_068",
       "contratista": "MARFRIO SAS",
       "objeto": "AIRES CONTENEDORES",
       "estado": "Cerrado",
@@ -1915,7 +1933,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_069",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -1932,7 +1950,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_070",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "En liquidación",
@@ -1949,7 +1967,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_071",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "Revisión de los diseños eléctricos CD Y AP",
       "estado": "Cerrado",
@@ -1966,7 +1984,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_072",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero de pilotes",
       "estado": "Cerrado",
@@ -1983,7 +2001,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_073",
       "contratista": "BANDA ECO-AMBIENTAL SAS",
       "objeto": "Poda de equilibrio de BONGA",
       "estado": "Cerrado",
@@ -2000,7 +2018,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_074",
       "contratista": "INERCE S.A.S.",
       "objeto": "Conexión eléctrica MT OBRA",
       "estado": "Cerrado",
@@ -2017,7 +2035,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_075",
       "contratista": "INERCE S.A.S.",
       "objeto": "Desconexión MT Carril",
       "estado": "Cerrado",
@@ -2034,7 +2052,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_076",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -2051,7 +2069,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_077",
       "contratista": "SODIMAC COLOMBIA S.A.",
       "objeto": "Dotación oficina CIVILCO Y SALA DE JUNTAS",
       "estado": "Cerrado",
@@ -2068,7 +2086,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_078",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "Revisión Especifiaciones Pliegos",
       "estado": "Cerrado",
@@ -2085,7 +2103,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_079",
       "contratista": "PEMEL S.A.S.",
       "objeto": "Suministro de MANTO ALUMANTO AUTOADHESIVO",
       "estado": "Cerrado",
@@ -2102,7 +2120,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_080",
       "contratista": "C.H. PEREIRA & CIA. S.A.S.",
       "objeto": "Disposición de equipos para arreglo de terreno.",
       "estado": "Cerrado",
@@ -2119,7 +2137,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_081",
       "contratista": "FUNDACIÓN MAPACHE COLOMBIA",
       "objeto": "Manejo de fauna silvestre: Ahuyentamiento, captura, rescate, manejo, reubicación y liberación de Iguanas",
       "estado": "Cerrado",
@@ -2136,7 +2154,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_082",
       "contratista": "SERVICIOS GEOLOGICOS Y GEOTECNICOS  DEL CARIBE S.A.S.",
       "objeto": "Acompañamiento Geotécnico",
       "estado": "Cerrado",
@@ -2153,7 +2171,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_083",
       "contratista": "INERCE S.A.S.",
       "objeto": "Instalaciones eléctricas y de comunicaciones para habilitar contenedores proyecto fénix",
       "estado": "Cerrado",
@@ -2170,7 +2188,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_084",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Punto ecológico",
       "estado": "Cerrado",
@@ -2187,7 +2205,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_085",
       "contratista": "DISPRO SAS",
       "objeto": "Papeleria e insumos de oficina",
       "estado": "Cerrado",
@@ -2204,7 +2222,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_086",
       "contratista": "COVECO DE COLOMBIA S.A.S.",
       "objeto": "Suministro de Tubería para pasantes sobre zonas duras",
       "estado": "Cerrado",
@@ -2221,7 +2239,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_087",
       "contratista": "TECNIELECTRONIS Y CIA SAS",
       "objeto": "Mantenimiento de computadores e impresora de personal de CIVILCO-INTERCEC",
       "estado": "Cerrado",
@@ -2238,7 +2256,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_088",
       "contratista": "EKIMAK S.A.S.",
       "objeto": "SERVICIO DE MANTENIMIENTO DE REDES /EQUIPO PRESIÓN SUCCIÓN",
       "estado": "Cerrado",
@@ -2255,7 +2273,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_089",
       "contratista": "SIEL SAS",
       "objeto": "DISEÑO INSTALACIONES ELECTRICAS TEATRINOS BLOQUES 5y 9 - NUEVA CIUDADELA ESCOLAR COMFENALCO.",
       "estado": "Cerrado",
@@ -2272,7 +2290,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_090",
       "contratista": "INGUETO SAS",
       "objeto": "ESTUDIO DE TRÁNSITO DEL AÑO 2020 A 2024",
       "estado": "Cerrado",
@@ -2289,7 +2307,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_091_1.2",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo a CRÉDITO",
       "estado": "Cerrado",
@@ -2306,7 +2324,7 @@
       "pct_pagado": 99.8
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_091_1.3",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo a CRÉDITO",
       "estado": "Cerrado",
@@ -2323,7 +2341,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_092",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero para DINACOL SAS para construcción de cárcamos, bordillos que conforman contrahuellas de la escalera y para la garita.",
       "estado": "Cerrado",
@@ -2340,7 +2358,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_093",
       "contratista": "CONSTRUCCIONES FNY SAS",
       "objeto": "Limpieza y recolección de residuos entre Puerta de acceso de Preescolar y Zona Verde de la comunidad de Zaragocilla.",
       "estado": "Cerrado",
@@ -2357,7 +2375,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_094",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -2374,7 +2392,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_095",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Dotación de personal",
       "estado": "Cerrado",
@@ -2391,7 +2409,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_096",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -2408,7 +2426,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_097",
       "contratista": "D&J DISEÑO S.A.S",
       "objeto": "Tramite de solicitud de intervención del Espacio Público Ante secretaria de Planeación",
       "estado": "Cerrado",
@@ -2425,7 +2443,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_098",
       "contratista": "EKIMAK S.A.S.",
       "objeto": "Baños portátiles para campamento de obra",
       "estado": "Cerrado",
@@ -2442,7 +2460,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_099",
       "contratista": "STECKERL ACEROS",
       "objeto": "Acero DINACOL Tramo 5",
       "estado": "Cerrado",
@@ -2459,7 +2477,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_100",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -2476,7 +2494,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2024_101",
       "contratista": "C.H. PEREIRA & CIA. S.A.S.",
       "objeto": "Movimiento de tierras para pilotaje de muro de contención y conformación de talud.",
       "estado": "Cerrado",
@@ -2493,7 +2511,7 @@
       "pct_pagado": 99.2
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_001",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -2510,7 +2528,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_002",
       "contratista": "INGENIERÍA Y GESTIONES DE COLOMBIA S.A.S.",
       "objeto": "Acarreo Monumento Tribilín",
       "estado": "Cerrado",
@@ -2527,7 +2545,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_003",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Construcción de banco para almacenar acero.",
       "estado": "Cerrado",
@@ -2544,7 +2562,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_004",
       "contratista": "C.H. PEREIRA & CIA. S.A.S.",
       "objeto": "REPARCHEO ZONAS DEL PARQUEADERO EN SUELO CEMENTO",
       "estado": "Cerrado",
@@ -2561,7 +2579,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_005",
       "contratista": "CENTRAL DE EQUIPOS Y MAQUINARIA S.A.S",
       "objeto": "Demolición de rocas encontradas en la loma del Tribilín.",
       "estado": "Cerrado",
@@ -2578,7 +2596,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_006",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero Reposic. Pilotes",
       "estado": "Cerrado",
@@ -2595,7 +2613,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_007_1.2",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -2612,7 +2630,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_007_1.3",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -2629,7 +2647,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_008",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Batea para cilindros, Imperm techo contenedores, puerta acceso contenedores.",
       "estado": "Cerrado",
@@ -2646,7 +2664,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_009",
       "contratista": "HIGIELECTRONIX SAS",
       "objeto": "Compra de alcohosensor",
       "estado": "Cerrado",
@@ -2663,7 +2681,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_010",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Compra de arneses para trabajos en altura en la obra.",
       "estado": "Cerrado",
@@ -2680,7 +2698,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_011",
       "contratista": "CANEL S.A.",
       "objeto": "Compra de plotter",
       "estado": "Cerrado",
@@ -2697,7 +2715,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_012",
       "contratista": "INERCE S.A.S.",
       "objeto": "CONSTRUCCIÓN DE LAS INSTALACIONES ELÉCTRICA DEL PUENTE GRUA",
       "estado": "Cerrado",
@@ -2714,7 +2732,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_013",
       "contratista": "C.H. PEREIRA & CIA. S.A.S.",
       "objeto": "SUMINISTRO Y TRANSPORTE DE PIEDRA RAJÓN",
       "estado": "Cerrado",
@@ -2731,7 +2749,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_014",
       "contratista": "STECKERL ACEROS",
       "objeto": "Compra de perfiles para barrera de sonido.",
       "estado": "Cerrado",
@@ -2748,7 +2766,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_015",
       "contratista": "ANCLAJES CARTAGENA",
       "objeto": "HERRAJES PARA BARRERA ACÚSTICA",
       "estado": "Cerrado",
@@ -2765,7 +2783,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_016",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "ACERO ZAPATAS BLOQUE 1 Y 2",
       "estado": "Cerrado",
@@ -2782,7 +2800,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_017",
       "contratista": "COVECO DE COLOMBIA S.A.S.",
       "objeto": "Suministro de paneles acústicos ECHO BARRIER",
       "estado": "Cerrado",
@@ -2799,7 +2817,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_018",
       "contratista": "EKIMAK S.A.S.",
       "objeto": "TRANSPORTE DE AGUAS PARA LAVADO DE PAVIMENTO DE PARQUEADERO",
       "estado": "Cerrado",
@@ -2816,7 +2834,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_019",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "Acompañamiento técnico Proceso selección CD y AP",
       "estado": "Cerrado",
@@ -2833,7 +2851,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_020",
       "contratista": "SERVICIOS GEOLOGICOS Y GEOTECNICOS  DEL CARIBE S.A.S.",
       "objeto": "Exploración geotécnica en el área con presencia de rocas.",
       "estado": "Cerrado",
@@ -2850,7 +2868,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_021",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero columnas, muros y vigas de amarre bloques 1 y 2.",
       "estado": "Cerrado",
@@ -2867,7 +2885,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_022",
       "contratista": "TRANSPORTE DE AGUA IVAN LAGUNA S.A.S.",
       "objeto": "Humectación de parqueadero rutas CEC.",
       "estado": "Cerrado",
@@ -2884,7 +2902,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_023",
       "contratista": "314 GROUP CONTAINERS ENGINEERING SOLUTIONS S.A.S.",
       "objeto": "Demolición de rocas encontradas en la loma del Tribilín.",
       "estado": "Cerrado",
@@ -2901,7 +2919,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_024",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -2918,7 +2936,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_025",
       "contratista": "VELEZ MUÑOZ LTDA (PLASTICOS REFORZADOS EN FIBRA DE VIDRIO)",
       "objeto": "Tanques de Almacenamiento",
       "estado": "Cerrado",
@@ -2935,7 +2953,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_026",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "En liquidación",
@@ -2952,7 +2970,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_027",
       "contratista": "ACO SOLUCIONES DE DRENAJE SAS",
       "objeto": "Suministro de Canales de Drenaje ACO Xtraline",
       "estado": "Cerrado",
@@ -2969,7 +2987,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_028",
       "contratista": "CONSTRUCCIONES SERVICIOS AMBIENTALES Y BIOLOGICOS SAS",
       "objeto": "Captura y traslado de iguanas .",
       "estado": "Cerrado",
@@ -2986,7 +3004,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_029",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para vigas cintas de confinamiento de adoquines.",
       "estado": "Cerrado",
@@ -3003,7 +3021,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_030",
       "contratista": "MP TINTAS Y CARTUCHOS SAS",
       "objeto": "Tintas de impresora",
       "estado": "Cerrado",
@@ -3020,7 +3038,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_031",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Pedido de aceros adicionales para pilotes tipo Kelly en zona de bloques.",
       "estado": "Cerrado",
@@ -3037,7 +3055,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_032",
       "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
       "objeto": "Revisión estructural de los elementos deformados de la garita.",
       "estado": "Cerrado",
@@ -3054,7 +3072,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_033",
       "contratista": "GRUPO TSM INGENIERIA SAS",
       "objeto": "Programa control de acceso de personal -ARHI-20250105",
       "estado": "En ejecución",
@@ -3066,12 +3084,12 @@
       "valor_compromiso": 10323250.0,
       "valor_pagado": 7705250.0,
       "pct_ejecutado": 0.95,
-      "pct_facturado": 0.8415,
+      "pct_facturado": 0.8732,
       "saldo_por_pagar": 2618000.0,
       "pct_pagado": 74.6
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_034",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3088,7 +3106,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_035_1.1",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -3105,7 +3123,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_035_1.2",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -3122,7 +3140,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_035_1.3",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -3139,7 +3157,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_036",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero saldos Bloque 2",
       "estado": "Cerrado",
@@ -3156,7 +3174,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_037",
       "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
       "objeto": "Acompañamiento técnico a construcción de estructuras de Bloques 1, 2, 9 y Cuartos técnicos, según requerimiento, para Solución de interferencias, ajustes de diseño según proceso constructivo, validación de cambios, etc.",
       "estado": "En liquidación",
@@ -3173,7 +3191,7 @@
       "pct_pagado": 38.5
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_038",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero Bloque 9",
       "estado": "Cerrado",
@@ -3190,7 +3208,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_039",
       "contratista": "E-GLOBAL SOLUTIONS SAS",
       "objeto": "Suministro de computadores",
       "estado": "Cerrado",
@@ -3207,7 +3225,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_040",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Construcción de losa contrapiso para tanques de agua.",
       "estado": "Cerrado",
@@ -3224,7 +3242,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_041",
       "contratista": "UNE EPM TELECOMUNICACIONES S.A.",
       "objeto": "Servicio de internet y telefonía celular ilimitada para campamento de obra.",
       "estado": "En ejecución",
@@ -3234,14 +3252,14 @@
       "fecha_inicio": "2025-03-20",
       "fecha_fin": "2026-12-19",
       "valor_compromiso": 5531653.0,
-      "valor_pagado": 4278695.0,
+      "valor_pagado": 4552837.0,
       "pct_ejecutado": 0.83,
       "pct_facturado": 0.8231,
-      "saldo_por_pagar": 1252958.0,
-      "pct_pagado": 77.3
+      "saldo_por_pagar": 978816.0,
+      "pct_pagado": 82.3
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_042",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Compra de señalización y seguridad industrial para personal de obra.",
       "estado": "Cerrado",
@@ -3258,7 +3276,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_043",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero ajuste foso ascensor",
       "estado": "Cerrado",
@@ -3275,7 +3293,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_044",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero saldos columnas Bloque 2",
       "estado": "Cerrado",
@@ -3292,7 +3310,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_045",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero de refuerzo adicional de pilotes 49 y 50 según concepto de Ing. Estructural Diseñador. Anexo",
       "estado": "Cerrado",
@@ -3309,7 +3327,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_046",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "En liquidación",
@@ -3326,7 +3344,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_047",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Compra de tubería para adecuación de contenedor de baños para campamento de obra.",
       "estado": "Cerrado",
@@ -3343,7 +3361,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_048",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero bloque enfermería",
       "estado": "Cerrado",
@@ -3360,7 +3378,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_049",
       "contratista": "JCAD SAS",
       "objeto": "Renovación Licencias Revit",
       "estado": "Cerrado",
@@ -3377,7 +3395,7 @@
       "pct_pagado": 98.7
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_050",
       "contratista": "INERCE S.A.S.",
       "objeto": "Acometida para alimentación de los contenedores # 3, 4 y baños",
       "estado": "Cerrado",
@@ -3394,7 +3412,7 @@
       "pct_pagado": 89.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_051",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3411,7 +3429,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_052",
       "contratista": "AQ INGENIERIA S.A.S",
       "objeto": "Asesoría técnica que incluye visitas a obra, validación de cambios en las redes hidrosanitarias, gas y contraincendios., según requerimiento.",
       "estado": "En ejecución",
@@ -3428,7 +3446,7 @@
       "pct_pagado": 81.2
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_053",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero vigas placa nivel 1 Bloque 1 y 2",
       "estado": "Cerrado",
@@ -3445,7 +3463,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_054",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero Muro contención H=4.00m",
       "estado": "Cerrado",
@@ -3462,7 +3480,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_055",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero muro de contención H=5.00m",
       "estado": "Cerrado",
@@ -3479,7 +3497,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_056",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3496,7 +3514,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_057",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "SUMINISTRO DE PERSONAL PARA OFICIOS VARIOS",
       "estado": "Cerrado",
@@ -3513,7 +3531,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_058",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3530,7 +3548,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_059",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero para estructura según requerimiento y programación de obra",
       "estado": "En liquidación",
@@ -3547,7 +3565,7 @@
       "pct_pagado": 89.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_060",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Compra de elementos de aseo para campamento de obra.",
       "estado": "Cerrado",
@@ -3564,7 +3582,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_061",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Limpieza de canal",
       "estado": "Cerrado",
@@ -3581,7 +3599,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_062",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Compra de elementos para trabajos de obra.",
       "estado": "Cerrado",
@@ -3598,7 +3616,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_063",
       "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "Construcción base de torre grúa",
       "estado": "Cerrado",
@@ -3615,7 +3633,7 @@
       "pct_pagado": 99.6
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_064",
       "contratista": "INERCE S.A.S.",
       "objeto": "CONSTRUCCIÓN DE LAS INSTALACIONES ELÉCTRICA PARA TABLERO DE MAQUINAS DE SOLDAR",
       "estado": "Cerrado",
@@ -3632,7 +3650,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_065",
       "contratista": "CONSTRUCCIONES SERVICIOS AMBIENTALES Y BIOLOGICOS SAS",
       "objeto": "Capacitación sobre el manejo de fauna silvestre.",
       "estado": "Cerrado",
@@ -3649,7 +3667,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_066",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3666,7 +3684,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_067",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Mantenimiento a demarcación horizontal y señalización del PMT",
       "estado": "Cerrado",
@@ -3683,7 +3701,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_068",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Compra de sacos para construcción de dique",
       "estado": "Cerrado",
@@ -3700,7 +3718,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_069",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3717,7 +3735,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_070",
       "contratista": "JHON FREDY GIL MORENO",
       "objeto": "CONSULTORIA TÉCNICA EN DISEÑO DE INGENIERÍA ESTRUCTURAL.",
       "estado": "Cerrado",
@@ -3734,7 +3752,7 @@
       "pct_pagado": 84.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_071",
       "contratista": "EKIMAK S.A.S.",
       "objeto": "Limpieza de tanque receptor de aguas residuales de módulo batería sanitaria. Se realizará limpieza cada 10 días, es decir, 3 veces al mes.",
       "estado": "Cerrado",
@@ -3751,7 +3769,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_072",
       "contratista": "AGOFER S.A.S.",
       "objeto": "Suministro de tubería estructural rectangular, incluye transporte.",
       "estado": "Cerrado",
@@ -3768,7 +3786,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_073",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3785,7 +3803,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_074",
       "contratista": "OFI ESPACIOS EMPRESARIALES SAS",
       "objeto": "Mesa para sala de juntas campamento de obra.",
       "estado": "Cerrado",
@@ -3802,7 +3820,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_075",
       "contratista": "FERRETERIA IGNACIO SIERRA SUCESORES SAS",
       "objeto": "Pasantes para la succión de tanques.",
       "estado": "Cerrado",
@@ -3819,7 +3837,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_076",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3836,7 +3854,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_077",
       "contratista": "GENESIS MULTISERVICIOS INTEGRALES S.A.S.",
       "objeto": "Elementos de aseo y cafetería para campamento de obra.",
       "estado": "Cerrado",
@@ -3853,7 +3871,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_078",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "Acompañamiento técnico en la revisión de las ofertas de cotización de las Instalaciones Eléctricas, Iluminación, Comunicaciones, Especiales y el Sistema de protección contra rayos(SIPRA)",
       "estado": "Suspendido",
@@ -3870,7 +3888,7 @@
       "pct_pagado": 86.2
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_079",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3887,7 +3905,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_080",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Compra de rollos de cinta pvc para impermeabilización de tanques de almacenamiento y muros de contención.",
       "estado": "Cerrado",
@@ -3904,7 +3922,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_081",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -3921,7 +3939,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_082",
       "contratista": "COMERCIALIZADORA FERRETERA JESUS S.A.S.",
       "objeto": "Compra de varillas para muro de contención.",
       "estado": "Cerrado",
@@ -3938,7 +3956,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_083",
       "contratista": "TINCORP COLOMBIA SAS",
       "objeto": "Compra de licencias Microsoft Office.",
       "estado": "Cerrado",
@@ -3955,7 +3973,7 @@
       "pct_pagado": 97.4
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_084",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero pavimento, bordillos y vigacintas; carril de desaceleración y jardineras; escaleras y rampas.",
       "estado": "Cerrado",
@@ -3972,7 +3990,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_085",
       "contratista": "CDH SERVICES S.A.S.",
       "objeto": "Servicio de Inspección de soldadura, tecnica visual y tintas penetrantes.",
       "estado": "Cerrado",
@@ -3989,7 +4007,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_086",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para pilotes adicionales Bloque 3",
       "estado": "Cerrado",
@@ -4006,7 +4024,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_087",
       "contratista": "SODIMAC COLOMBIA S.A.",
       "objeto": "Elementos de oficina para campamento de obra.",
       "estado": "Cerrado",
@@ -4023,7 +4041,7 @@
       "pct_pagado": 95.5
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_088",
       "contratista": "E-GLOBAL SOLUTIONS SAS",
       "objeto": "Soporte técnico al computador de Nicole Zakzuk",
       "estado": "Cerrado",
@@ -4040,7 +4058,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_089",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para registros de aguas lluvias en carril desaceleración",
       "estado": "Cerrado",
@@ -4057,7 +4075,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_090",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Compra de elementos de aseo, seguridad y protección",
       "estado": "Cerrado",
@@ -4074,7 +4092,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_091",
       "contratista": "SODIMAC COLOMBIA S.A.",
       "objeto": "Compra de radios para operaciones de Grua",
       "estado": "Cerrado",
@@ -4091,7 +4109,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_092",
       "contratista": "ASOGESTIÓN SAS",
       "objeto": "Cuantificación de la intensidad de ruido en obra.",
       "estado": "Cerrado",
@@ -4108,7 +4126,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_093",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -4125,7 +4143,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_094",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -4142,7 +4160,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_095",
       "contratista": "AFT INGENIEROS CONSULTORES S.A.S.",
       "objeto": "Auditoría técnica de las propuestas técnicas y económicas para los sistemas de aire acondicionado y ventilicación mecánica de los bloques 1 y 2.",
       "estado": "Cerrado",
@@ -4159,7 +4177,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_096",
       "contratista": "STECKERL ACEROS S.A.S.",
       "objeto": "Láminas y perfil tubular para cerramiento",
       "estado": "Cerrado",
@@ -4176,7 +4194,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_097",
       "contratista": "MADERAS ATRATO S.A.S.",
       "objeto": "Listones de madera para acopio de acero.",
       "estado": "Cerrado",
@@ -4193,7 +4211,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_098",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -4210,7 +4228,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_099",
       "contratista": "SOLUCIONES REALES INTEGRALES - S.R.I. S.A.S.",
       "objeto": "Circuito ramal a tomacorriente GFCI de hidrolavadora",
       "estado": "Cerrado",
@@ -4227,7 +4245,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_100",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para Garita Muro no Estructurales",
       "estado": "Cerrado",
@@ -4244,7 +4262,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_101",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para placas reforzadas irregulares (carril de desaceleración)",
       "estado": "Cerrado",
@@ -4261,7 +4279,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_102",
       "contratista": "COPY GAMAS S.A.S",
       "objeto": "Copias de planos curaduría",
       "estado": "Cerrado",
@@ -4278,7 +4296,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_103",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Tubos en acero para elaboracion de barandas en campamento de obra",
       "estado": "Cerrado",
@@ -4295,7 +4313,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_104",
       "contratista": "RAMALZA SAS",
       "objeto": "Elaboración de empalmes mecánicos roscados para diagonales de fachada de la estructura del edificio Bloques 1, 2 y 9 del proyecto Fénix, incluye materiales y operador",
       "estado": "Cerrado",
@@ -4312,7 +4330,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_105",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para registros manjoles en carril de desaceleracion",
       "estado": "Cerrado",
@@ -4329,7 +4347,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_106",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para muro perimetral y canales",
       "estado": "Cerrado",
@@ -4346,7 +4364,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_107",
       "contratista": "CDH SERVICES S.A.S.",
       "objeto": "Servicio de Inspección de soldadura, tecnica visual y tintas penetrantes.",
       "estado": "Cerrado",
@@ -4363,7 +4381,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_108",
       "contratista": "AFT INGENIEROS CONSULTORES S.A.S.",
       "objeto": "Asesoría y diseño de los sistemas eléctricos y de control para los sistemas de aire acondicionado y ventilación mecánica para el CEC de Cartagena",
       "estado": "Cerrado",
@@ -4380,7 +4398,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_109",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro de materiales eléctricos según lo cotizado en la propuesta COT-GU-12415 para instalacion de punto de energia para maquina roscadora, incluyendo cableado, interruptores, terminales y otros elementos especificados",
       "estado": "Cerrado",
@@ -4397,7 +4415,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_110",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Señalización segurito",
       "estado": "Cerrado",
@@ -4414,7 +4432,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_111",
       "contratista": "OFI ESPACIOS EMPRESARIALES SAS",
       "objeto": "Suministro sillas ergonómicas para sala de juntas",
       "estado": "Cerrado",
@@ -4431,7 +4449,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_112",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro Kit de Rescate",
       "estado": "Cerrado",
@@ -4448,7 +4466,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_113",
       "contratista": "SEYC SOLUCIONES ESTRUCTURALES Y CIVILES LTDA",
       "objeto": "diseño estructural rampa peatonal y muros de contención en zona de parqueaderos en proyecto Fénix Colegio Comfenalco",
       "estado": "Cerrado",
@@ -4465,7 +4483,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_114",
       "contratista": "MCS COLOMBIA S.A.S",
       "objeto": "Nivelacion de la grua",
       "estado": "Cerrado",
@@ -4482,7 +4500,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_115",
       "contratista": "COMPULAGO",
       "objeto": "Compra de celular para el control de acceso de personal ARHI",
       "estado": "Cerrado",
@@ -4499,7 +4517,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_116",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -4516,7 +4534,7 @@
       "pct_pagado": 99.9
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_117_1.1",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Compra de elementos de aseo, seguridad y protección",
       "estado": "Cerrado",
@@ -4533,7 +4551,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_117_1.15",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Compra de elementos de aseo, seguridad y protección",
       "estado": "Cerrado",
@@ -4550,7 +4568,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_118",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Compra de rollos de cinta pvc para impermeabilización de tanques de almacenamiento y muros de contención.",
       "estado": "Cerrado",
@@ -4567,7 +4585,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_119",
       "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
       "objeto": "diseño estructural de caseta para subestacion electrica 2 en proyecto Fénix Colegio Comfenalco.",
       "estado": "Cerrado",
@@ -4584,7 +4602,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_120",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -4601,7 +4619,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_121",
       "contratista": "C&S Ingeniería Consultoría SAS",
       "objeto": "Acompañamiento técnico a construcción de MUROS DE CONTENCIÓN, según requerimiento, para Solución de interferencias, ajustes de diseño según proceso constructivo, validación de cambios, etc.",
       "estado": "Suspendido",
@@ -4618,7 +4636,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_122",
       "contratista": "Compañía Mundial de Seguros",
       "objeto": "Polizas para la intervencion en la transversal 50",
       "estado": "Cerrado",
@@ -4635,7 +4653,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_123",
       "contratista": "PEMEL S.A.S.",
       "objeto": "Compra para recubrimiento anticorrosivo en la proteccion del acero",
       "estado": "Cerrado",
@@ -4652,7 +4670,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_124",
       "contratista": "MEGACOMPUTO Y TECNOLOGIAS S.A.S",
       "objeto": "Servicio de mantenimiento de computadores e impresora de personal de CIVILCO - INTERCEC",
       "estado": "Cerrado",
@@ -4669,7 +4687,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_125",
       "contratista": "MEGACOMPUTO Y TECNOLOGIAS S.A.S",
       "objeto": "Configuración de red wifi e impresora multifuncional Epson",
       "estado": "Cerrado",
@@ -4686,7 +4704,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_126",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Flyer informativo Proyecto Fénix",
       "estado": "Cerrado",
@@ -4703,7 +4721,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_127",
       "contratista": "INGESA CONSULTORES",
       "objeto": "Medición higiénico-ocupacional de exposición a material particulado de sílice cristalina y cuarzo en el ambiente laboral.",
       "estado": "Cerrado",
@@ -4720,7 +4738,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_128",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "SUMINISTRO DE PERSONAL PARA OFICIOS VARIOS",
       "estado": "Cerrado",
@@ -4737,7 +4755,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_129",
       "contratista": "E-GLOBAL SOLUTIONS SAS",
       "objeto": "Suministro de computadores según distribución",
       "estado": "Cerrado",
@@ -4754,7 +4772,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_130",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "ASESORIA TÉCNICA MESUAL EN LA EJECUCIÓN DE LAS OBRAS DE CONSTRUCCIÓN DE LAS INSTALACIONES ELÉCTRICAS, ILUMINACIÓN,\nCOMUNICACIONES, ESPECIALES Y SIPRA FASE 1 CEC",
       "estado": "Cerrado",
@@ -4771,7 +4789,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_131",
       "contratista": "MAC CENTER COLOMBIA SAS",
       "objeto": "Ipad: Dispositivo tecnologico para uso del maestro de obra de CIVILCO.",
       "estado": "Cerrado",
@@ -4788,7 +4806,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_132",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -4805,7 +4823,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_133",
       "contratista": "INERCE S.A.S.",
       "objeto": "CONSTRUCCIÓN DE LAS INSTALACIONES ELÉCTRICAS PARA CAMBIO DE POSTES EN PREESCOLAR",
       "estado": "Cerrado",
@@ -4822,7 +4840,7 @@
       "pct_pagado": 99.2
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_134",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -4839,7 +4857,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_135",
       "contratista": "Technical Security Integration S.A.S.",
       "objeto": "Compra de pantalla interactiva para sala de juntas",
       "estado": "Cerrado",
@@ -4856,7 +4874,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_136",
       "contratista": "A & A EQUIPOS Y SOLUCIONES EN CONTENEDORES S.A.S.",
       "objeto": "Limpieza de tanque receptor de aguas residuales de módulo batería sanitaria",
       "estado": "Cerrado",
@@ -4873,7 +4891,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_137",
       "contratista": "MP TINTAS Y CARTUCHOS SAS",
       "objeto": "Compra de tintas para impresora",
       "estado": "Cerrado",
@@ -4890,7 +4908,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_138",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "SUMINISTRO DE CONCRETO SEGÚN REQUERIMIENTO DE RESISTENCIA, TAMAÑO Y PLASTICIDAD + SERVICIO DE BOMBEO",
       "estado": "Cerrado",
@@ -4907,7 +4925,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_139",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "SUMINISTRO SIKAWELL S2",
       "estado": "Cerrado",
@@ -4924,7 +4942,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_140_1.13",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Reflector led 200w 6500k sylvania",
       "estado": "Cerrado",
@@ -4941,7 +4959,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_140_1.8",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Extintor 20 pqs",
       "estado": "Cerrado",
@@ -4958,7 +4976,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_141",
       "contratista": "COMPULAGO",
       "objeto": "Compra de celular para el control de acceso de personal ARHI - entrada Coveco",
       "estado": "Cerrado",
@@ -4975,7 +4993,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_142",
       "contratista": "SERVICIOS GEOLOGICOS Y GEOTECNICOS  DEL CARIBE S.A.S.",
       "objeto": "Revisión y concepto de Pruebas Integridad de Pilotes (PIT) Proyecto Ciudad Escolar Comfenalco",
       "estado": "Cerrado",
@@ -4992,7 +5010,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_143",
       "contratista": "SERVICIOS GEOLOGICOS Y GEOTECNICOS  DEL CARIBE S.A.S.",
       "objeto": "análisis geotécnico de las rampas de acceso peatonal, proyecto Fenix Fase I, Ciudad Escolar Comfenalco, Cartagena (Bol).",
       "estado": "Cerrado",
@@ -5009,7 +5027,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_144",
       "contratista": "CAJA DE COMPENSACION FAMILIAR DE FENALCO",
       "objeto": "Refrigerios para evento de socializacion del proyecto",
       "estado": "Cerrado",
@@ -5026,7 +5044,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_145",
       "contratista": "ICC COLOMBIA - INGENIERIA, CONSULTORIA Y CAPACITACION COLOMBIA S.A.S",
       "objeto": "Curso diplomado gestion de presupuesto y control de obra con Arquimedes y Bim Online",
       "estado": "Cerrado",
@@ -5043,7 +5061,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_146",
       "contratista": "PEISKOS INDUSTRIAL S.A.S.",
       "objeto": "Compra de megáfono para brigada",
       "estado": "Cerrado",
@@ -5060,7 +5078,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_147",
       "contratista": "FERRETERIA IGNACIO SIERRA SUCESORES SAS",
       "objeto": "Pasantes para la succión de tanques.",
       "estado": "Cerrado",
@@ -5077,7 +5095,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_148",
       "contratista": "INERCE S.A.S.",
       "objeto": "CONSTRUCCIÓN ACOMETIDA PARA GABINETESDE DISTRIBUCIÓN DE CORRIENTE",
       "estado": "Cerrado",
@@ -5094,7 +5112,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_149",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Ejecución de trabajos de cerramiento de contenedores con lámina metálica, soportes en platina y pernos de acero para ampliación de campamento, y arreglo de la puerta de volquetas de Coveco",
       "estado": "Cerrado",
@@ -5111,7 +5129,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_150",
       "contratista": "ACAFOR - ASOCIACIÓN DE CAMPESINOS FORESTALES",
       "objeto": "Inspección, informe y concepto profesional sobre medida preventiva y mitigación de los impactos negativos hacia el componente biótico en zona de relleno del muro de contención y talud",
       "estado": "Cerrado",
@@ -5128,7 +5146,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_151",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Rollos de manto frío para reforzar cerramiento",
       "estado": "Cerrado",
@@ -5145,7 +5163,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_152",
       "contratista": "JCAD SAS",
       "objeto": "Licencias de Suite AEC",
       "estado": "Cerrado",
@@ -5162,7 +5180,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_153",
       "contratista": "MARFRIO SAS",
       "objeto": "Mantenimiento preventivo a los aires acondicionados de la oficina de CIVILCO E INTERCEC",
       "estado": "Cerrado",
@@ -5179,7 +5197,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_154",
       "contratista": "TINCORP COLOMBIA SAS",
       "objeto": "Compra de licencias Microsoft Office.",
       "estado": "Cerrado",
@@ -5196,7 +5214,7 @@
       "pct_pagado": 99.5
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_155",
       "contratista": "UNE EPM TELECOMUNICACIONES S.A.",
       "objeto": "Servicio de internet y telefonía celular ilimitada para campamento de obra.",
       "estado": "En ejecución",
@@ -5206,14 +5224,14 @@
       "fecha_inicio": "2025-09-19",
       "fecha_fin": "2026-12-18",
       "valor_compromiso": 813047.0,
-      "valor_pagado": 502472.0,
+      "valor_pagado": 649422.0,
       "pct_ejecutado": 0.75,
       "pct_facturado": 0.7988,
-      "saldo_por_pagar": 310575.0,
-      "pct_pagado": 61.8
+      "saldo_por_pagar": 163625.0,
+      "pct_pagado": 79.9
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_156",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Para la legalización de las facturas generadas desde el 05 de mayo hasta el 16 de junio de 2025",
       "estado": "Cerrado",
@@ -5230,7 +5248,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_157",
       "contratista": "PATEST S.A.S.",
       "objeto": "Estudio de Inspección y Diagnostico preliminar de Patología de la Construcción para determinar daños existentes, riesgo por la afectación y diseñar un plan de acción para los elementos afectados",
       "estado": "Cerrado",
@@ -5247,7 +5265,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_158",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "SUMINISTRO DE CONCRETO SEGÚN REQUERIMIENTO DE RESISTENCIA, TAMAÑO Y PLASTICIDAD + SERVICIO DE BOMBEO",
       "estado": "Cerrado",
@@ -5264,7 +5282,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_159",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Suministro de señalizaciones y de pendon curaduria",
       "estado": "Cerrado",
@@ -5281,7 +5299,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_160",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -5298,7 +5316,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_161",
       "contratista": "MEGACOMPUTO Y TECNOLOGIAS S.A.S",
       "objeto": "COMPRA,INSTALACION Y CONFIGURACION SISTEMA WIFI ROUTER",
       "estado": "Cerrado",
@@ -5315,7 +5333,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_162",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Compra de láminas para cerramiento",
       "estado": "Cerrado",
@@ -5332,7 +5350,7 @@
       "pct_pagado": 92.9
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_163",
       "contratista": "BANDA ECO-AMBIENTAL SAS",
       "objeto": "Tala de un árbol de roble",
       "estado": "Cerrado",
@@ -5349,7 +5367,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_164",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para zapatas y muros carril desaceleracion / Anden",
       "estado": "Cerrado",
@@ -5366,7 +5384,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_165",
       "contratista": "PEMEL S.A.S.",
       "objeto": "Compra de rollos de manto frio para reforzar el cerramiento",
       "estado": "Cerrado",
@@ -5383,7 +5401,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_166",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Compra de colombinas para delimitar y señalar las actividades programadas para la transversal 50",
       "estado": "Cerrado",
@@ -5400,7 +5418,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_167",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -5417,7 +5435,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_168",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero horizontal para muro perimetral",
       "estado": "Cerrado",
@@ -5434,7 +5452,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_169",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Señalizaciones viales Transversal 50",
       "estado": "Cerrado",
@@ -5451,7 +5469,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_170",
       "contratista": "COVECO DE COLOMBIA S.A.S.",
       "objeto": "Compra de láminas para cerramiento",
       "estado": "Cerrado",
@@ -5468,7 +5486,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_171",
       "contratista": "MCS COLOMBIA S.A.S",
       "objeto": "Suministro de dos aparejadores certificados para manejo de cargas de torre grúa",
       "estado": "Cerrado",
@@ -5485,7 +5503,7 @@
       "pct_pagado": 95.7
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_172",
       "contratista": "UNIVERSAL DE PRODUCTOS Y SERVICIOS SAS",
       "objeto": "Alquiler de medidor de gases para actividad de decimbre de tanque de almacenamiento",
       "estado": "Cerrado",
@@ -5502,7 +5520,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_173",
       "contratista": "PEMEL S.A.S.",
       "objeto": "Compra de rollos de manto frío para reforzar el cerramiento",
       "estado": "Cerrado",
@@ -5519,7 +5537,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_174",
       "contratista": "CONSTRUCCIONES SERVICIOS AMBIENTALES Y BIOLOGICOS SAS",
       "objeto": "Suministro y transporte de alimento para iguanas al centro de atención veterinario (CAP)",
       "estado": "Cerrado",
@@ -5536,7 +5554,7 @@
       "pct_pagado": 99.3
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_175",
       "contratista": "ESTABLECIMIENTO PUBLICO AMBIENTAL- EPA CARTAGENA",
       "objeto": "Control y seguimiento ambiental",
       "estado": "Cerrado",
@@ -5553,7 +5571,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_176",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero muro nuevo y zapata de rampa cero (COVECO)",
       "estado": "Cerrado",
@@ -5570,7 +5588,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_177",
       "contratista": "PEISKOS INDUSTRIAL S.A.S.",
       "objeto": "Compra de adhesivo epóxico para actividades a realizar en el muro perimetral",
       "estado": "Cerrado",
@@ -5587,7 +5605,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_178",
       "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
       "objeto": "diseño estructural del Muro de Contención del proyecto “BLOQUE 9 COLEGIO COMFENALCO”",
       "estado": "Cerrado",
@@ -5604,7 +5622,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_179",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Suministro de vallas",
       "estado": "Cerrado",
@@ -5621,7 +5639,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_180",
       "contratista": "CDH SERVICES S.A.S.",
       "objeto": "Servicios de Inspección de soldadura en alturas. Métodos VT, PT Y UT",
       "estado": "Cerrado",
@@ -5638,7 +5656,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_181",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "SUMINISTRO E INSTALACION DE TUBERIA DE PRESION AGUA 3” TANQUES SECTOR BOMBAS",
       "estado": "Cerrado",
@@ -5655,7 +5673,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_182",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero carril de desaceleracion Anden Exterior (Coveco)",
       "estado": "Cerrado",
@@ -5672,7 +5690,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_183",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Compra elemtos seguridad y trabajo en obra",
       "estado": "Cerrado",
@@ -5689,7 +5707,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_184",
       "contratista": "E-GLOBAL SOLUTIONS SAS",
       "objeto": "Suministro de elementos de oficina: Aux Tecnico y Comfenalco",
       "estado": "Cerrado",
@@ -5706,7 +5724,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_185",
       "contratista": "LEONEL GUILLERMO GUARDO CASTAÑO",
       "objeto": "Apoyo y fortalecimiento de la gestión ambiental en el proyecto “Plan Maestro Ciudad Escolar COMFENALCO – CEC”",
       "estado": "Cerrado",
@@ -5723,7 +5741,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_186",
       "contratista": "SERVIECOLOGICA S.A.S.",
       "objeto": "Control integrado de plagas en el proyecto y campamento",
       "estado": "Cerrado",
@@ -5740,7 +5758,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_187",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Suministro de escalera para proyecto Fenix",
       "estado": "Cerrado",
@@ -5757,7 +5775,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_188",
       "contratista": "Unidad de Planeación Minero Energética (UPME)",
       "objeto": "Pago de certificado GEE ante la Unidad de Planeación Minero Energética (UPME), para la exclusión de IVA en la compra de los asensores Shagai Mitsubishi, de acuerdo a los beneficios\ntributarios de la Ley 1715 de 2014 en el marco del contrato MEC-2025045S/CV-CEC-05-2025.",
       "estado": "Cerrado",
@@ -5774,7 +5792,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_189",
       "contratista": "PROYECTOS Y SOLUCIONES INDUSTRIALES SAS",
       "objeto": "Compra de detector de gases para actividades en espacios confinados",
       "estado": "Cerrado",
@@ -5791,7 +5809,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_190",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "SUMINISTRO DE CONCRETO SEGÚN REQUERIMIENTO DE RESISTENCIA, TAMAÑO Y PLASTICIDAD + SERVICIO DE BOMBEO",
       "estado": "Cerrado",
@@ -5808,7 +5826,7 @@
       "pct_pagado": 66.3
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_191",
       "contratista": "BANDA ECO-AMBIENTAL SAS",
       "objeto": "Atender emergencia por árboles caídos en el ventarrón del día 22 de octubre",
       "estado": "Cerrado",
@@ -5825,7 +5843,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_192",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "SUMINISTRO DE CONCRETO SEGÚN REQUERIMIENTO DE RESISTENCIA, TAMAÑO Y PLASTICIDAD + SERVICIO DE BOMBEO",
       "estado": "Cerrado",
@@ -5842,7 +5860,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_193",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Aceros de visa losa nivel 4 bloques 1 y 2",
       "estado": "Cerrado",
@@ -5859,7 +5877,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_194",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero pedido parcial para escaleras de bloque 1 y bloque 2",
       "estado": "Cerrado",
@@ -5876,7 +5894,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_195",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Suministro de polisombra y amarres plasticas",
       "estado": "Cerrado",
@@ -5893,7 +5911,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_196",
       "contratista": "ACO SOLUCIONES DE DRENAJE SAS",
       "objeto": "Suministro de Canales de Drenaje ACO Xtraline -  Anicional",
       "estado": "Cerrado",
@@ -5910,7 +5928,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_197",
       "contratista": "FENIX AZUL CONSTRUCCIONES S.A.S.",
       "objeto": "ElaboracióndePlandeManejodeTráfico,paraeldesarrollodelaconstruccióndelcolegioComfenalco–ProyectoFénix,andenessobreTv.50y entradas al proyecto. Teniendo en cuenta el manual de Señalización Vial de Colombia – Versión 2024 (incluye gestión de aprobación en DATT)",
       "estado": "Cerrado",
@@ -5927,7 +5945,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_198",
       "contratista": "MEGACOMPUTO Y TECNOLOGIAS S.A.S",
       "objeto": "Reemplazo de caja de mantenimiento de la imprsora EPSON T04D1 en oficina de CIVICLO-CecFenix, compra de repuesto original e intalación del mismo",
       "estado": "Cerrado",
@@ -5944,7 +5962,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_199",
       "contratista": "VISION 360 CORTINAS Y PERSIANAS S.A.S.",
       "objeto": "Suministro de tres cortinas enrollables en Blackout americano para ventanas del contenedor de InterCec",
       "estado": "Cerrado",
@@ -5961,7 +5979,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_200",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -5978,7 +5996,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_201",
       "contratista": "ICC COLOMBIA - INGENIERIA, CONSULTORIA Y CAPACITACION COLOMBIA S.A.S",
       "objeto": "Renovacion de contrato de mejoras para licencias de ARQUIMEDES 196229-196230-196231 + Obsequio",
       "estado": "Cerrado",
@@ -5995,7 +6013,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_202",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Suministro de varillas y sintas sika para muro de contención.",
       "estado": "Cerrado",
@@ -6012,7 +6030,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_203",
       "contratista": "DITRONICA S.A.S",
       "objeto": "Suministro e intalación de puertas enrollables.",
       "estado": "En liquidación",
@@ -6029,7 +6047,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_204",
       "contratista": "TINCORP COLOMBIA SAS",
       "objeto": "Compra de licencias Microsoft Office",
       "estado": "Cerrado",
@@ -6046,7 +6064,7 @@
       "pct_pagado": 99.6
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_205",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "ACERO PEDIDO PARA LOSA MACIZA NIVE 4 BLOQUE 1",
       "estado": "Cerrado",
@@ -6063,7 +6081,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_206",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero para losa aligerada Nivel 4 B1 y B2",
       "estado": "Cerrado",
@@ -6080,7 +6098,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_207",
       "contratista": "PEISKOS INDUSTRIAL S.A.S.",
       "objeto": "Suministro de formaletas metálicas, cucharas y apisonadores para toma de muestras para ensayos en manpostería",
       "estado": "Cerrado",
@@ -6097,7 +6115,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_208",
       "contratista": "GEOTECSO S.A.S.",
       "objeto": "análisis y recomendaciones técnicas correspondientes al material de relleno para el muro de contención",
       "estado": "Cerrado",
@@ -6114,7 +6132,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_209",
       "contratista": "ROCA S.A.S.",
       "objeto": "suministro de pisos y enchapes para proyecto Fenix fase 1",
       "estado": "Suspendido",
@@ -6126,12 +6144,12 @@
       "valor_compromiso": 630098375.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": 0.95,
-      "pct_facturado": 0.86,
+      "pct_facturado": 0.8504,
       "saldo_por_pagar": 630098375.0,
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_210",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero escaleras tipo T1+T2+T3+T4 Bloque 1 y Bloque 2",
       "estado": "Cerrado",
@@ -6148,7 +6166,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_211",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero malla losa contrapiso bloque fase 1",
       "estado": "Cerrado",
@@ -6165,7 +6183,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_212",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "SUMINISTRO DE CONCRETO SEGÚN REQUERIMIENTO DE RESISTENCIA, TAMAÑO Y PLASTICIDAD + SERVICIO DE BOMBEO",
       "estado": "Cerrado",
@@ -6182,7 +6200,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_213",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero para estructura según requerimiento y programación de obra",
       "estado": "Cerrado",
@@ -6199,7 +6217,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_214",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Señalizaciones viales Transversal 50",
       "estado": "Cerrado",
@@ -6216,7 +6234,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_215",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero malla losas contrapiso bloques fase 1",
       "estado": "Cerrado",
@@ -6233,7 +6251,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_216",
       "contratista": "SEYC SOLUCIONES ESTRUCTURALES Y CIVILES LTDA",
       "objeto": "diseño estructural de muro de contención con pilotes tangenciales en zona de rampa en proyecto Fénix Colegio Comfenalco",
       "estado": "Cerrado",
@@ -6250,7 +6268,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_217",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "ACERO PARA PAVIMENTO PLACAS CONECTORAS ENTRE TRAMOS 3 Y 4",
       "estado": "Cerrado",
@@ -6267,7 +6285,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_218",
       "contratista": "COMPULAGO",
       "objeto": "Suminitro de tintas para impresora EPSON L6490",
       "estado": "Cerrado",
@@ -6284,7 +6302,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_219",
       "contratista": "EV INGENIERIA S.A.S.",
       "objeto": "ENSAYOS DE DENSIDADES DE CAMPO EN CIUDADELA ESCOLAR COMFENALCO EN CARTAGENA",
       "estado": "Cerrado",
@@ -6301,7 +6319,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_220",
       "contratista": "ESTABLECIMIENTO PUBLICO AMBIENTAL- EPA CARTAGENA",
       "objeto": "Pago de los valores liquidados por concepto de seguimiento y control a la empresa CAJA DE COMPENSACION FAMILIAR DE FENALCO – ANDI COMFENALCO\nCARTAGENA",
       "estado": "Cerrado",
@@ -6318,7 +6336,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_221",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "suministro de acero andén exterior Tranversal 50",
       "estado": "Cerrado",
@@ -6335,7 +6353,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_222",
       "contratista": "POLYPLASTICOS DE COLOMBIA SAS",
       "objeto": "SUMINISTRO DE CANECAS PLASTICAS DE 208L PARA TRANSVERSAL 50",
       "estado": "Cerrado",
@@ -6352,7 +6370,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2025_223",
       "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "Demolición y reconstrucción de muro perimetral.",
       "estado": "Cerrado",
@@ -6369,7 +6387,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_001",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -6386,7 +6404,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_002",
       "contratista": "PEISKOS INDUSTRIAL S.A.S.",
       "objeto": "Compras varias: Suministro material para recubrimiento de acero y flexometros para el maestro y residentes del proyecto Fenix",
       "estado": "Cerrado",
@@ -6403,7 +6421,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_003",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Suministro de personal para oficios varios",
       "estado": "Cerrado",
@@ -6420,7 +6438,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_004",
       "contratista": "INERCE S.A.S.",
       "objeto": "CONSTRUCCIÓN ACOMETIDA PARA ALIMENTACIÓN DEL TABLERO DE FABRICACIÓN PARA CONEXIÓN DE EQUIPOS EN EL PROYECTO FÉNIX",
       "estado": "Cerrado",
@@ -6437,7 +6455,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_005",
       "contratista": "SERVICIOS Y MANTENIMIENTOS INDUSTRIALES SAS",
       "objeto": "Rehabilitación de tablón 30x30",
       "estado": "Cerrado",
@@ -6454,7 +6472,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_006",
       "contratista": "INERCE S.A.S.",
       "objeto": "cambio de postes de baja tensión en carril de desaceleración.",
       "estado": "Cerrado",
@@ -6471,7 +6489,7 @@
       "pct_pagado": 95.4
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_007",
       "contratista": "MARFRIO SAS",
       "objeto": "Suministro de equipo de aire acondicionado tipo mini-split de 18.000 BTU Inverter a 220 VOLT con refrigerante R32 Marca MC QUAY, para garita de acceso principal",
       "estado": "Cerrado",
@@ -6488,7 +6506,7 @@
       "pct_pagado": 93.1
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_008",
       "contratista": "OFI ESPACIOS EMPRESARIALES SAS",
       "objeto": "Suministro para campamento de obra (Dispensador de agua, Estanteria)",
       "estado": "Cerrado",
@@ -6505,7 +6523,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_009",
       "contratista": "MEGACOMPUTO Y TECNOLOGIAS S.A.S",
       "objeto": "Servicio de mantenimiento de computadores e impresora para CIVILCO - INTERCEC.",
       "estado": "Cerrado",
@@ -6522,7 +6540,7 @@
       "pct_pagado": 95.5
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_010",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero faltante Coveco Transversal 50",
       "estado": "Cerrado",
@@ -6539,7 +6557,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_011",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Acero para zapata \"poste\" cambio de diseño en Acceso Ppal y CD",
       "estado": "Cerrado",
@@ -6556,7 +6574,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_012",
       "contratista": "DITRONICA S.A.S",
       "objeto": "Suministro e intalación de Talanqueras para zona Carril de Desaceleración",
       "estado": "En liquidación",
@@ -6573,7 +6591,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_013",
       "contratista": "INVERSIONES OÑATE MORA E HIJOS S.A.S. - MUNDO PAN",
       "objeto": "Compra de comestibles para refrigerios de comités de obra y otras reuniones en proyecto CecFenix-Comfenalco.",
       "estado": "Cerrado",
@@ -6590,7 +6608,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_014",
       "contratista": "PEMEL S.A.S.",
       "objeto": "Compra de rollos de manto para reforzar el cerramiento",
       "estado": "Cerrado",
@@ -6607,7 +6625,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_015",
       "contratista": "AFT INGENIEROS CONSULTORES S.A.S.",
       "objeto": "Auditoria técnica durante la instalación y puesta en operación de los sistemas de aire acondicionado de los bloques 1 y 2 del proyecto Cec-Fenix en la ciudad de Cartagena.",
       "estado": "En ejecución",
@@ -6624,7 +6642,7 @@
       "pct_pagado": 20.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_016",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -6641,7 +6659,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_017",
       "contratista": "COVECO DE COLOMBIA S.A.S.",
       "objeto": "Compra de láminas para cerramiento",
       "estado": "Cerrado",
@@ -6658,7 +6676,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_018",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Suministros para seguridad de canecas, Transversal 50",
       "estado": "Cerrado",
@@ -6675,7 +6693,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_019",
       "contratista": "SGS COLOMBIA SAS",
       "objeto": "Ensayos de densidades para Obra Fenix",
       "estado": "En ejecución",
@@ -6692,7 +6710,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_020",
       "contratista": "DITRONICA S.A.S",
       "objeto": "Suministro Soportes para Video Beam aulas",
       "estado": "Cerrado",
@@ -6709,7 +6727,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_021",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -6726,7 +6744,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_022",
       "contratista": "DISTRIBUIDORA DE PRODUCTOS Y SERVICIOS S.A.S. (DISPROS)",
       "objeto": "Compra de elementos para botiquin",
       "estado": "Cerrado",
@@ -6743,7 +6761,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_023",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Suministro de consumibles de obra para seguridad",
       "estado": "Cerrado",
@@ -6760,7 +6778,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_024",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Stickers para canecas de Transversal 50",
       "estado": "Cerrado",
@@ -6777,7 +6795,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_025",
       "contratista": "COVECO DE COLOMBIA S.A.S.",
       "objeto": "MO instalación de cerramiento atenuador acústico",
       "estado": "Suspendido",
@@ -6794,7 +6812,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_026",
       "contratista": "CONSTRUCCIONES Y ACABADOS RR S.A.S.",
       "objeto": "Listones de madera para almacen d ascensores",
       "estado": "Cerrado",
@@ -6811,7 +6829,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_027",
       "contratista": "ESTABLECIMIENTO PUBLICO AMBIENTAL- EPA CARTAGENA",
       "objeto": "Pago al EPA de PIN generador para el proyecto Fenix fase 1 de Confenalco - Cartagena.",
       "estado": "Cerrado",
@@ -6828,7 +6846,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_028",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro rollos de plastico para carpado de material petrio",
       "estado": "Cerrado",
@@ -6845,7 +6863,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_029",
       "contratista": "FERRETERÍA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Suministro accesorios para seguridad y construccion de almacen ascensores",
       "estado": "Cerrado",
@@ -6862,7 +6880,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_030",
       "contratista": "INVERSIONES OÑATE MORA E HIJOS S.A.S. - MUNDO PAN",
       "objeto": "Compra de comestibles para refrigerios de comités de obra y otras reuniones en proyecto CecFenix-Comfenalco.",
       "estado": "Cerrado",
@@ -6879,7 +6897,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_031",
       "contratista": "EV INGENIERIA S.A.S.",
       "objeto": "ENSAYOS DE DENSIDADES DE CAMPO EN CIUDADELA ESCOLAR COMFENALCO EN CARTAGENA",
       "estado": "Cerrado",
@@ -6896,7 +6914,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_032",
       "contratista": "E Y E PUBLIVISUAL SAS",
       "objeto": "Señalización segurito",
       "estado": "Cerrado",
@@ -6913,7 +6931,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_033",
       "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "Reparcheo en zona de parqueadero",
       "estado": "Cerrado",
@@ -6930,7 +6948,7 @@
       "pct_pagado": 99.4
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_034",
       "contratista": "JONAN S.A.",
       "objeto": "Suministro elementos de cafetería y papelería",
       "estado": "Cerrado",
@@ -6947,7 +6965,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_035",
       "contratista": "GEOTECSO S.A.S.",
       "objeto": "Validación de perfil geotécnico y revisión de 25 pilotes adicionales y pilotes de pasarela peatonal",
       "estado": "En liquidación",
@@ -6957,14 +6975,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-03-16",
       "valor_compromiso": 2915500.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 2915500.0,
       "pct_ejecutado": 0.0,
       "pct_facturado": 1.0,
-      "saldo_por_pagar": 2915500.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_036",
       "contratista": "CANEL S.A.",
       "objeto": "Compra de respuesto y mantenimiento para Plotter",
       "estado": "Cerrado",
@@ -6981,7 +6999,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_037",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "Cerrado",
@@ -6998,7 +7016,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_038",
       "contratista": "INERCE S.A.S",
       "objeto": "instalación de luminarias y tomacorrientes en contenedores de Civilco",
       "estado": "Cerrado",
@@ -7015,7 +7033,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_039",
       "contratista": "JONAN S.A.",
       "objeto": "Suministro elementos de cafetería y papelería",
       "estado": "Cerrado",
@@ -7032,7 +7050,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_040",
       "contratista": "INGENIERÍA, CONSTRUCCIONES Y SERVICIOS I.C.S. S.A.S.",
       "objeto": "Instalaciones eléctricas provisionales en cuartos habilitados para montaje ascensores en B1 y B2.",
       "estado": "Cerrado",
@@ -7049,7 +7067,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_041",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "En liquidación",
@@ -7066,7 +7084,7 @@
       "pct_pagado": 99.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_042",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7083,7 +7101,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_043",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero mamposteria (Planta baja, Nivel 3 B1 y B2) COVECO",
       "estado": "Cerrado",
@@ -7100,7 +7118,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_044",
       "contratista": "ULTRACEM ZF SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo - Carril",
       "estado": "Cerrado",
@@ -7117,7 +7135,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_045",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7134,7 +7152,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_046",
       "contratista": "CDH SERVICES S.A.S.",
       "objeto": "Servicios de Inspección de soldadura AWS D1.1 en pérgolas",
       "estado": "En liquidación",
@@ -7151,7 +7169,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_047",
       "contratista": "SERVIECOLOGICA S.A.S.",
       "objeto": "Servicio de fumigación para el manejo integrado de plagas, con método de desinsectación a campamento y oficinas.",
       "estado": "Cerrado",
@@ -7168,7 +7186,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_048",
       "contratista": "DISTRIBUIDORA DE PRODUCTOS Y SERVICIOS S.A.S. (DISPROS)",
       "objeto": "Suministro cafeteria y papeleria",
       "estado": "Cerrado",
@@ -7185,7 +7203,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_049",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7202,7 +7220,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_050",
       "contratista": "CONSTRUCCIONES Y ACABADOS RR S.A.S.",
       "objeto": "Listones de madera para almacen de ascensores",
       "estado": "Cerrado",
@@ -7219,7 +7237,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_051",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "Optimización de diseños para redes especiales",
       "estado": "Cerrado",
@@ -7236,7 +7254,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_052",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero ZONA DE RAMPA PEATONAL - GRADAS",
       "estado": "Cerrado",
@@ -7253,7 +7271,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_053",
       "contratista": "GYJ FERRETERÍA S.A.S.",
       "objeto": "Suministro de acero ACERO MURO CONTENCION CARRETEABLE",
       "estado": "Cerrado",
@@ -7270,7 +7288,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_054",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "Suministro de concreto según requerimiento, tamaño y plasticidad + servicio de bombeo",
       "estado": "En ejecución",
@@ -7280,14 +7298,14 @@
       "fecha_inicio": "2026-04-22",
       "fecha_fin": "2026-12-21",
       "valor_compromiso": 308054622.0,
-      "valor_pagado": 107900958.0,
+      "valor_pagado": 182794457.0,
       "pct_ejecutado": 0.1192,
-      "pct_facturado": 0.5527,
-      "saldo_por_pagar": 200153664.0,
-      "pct_pagado": 35.0
+      "pct_facturado": 0.6077,
+      "saldo_por_pagar": 125260165.0,
+      "pct_pagado": 59.3
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_055",
       "contratista": "ESTABLECIMIENTO PUBLICO AMBIENTAL- EPA CARTAGENA",
       "objeto": "Complemento de pago para el PIN generador, correspondiente a la actualización de la tarifa para el año 2026 del EPA.",
       "estado": "Cerrado",
@@ -7304,7 +7322,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_056",
       "contratista": "INGENIERÍA, CONSTRUCCIONES Y SERVICIOS I.C.S. S.A.S.",
       "objeto": "Entubado en paredes de aulas de puntos audiovisuales y datos para proyecto Fénix",
       "estado": "Cerrado",
@@ -7321,7 +7339,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_057",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7338,7 +7356,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_058",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro de consumibles de obra para seguridad",
       "estado": "Cerrado",
@@ -7355,7 +7373,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_059",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7372,7 +7390,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_060",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7389,7 +7407,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_061",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de acero mamposteria (Nivel 3 B1 y B2) COVECO",
       "estado": "Cerrado",
@@ -7406,7 +7424,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_062",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7423,7 +7441,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_063",
       "contratista": "A & A EQUIPOS Y SOLUCIONES EN CONTENEDORES S.A.S.",
       "objeto": "Succión de tanque receptor de aguas residuales de módulo batería sanitaria.",
       "estado": "En ejecución",
@@ -7440,7 +7458,7 @@
       "pct_pagado": 52.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_064",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "acompañamiento técnico en la implementación de los pliegos para cotizar las Instalaciones Especiales de la FASE 1 DEL CEC.",
       "estado": "Cerrado",
@@ -7457,7 +7475,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_065",
       "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "Suministro de personal para oficios varios.",
       "estado": "Cerrado",
@@ -7474,7 +7492,7 @@
       "pct_pagado": 94.7
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_066",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de Acero B1 y B2 Ascensores, mesones y plaza AA Chillers",
       "estado": "Cerrado",
@@ -7491,7 +7509,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_067",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro acero B1 y B2 Descolgados y muro prerimetral",
       "estado": "Cerrado",
@@ -7508,7 +7526,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_068",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de acero muros de antepecho bloque 9 +  muro antepecho b1 y 2",
       "estado": "Cerrado",
@@ -7525,7 +7543,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_069",
       "contratista": "JCAD S.A.S.",
       "objeto": "Renovación de licencias de Autodesk",
       "estado": "Cerrado",
@@ -7542,7 +7560,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_070",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7559,7 +7577,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_071",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -7576,7 +7594,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_072",
       "contratista": "INERCE S.A.S",
       "objeto": "cambio de postes de baja tensión en proyecto fénix",
       "estado": "Cerrado",
@@ -7593,7 +7611,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_073",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Acero peatonal - acero muros zona sur sector bonga",
       "estado": "Cerrado",
@@ -7610,7 +7628,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_074",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Acero para muros zona sur este. Acero muro contencion conexión",
       "estado": "Cerrado",
@@ -7627,7 +7645,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_075",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Acero para muros zona sur este. Acero muro contencion conexión",
       "estado": "Cerrado",
@@ -7644,7 +7662,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_076",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro de polisombra para cerramiento perimetral y cinta PVC para uso en muros de contencion zona sureste",
       "estado": "Cerrado",
@@ -7661,7 +7679,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_077",
       "contratista": "PEISKOS INDUSTRIAL S.A.S.",
       "objeto": "Suministro consumibles de obra para reparacion de tuberia PVC",
       "estado": "Cerrado",
@@ -7678,7 +7696,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_078",
       "contratista": "GSA INGENIERIA S.A.S.",
       "objeto": "IMPERMEABILIZACIÓN CUBIERTAS CHILLERS",
       "estado": "Cerrado",
@@ -7695,7 +7713,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_079",
       "contratista": "DISTRIBUIDORA DE PRODUCTOS Y SERVICIOS S.A.S. (DISPROS)",
       "objeto": "Suministro elementos cafeteria",
       "estado": "Cerrado",
@@ -7712,7 +7730,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_080",
       "contratista": "PEMEL S.A.S.",
       "objeto": "Compra de rollo de manto frío",
       "estado": "Cerrado",
@@ -7729,7 +7747,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_081",
       "contratista": "MARFRIO S.A.S.",
       "objeto": "Servicio de mantenimiento preventivo para aires acondicionados en oficinas de CIVILCO, InterCEC y sala de juntas.",
       "estado": "Cerrado",
@@ -7746,7 +7764,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_082",
       "contratista": "PEMEL S.A.S.",
       "objeto": "Compra de rollo de manto frío para impermeabilización de contenedor y grifos para puntos de recoleccion de agua.",
       "estado": "Cerrado",
@@ -7763,7 +7781,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_083",
       "contratista": "DISTRIBUIDORA DE PRODUCTOS Y SERVICIOS S.A.S. (DISPROS)",
       "objeto": "Suministro elementos de papeleria",
       "estado": "Cerrado",
@@ -7780,7 +7798,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_084",
       "contratista": "E & E PUBLIVISUAL S.A.S.",
       "objeto": "Suministro carteles resolucion actualizada de Curaduría",
       "estado": "Cerrado",
@@ -7797,7 +7815,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_085",
       "contratista": "INVERSIONES OÑATE MORA E HIJOS S.A.S. - MUNDO PAN",
       "objeto": "Suministro de refrigerios para los comités de obra y otras reuniones o eventos coorpotativos del proyecto Fenix Comfenalco que lo ameriten.",
       "estado": "En ejecución",
@@ -7807,14 +7825,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-12-17",
       "valor_compromiso": 3100000.0,
-      "valor_pagado": 1473800.0,
+      "valor_pagado": 2288600.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.649,
-      "saldo_por_pagar": 1626200.0,
-      "pct_pagado": 47.5
+      "pct_facturado": 0.8183,
+      "saldo_por_pagar": 811400.0,
+      "pct_pagado": 73.8
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_086",
       "contratista": "G SPATH S.A.S.",
       "objeto": "Suministro pluma grua para Obra Fenix",
       "estado": "En liquidación",
@@ -7831,7 +7849,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_087",
       "contratista": "LEONEL GUILLERMO GUARDO CASTAÑO",
       "objeto": "ACTUALIZACIÓN DEL PLAN DE MANEJO AMBIENTAL - PMA DEL PROYECTO “PLAN MAESTRO CIUDAD ESCOLAR COMFENALCO – CEC”.",
       "estado": "Cerrado",
@@ -7848,7 +7866,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_088",
       "contratista": "REPLANTEATE S.A.S.",
       "objeto": "Revision y Análisis Fitosanitarios de árboles Proyecto Fénix Comfenalco.",
       "estado": "Cerrado",
@@ -7865,7 +7883,7 @@
       "pct_pagado": 71.8
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_089",
       "contratista": "FERRETERIA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Consumibles de obra para protección de pisos",
       "estado": "Cerrado",
@@ -7882,7 +7900,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_090",
       "contratista": "FERRETERIA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Consumibles de obra para protección de pisos",
       "estado": "Cerrado",
@@ -7899,7 +7917,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_091",
       "contratista": "BANDA ECO-AMBIENTAL SAS",
       "objeto": "traslado y siembra de palmeras",
       "estado": "En liquidación",
@@ -7916,7 +7934,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_092",
       "contratista": "ULTRACEM SAS",
       "objeto": "Concretos - Estructura",
       "estado": "En ejecución",
@@ -7926,14 +7944,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-11-19",
       "valor_compromiso": 273434487.0,
-      "valor_pagado": 208435749.0,
+      "valor_pagado": 210542049.0,
       "pct_ejecutado": 0.81,
-      "pct_facturado": 0.9274,
-      "saldo_por_pagar": 64998738.0,
-      "pct_pagado": 76.2
+      "pct_facturado": 0.9281,
+      "saldo_por_pagar": 62892438.0,
+      "pct_pagado": 77.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_093",
       "contratista": "ULTRACEM SAS",
       "objeto": "Concretos - Zona Carril",
       "estado": "En liquidación",
@@ -7950,7 +7968,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_094",
       "contratista": "FERRETERIA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Consumibles de obra para instalacion cerramiento cuarto tecnico",
       "estado": "Cerrado",
@@ -7967,7 +7985,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_095",
       "contratista": "DITRONICA S.A.S",
       "objeto": "Suministro de equipo cómputo para control de acceso",
       "estado": "Cerrado",
@@ -7984,7 +8002,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_096",
       "contratista": "CONTRUCCIONES Y ACABADOS RR SAS",
       "objeto": "Listones de madera para almacén de cuarto tecnico",
       "estado": "Cerrado",
@@ -8001,7 +8019,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_097",
       "contratista": "JONAN S.A.",
       "objeto": "Suministro elementos de cafetería y papelería",
       "estado": "Cerrado",
@@ -8018,7 +8036,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_098",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro de colombinas para delimitacion en obra y consumibles de obra para riego y corte",
       "estado": "Cerrado",
@@ -8035,7 +8053,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_099",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -8052,7 +8070,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_100",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -8069,7 +8087,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_101",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de acero placas de contrapiso Bloque 9 adicional",
       "estado": "Cerrado",
@@ -8086,7 +8104,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_102",
       "contratista": "MYLEX CONSTRUCTORES S.A.S",
       "objeto": "Suministro de personal para toma de detalles y aseo en Comfenalco Cartagena obra Fenix - fase 1",
       "estado": "En liquidación",
@@ -8103,7 +8121,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_103",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro de polisombra para mantenimiento en bloque 4,5  y3",
       "estado": "Cerrado",
@@ -8120,7 +8138,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_104",
       "contratista": "CONCRESERVICIOS S.A.S",
       "objeto": "Ensayos de laboratorio de concreto, integridad de pilotes, mamposteria, entre otros. Para Obra Fenix",
       "estado": "En ejecución",
@@ -8137,7 +8155,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_105",
       "contratista": "EV INGENIERIA S.A.S.",
       "objeto": "ENSAYOS DE DENSIDADES DE CAMPO EN CIUDADELA ESCOLAR COMFENALCO EN CARTAGENA",
       "estado": "En liquidación",
@@ -8154,7 +8172,7 @@
       "pct_pagado": 25.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_106",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro elementos para proteccion de ventanas y punto ecologico",
       "estado": "Cerrado",
@@ -8171,7 +8189,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_107",
       "contratista": "DITRONICA S.A.S",
       "objeto": "Suministro de niveles láser",
       "estado": "Cerrado",
@@ -8188,7 +8206,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_108",
       "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "Excavación, cargue y transporte hasta botadero y tranporte interno en obra.",
       "estado": "Cerrado",
@@ -8205,7 +8223,7 @@
       "pct_pagado": 97.6
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_109",
       "contratista": "DISTRIBUIDORA DE PRODUCTOS Y SERVICIOS S.A.S. (DISPROS)",
       "objeto": "Suministro elementos de aseo",
       "estado": "Cerrado",
@@ -8222,7 +8240,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_110",
       "contratista": "TECNOSOLUCIONES LTDA.",
       "objeto": "SUMINISTRO E INSTALACION DEL SISTEMA DE IMPERMEABILIZACIÓN CON SISTEMA CEMENTICO FLEXIBLE PARA PASILLOS PISO N° 1",
       "estado": "En ejecución",
@@ -8232,14 +8250,14 @@
       "fecha_inicio": "2026-07-23",
       "fecha_fin": "2026-09-18",
       "valor_compromiso": 37447839.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 37428422.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 37447839.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 19417.0,
+      "pct_pagado": 99.9
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_111",
       "contratista": "FERRETERIA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Consumibles de obra para mantenimiento de polisombra y cinta para juntas de dilatación",
       "estado": "Cerrado",
@@ -8256,7 +8274,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_112",
       "contratista": "LEONEL GUILLERMO GUARDO CASTAÑO",
       "objeto": "Apoyo y fortalecimiento de la gestión ambiental en el proyecto “Plan Maestro Ciudad Escolar COMFENALCO – CEC”.",
       "estado": "En ejecución",
@@ -8273,7 +8291,7 @@
       "pct_pagado": 25.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_113",
       "contratista": "JONAN S.A.",
       "objeto": "Suministro elementos de cafetería",
       "estado": "Cerrado",
@@ -8290,10 +8308,10 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_114",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro acero MALLA ELECTROSOLDADA CUBIERTA BAÑO N1B2",
-      "estado": "En liquidación",
+      "estado": "Cerrado",
       "tipo": "ORDEN",
       "ccosto": "CC013-1.4",
       "detalle_ccosto": "CC013-1.4.1.21",
@@ -8307,7 +8325,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_115",
       "contratista": "COMPULAGO",
       "objeto": "Suministro de tintas para impresora EPSON L6490",
       "estado": "Cerrado",
@@ -8324,7 +8342,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_116",
       "contratista": "MASTER CONSTRUCCIONES DYN SAS",
       "objeto": "Suministro de barandas para seguridad de obra",
       "estado": "En liquidación",
@@ -8341,7 +8359,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_117",
       "contratista": "MASTER CONSTRUCCIONES DYN SAS",
       "objeto": "Instalación de barandas para seguridad de obra",
       "estado": "En ejecución",
@@ -8358,7 +8376,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_118",
       "contratista": "FERRETERIA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Suministro tanques metalicos para cerramiento en Tv 50",
       "estado": "Cerrado",
@@ -8375,7 +8393,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_119",
       "contratista": "CONTRUCCIONES Y ACABADOS RR SAS",
       "objeto": "Suministro listones de madera para cerramiento en Tv 50",
       "estado": "En liquidación",
@@ -8392,7 +8410,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_120",
       "contratista": "MEGACOMPUTOS Y TECNOLOGÍAS S.A.S.",
       "objeto": "Servicio de mantenimiento de computadores e impresora para CIVILCO - INTERCEC.",
       "estado": "Cerrado",
@@ -8409,7 +8427,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_121",
       "contratista": "E&E PUBLIVISUAL S.A.S.",
       "objeto": "Suministro de planos",
       "estado": "Cerrado",
@@ -8426,7 +8444,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_122",
       "contratista": "CEMENTOS ARGOS SAS",
       "objeto": "SUMINISTRO DE CEMENTO PARA CEBADO DE BOMBA (FUNDIDA DE PILOTES)",
       "estado": "Cerrado",
@@ -8443,10 +8461,10 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_123",
       "contratista": "STECKERL ACEROS S.A.S.",
       "objeto": "Suministro de tubo estructural para barrera de sonido",
-      "estado": "En liquidación",
+      "estado": "Cerrado",
       "tipo": "ORDEN",
       "ccosto": "CC013-1.16",
       "detalle_ccosto": "CC013-1.16.2.1",
@@ -8460,7 +8478,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_124",
       "contratista": "SEYC SOLUCIONES ESTRUCTURALES Y CIVILES LTDA",
       "objeto": "Diseño estructural para lucernarios, claraboyas, pisos translucidos, marquesina y tragaluces en proyecto Fénix Colegio Comfenalco",
       "estado": "En legalización",
@@ -8477,7 +8495,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_125",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de acero muros de llegada a terraza de bloques",
       "estado": "En ejecución",
@@ -8494,7 +8512,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_126",
       "contratista": "MAS CONSTRUCTORES S.A.S.",
       "objeto": "Suministro de comedores para casino en obra",
       "estado": "En liquidación",
@@ -8511,7 +8529,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_127",
       "contratista": "BARCAST S.A.S.",
       "objeto": "Construcción, suministro e instalación de mesones baños",
       "estado": "En ejecución",
@@ -8528,7 +8546,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_128",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro de punto ecologico para casino en Obra Fenix",
       "estado": "Cerrado",
@@ -8545,7 +8563,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_129",
       "contratista": "INGENIERÍA, CONSTRUCCIONES Y SERVICIOS I.C.S. S.A.S.",
       "objeto": "Instalaciones eléctricas para foso y MB control ascensores B1 y B2",
       "estado": "Cerrado",
@@ -8562,7 +8580,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_130",
       "contratista": "MYLEX CONSTRUCTORES S.A.S",
       "objeto": "Suministro de personal para toma de detalles, aseo en obra y oficios varios",
       "estado": "En liquidación",
@@ -8579,10 +8597,10 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_131",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro de consumibles de obra para seguridad",
-      "estado": "En liquidación",
+      "estado": "Cerrado",
       "tipo": "ORDEN",
       "ccosto": "CC013-1.15",
       "detalle_ccosto": "CC013-1.15.2.1",
@@ -8596,15 +8614,15 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_132",
       "contratista": "HECO INGENIERIA S.A.S.",
       "objeto": "REPARACIÓN DE TUBERÍA EN CUARTO DE BOMBAS PRINCIPAL PROYECTO FENIX COMFENALCO",
-      "estado": "En legalización",
+      "estado": "En ejecución",
       "tipo": "ORDEN",
       "ccosto": "CC013-1.1",
       "detalle_ccosto": "CC013-1.1.2.26",
-      "fecha_inicio": null,
-      "fecha_fin": "2026-07-25",
+      "fecha_inicio": "2026-09-08",
+      "fecha_fin": "2026-09-19",
       "valor_compromiso": 7336822.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
@@ -8613,27 +8631,27 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_133",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de acero muros de contencion sur este - tramo de llegada a bloques",
-      "estado": "En ejecución",
+      "estado": "Cerrado",
       "tipo": "ORDEN",
       "ccosto": "CC013-1.4",
       "detalle_ccosto": "CC013-1.4.1.21",
       "fecha_inicio": null,
       "fecha_fin": "2026-08-07",
       "valor_compromiso": 14451848.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 14451846.0,
       "pct_ejecutado": null,
       "pct_facturado": 1.0,
-      "saldo_por_pagar": 14451848.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 2.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_134",
       "contratista": "JONAN S.A.",
       "objeto": "Suministro elementos de cafetería, papelería y aseo",
-      "estado": "En liquidación",
+      "estado": "Cerrado",
       "tipo": "ORDEN",
       "ccosto": "CC013-1.15",
       "detalle_ccosto": "CC013-1.15.3.4",
@@ -8647,10 +8665,10 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_135",
       "contratista": "PISCINAS Y ENCHAPES S.A.S.",
       "objeto": "Suministro de aparatos sanitario s y accesorios",
-      "estado": "En legalización",
+      "estado": "En liquidación",
       "tipo": "ORDEN",
       "ccosto": "CC013-1.11",
       "detalle_ccosto": "CC013-1.11.2.1 al CC013-1.11.2.19",
@@ -8664,7 +8682,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_136",
       "contratista": "INGENIERÍA, CONSTRUCCIONES Y SERVICIOS I.C.S. S.A.S.",
       "objeto": "Instalación eléctrica provisional comedor bloque 9",
       "estado": "Cerrado",
@@ -8681,7 +8699,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_137",
       "contratista": "A & A EQUIPOS Y SOLUCIONES EN CONTENEDORES S.A.S.",
       "objeto": "Reubicacion de contenedores obra fenix",
       "estado": "Suspendido",
@@ -8698,7 +8716,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_138",
       "contratista": "OFI ESPACIOS EMPRESARIALES SAS",
       "objeto": "Suministro silla para interventoria",
       "estado": "En liquidación",
@@ -8715,7 +8733,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_139",
       "contratista": "PEISKOS INDUSTRIAL S.A.S.",
       "objeto": "Suministro ventiladores para comedor de Obra Fenix",
       "estado": "En liquidación",
@@ -8732,7 +8750,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_140",
       "contratista": "PEISKOS INDUSTRIAL S.A.S.",
       "objeto": "Suministro herramientas para personal de aseo y toma de detalles de obra",
       "estado": "En liquidación",
@@ -8749,7 +8767,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_141",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Suministro de materiales para pintura de cuarto tecnico",
       "estado": "En liquidación",
@@ -8766,7 +8784,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_142",
       "contratista": "MEGACOMPUTOS Y TECNOLOGÍAS S.A.S.",
       "objeto": "Suministro de computador portatil para personal de CIVILCO",
       "estado": "Cerrado",
@@ -8783,7 +8801,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_143",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -8800,7 +8818,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_144",
       "contratista": "DISTRIBUIDORA DE PRODUCTOS Y SERVICIOS S.A.S. (DISPROS)",
       "objeto": "Suministro elementos de cafetería",
       "estado": "En liquidación",
@@ -8812,12 +8830,12 @@
       "valor_compromiso": 391800.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
-      "pct_facturado": 1.0,
+      "pct_facturado": 2.0,
       "saldo_por_pagar": 391800.0,
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_145",
       "contratista": "PEISKOS INDUSTRIAL S.A.S.",
       "objeto": "Suministro elementos de aseo para obra",
       "estado": "En liquidación",
@@ -8834,7 +8852,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_146",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -8851,7 +8869,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_147",
       "contratista": "MEGACOMPUTOS Y TECNOLOGÍAS S.A.S.",
       "objeto": "SERVICIO DE CORRECIÓN DE ERROR DE ARRANQUE EN COMPUTADOR PORTATIL INTERCEC",
       "estado": "Cerrado",
@@ -8868,7 +8886,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_148",
       "contratista": "MEGACOMPUTOS Y TECNOLOGÍAS S.A.S.",
       "objeto": "SERVICIO DE REPARACIÓN DE EQUIPOS COMPUTOS DE CIVILCO AFECTADOS POR LLUVIA",
       "estado": "Cerrado",
@@ -8885,7 +8903,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_149",
       "contratista": "MAS CONSTRUCTORES S.A.S.",
       "objeto": "Suministro e instlacion de escaleras en bloques 1 y 2",
       "estado": "En ejecución",
@@ -8902,8 +8920,8 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
-      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K S.A.S.",
+      "codigo": "ORD_2026_150",
+      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "Suministro de personal para oficios varios",
       "estado": "En ejecución",
       "tipo": "ORDEN",
@@ -8914,12 +8932,12 @@
       "valor_compromiso": 54906021.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.0,
+      "pct_facturado": 0.9046,
       "saldo_por_pagar": 54906021.0,
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_151",
       "contratista": "PEMEL SAS",
       "objeto": "Compra de rollos de manto frío para reforzar el cerramiento",
       "estado": "En liquidación",
@@ -8936,7 +8954,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_152",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de acero para muros de contencion sur este",
       "estado": "En liquidación",
@@ -8953,7 +8971,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_153",
       "contratista": "TODO INDUSTRIAS S.A.S.",
       "objeto": "Consumibles de obra (Sikalatex para plantilla de nivelación - Cadena y candados para almacen provicional en campamento)",
       "estado": "En liquidación",
@@ -8970,7 +8988,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_154",
       "contratista": "OFI ESPACIOS EMPRESARIALES SAS",
       "objeto": "Suministro sillas para oficina (silla para CIVILCO debido a que fue dada de baja ya que no cumplia con condiciones seguras)",
       "estado": "En liquidación",
@@ -8987,7 +9005,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_155",
       "contratista": "WILLIAM JOSE GOMEZ ARDILA",
       "objeto": "Suministro de consumibles de obra para fabricación de barandas de escaleras",
       "estado": "Cerrado",
@@ -9004,7 +9022,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_156",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro material para cubierta de oficinas campamento",
       "estado": "En liquidación",
@@ -9014,31 +9032,14 @@
       "fecha_inicio": "2026-08-13",
       "fecha_fin": "2026-09-06",
       "valor_compromiso": 4818834.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 4818834.0,
       "pct_ejecutado": null,
       "pct_facturado": 1.0,
-      "saldo_por_pagar": 4818834.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
-      "contratista": "MARFRIO SAS",
-      "objeto": "Suministro de aire acondicionado tipo mini-split de 12.000BTU ON/OFF monofasico Marca MC QUAY, para contenedor de KER Ingenieria",
-      "estado": "En legalización",
-      "tipo": "ORDEN",
-      "ccosto": "CC013-1.1",
-      "detalle_ccosto": "CC013-1.1.2.8",
-      "fecha_inicio": "2026-08-13",
-      "fecha_fin": "2026-09-06",
-      "valor_compromiso": 1726807.0,
-      "valor_pagado": 0.0,
-      "pct_ejecutado": null,
-      "pct_facturado": 0.0,
-      "saldo_por_pagar": 1726807.0,
-      "pct_pagado": 0.0
-    },
-    {
-      "codigo": null,
+      "codigo": "ORD_2026_157",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -9055,7 +9056,24 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_158",
+      "contratista": "Anulado",
+      "objeto": "Anulado",
+      "estado": "Anulado",
+      "tipo": "ORDEN",
+      "ccosto": "-",
+      "detalle_ccosto": "-",
+      "fecha_inicio": null,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
+    },
+    {
+      "codigo": "ORD_2026_159",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Acero para ALFAJIAS+ANCLAJES PARA LISTON DE ASIENTO+ESCUADRAS DE ESQUINAS FRENTE DE OBRA: ANTEPECHOS DE CUBIERTA",
       "estado": "En liquidación",
@@ -9065,14 +9083,14 @@
       "fecha_inicio": "2026-08-13",
       "fecha_fin": "2026-09-06",
       "valor_compromiso": 1078768.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 1078768.0,
       "pct_ejecutado": null,
       "pct_facturado": 1.0,
-      "saldo_por_pagar": 1078768.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_160",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de acero para CUBIERTA BAÑO N1B2 VIGAS Y CUBIERTAS ASCENSORES (COVECO)",
       "estado": "En liquidación",
@@ -9082,15 +9100,15 @@
       "fecha_inicio": "2026-08-13",
       "fecha_fin": "2026-09-06",
       "valor_compromiso": 4341277.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 4341277.0,
       "pct_ejecutado": null,
       "pct_facturado": 1.0,
-      "saldo_por_pagar": 4341277.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
-      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K S.A.S.",
+      "codigo": "ORD_2026_161",
+      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
       "objeto": "Suministro de abrazaderas e instalación de malacates.",
       "estado": "En liquidación",
       "tipo": "ORDEN",
@@ -9106,7 +9124,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_162",
       "contratista": "RAMÍREZ CONSTRUCCIONES Y CARPINTERÍAS SAS",
       "objeto": "Listones de madera para almacén provisional de aparatos sanitarios",
       "estado": "En liquidación",
@@ -9123,7 +9141,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_163",
       "contratista": "MAS CONSTRUCTORES S.A.S.",
       "objeto": "Fabricacion y montaje para shuts de escombros en bloque 1",
       "estado": "En liquidación",
@@ -9135,12 +9153,12 @@
       "valor_compromiso": 4849964.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.0,
+      "pct_facturado": 1.0,
       "saldo_por_pagar": 4849964.0,
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_164",
       "contratista": "JONAN S.A.",
       "objeto": "Suministro elementos de cafetería y aseo",
       "estado": "En liquidación",
@@ -9157,7 +9175,7 @@
       "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_165",
       "contratista": "REMDEL INGENIEROS LTDA",
       "objeto": "Asesoría durante la ejecución de las obras de las Instalaciones Eléctricas, Iluminación, Comunicaciones, Especiales y el Sistema de protección contra rayos (SIPRA) de la FASE 1 DEL CEC",
       "estado": "En ejecución",
@@ -9169,12 +9187,12 @@
       "valor_compromiso": 8925000.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.0,
+      "pct_facturado": 0.02,
       "saldo_por_pagar": 8925000.0,
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_166",
       "contratista": "A & A EQUIPOS Y SOLUCIONES EN CONTENEDORES S.A.S.",
       "objeto": "Mantenimiento de contenedores",
       "estado": "En ejecución",
@@ -9191,7 +9209,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_167",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro acero para ZAPATAS + VIGAS AMARRE + MURO CONTENCION + COLUMNA SUBESTACIÓN #2",
       "estado": "En liquidación",
@@ -9201,14 +9219,14 @@
       "fecha_inicio": "2026-08-15",
       "fecha_fin": "2026-09-08",
       "valor_compromiso": 29862420.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 29862420.0,
       "pct_ejecutado": null,
       "pct_facturado": 1.0,
-      "saldo_por_pagar": 29862420.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_168",
       "contratista": "INOXIDEAS INTERNACIONAL S.A.S.",
       "objeto": "SUMINISTRO E INSTALACIÓN DE DIVISIONES DE BAÑOS EN ACERO INOXIDABLE",
       "estado": "En ejecución",
@@ -9225,7 +9243,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_169",
       "contratista": "PEISKOS INDUSTRIAL S.A.S",
       "objeto": "Suministro elementos para demarcacion SST y herramientas para uso de personal a cargo de CIVILCO",
       "estado": "En ejecución",
@@ -9242,24 +9260,24 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
-      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K S.A.S.",
-      "objeto": "Ejecución de los trabajos de excavación, cargue, demolición de escaleras y transporte de materiales sobrantes (interno y hacia botadero certificado) para la Subestación Eléctrica 2 y la conexión de T4 en el Proyecto Fénix - Ciudad Escolar Comfenalco Fase 1",
-      "estado": "En liquidación",
+      "codigo": "ORD_2026_170",
+      "contratista": "Anulado",
+      "objeto": "Anulado",
+      "estado": "Anulado",
       "tipo": "ORDEN",
-      "ccosto": "CC013-1.6",
-      "detalle_ccosto": "CC013-1.6.6.1, CC013-1.6.6.2, CC013-1.6.6.3",
+      "ccosto": "-",
+      "detalle_ccosto": "-",
       "fecha_inicio": null,
-      "fecha_fin": "2026-08-25",
-      "valor_compromiso": 56809703.0,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 56809703.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_171",
       "contratista": "CIVIL TREND S.A.S",
       "objeto": "Reforzamiento estructural de viga de confinamiento, mediante instalación de acero estructural, anclajes químicos tipo epóxico y fundida de concreto fluido , en\nconstrucción Comfenalco",
       "estado": "En legalización",
@@ -9276,7 +9294,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_172",
       "contratista": "SERVIECOLOGICA S.A.S.",
       "objeto": "Servicio de fumigación para el manejo integrado de plagas, con método de desinsectación",
       "estado": "En liquidación",
@@ -9293,7 +9311,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_173",
       "contratista": "DISTRIBUIDORA INDUSTRIAL DEL CARIBE",
       "objeto": "Recarga y mantenimiento para extintores ABC de 10 lb",
       "estado": "En liquidación",
@@ -9303,14 +9321,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-09-10",
       "valor_compromiso": 110000.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 110000.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 110000.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_174",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de Angulos para Carcamo Bloque 2",
       "estado": "En liquidación",
@@ -9320,14 +9338,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-09-22",
       "valor_compromiso": 1142371.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 1142371.0,
       "pct_ejecutado": null,
       "pct_facturado": 1.0,
-      "saldo_por_pagar": 1142371.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_175",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -9344,7 +9362,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_176",
       "contratista": "Anulado",
       "objeto": "Anulado",
       "estado": "Anulado",
@@ -9361,7 +9379,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_177",
       "contratista": "SERVIMETERS S.A.S.",
       "objeto": "Inspección de instalaciones eléctricas de acuerdo con el Reglamento Técnico de Instalaciones Eléctricas (RETIE).",
       "estado": "En legalización",
@@ -9371,14 +9389,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-09-16",
       "valor_compromiso": 2933350.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 2933350.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 2933350.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_178",
       "contratista": "SERVIMETERS S.A.S.",
       "objeto": "Inspección de instalaciones de iluminación de acuerdo con el Reglamento Técnico de Iluminación y Alumbrado Público (RETILAP).",
       "estado": "En legalización",
@@ -9388,14 +9406,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-09-15",
       "valor_compromiso": 4004350.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 4004350.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 4004350.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_179",
       "contratista": "A & A EQUIPOS Y SOLUCIONES EN CONTENEDORES S.A.S.",
       "objeto": "Succión de tanque receptor de aguas residuales de módulo batería sanitaria",
       "estado": "En ejecución",
@@ -9412,7 +9430,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_180",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro acero para MURO DE CONTENCION TIPO T1 Y TIPO T2",
       "estado": "En liquidación",
@@ -9422,14 +9440,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-09-24",
       "valor_compromiso": 37681991.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 37189910.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.9869,
-      "saldo_por_pagar": 37681991.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 492081.0,
+      "pct_pagado": 98.7
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_181",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro acero para VIGA SUPERIOR Y RAMPA PEATONAL ZONA DE MURO CONTENCIÓN",
       "estado": "En liquidación",
@@ -9446,7 +9464,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_182",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de MALLAS Y ACEROS PARA ESCALERAS TIPO 1 Y TIPO 3",
       "estado": "En ejecución",
@@ -9463,7 +9481,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_183",
       "contratista": "FERRETERIA UNIVERSAL DEL CARIBE S.A.S.",
       "objeto": "Suministro rollos de plastico y carton para proteccion de pisos y alambre para cerramiento",
       "estado": "En liquidación",
@@ -9480,7 +9498,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_184",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro de acero para CUBIERTA MURO MARQUESINAS Y SOBRERECORRIDO ESCALERAS B1 Y B2 - FALTANTES PISOS SUPERIORES - CESAR GOMEZ",
       "estado": "En ejecución",
@@ -9497,7 +9515,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_185",
       "contratista": "MAS CONSTRUCTORES S.A.S.",
       "objeto": "Fabricacion y montaje de sobre techo para oficina de civilco e Intercec",
       "estado": "En liquidación",
@@ -9509,12 +9527,12 @@
       "valor_compromiso": 7968240.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.0,
+      "pct_facturado": 1.0,
       "saldo_por_pagar": 7968240.0,
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_186",
       "contratista": "FENIX AZUL CONSTRUCCIONES S.A.S.",
       "objeto": "REVISION Y AJUSTE DE PLAN DE MANEJO DE TRAFICO PROYECTO COLEGIO COMFENALCO",
       "estado": "Sin iniciar",
@@ -9531,7 +9549,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_187",
       "contratista": "EV INGENIERIA S.A.S.",
       "objeto": "ENSAYOS DE DENSIDADES DE CAMPO EN CIUDADELA ESCOLAR COMFENALCO EN CARTAGENA",
       "estado": "En ejecución",
@@ -9548,7 +9566,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_188",
       "contratista": "EV INGENIERIA S.A.S.",
       "objeto": "PRUEBAS DE INTEGRIDAD DE PILOTES",
       "estado": "En ejecución",
@@ -9565,7 +9583,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_189",
       "contratista": "SGS COLOMBIA SAS",
       "objeto": "Ensayos de densidades para Obra Fenix",
       "estado": "En ejecución",
@@ -9582,7 +9600,7 @@
       "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_190",
       "contratista": "COVECO DE COLOMBIA S.A.S",
       "objeto": "Alquiler de montacargas para movimiento de estibas de baldosas en planta baja",
       "estado": "En legalización",
@@ -9599,92 +9617,92 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_191",
       "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
-      "objeto": "REVISION ESTRUCTURAL IDE LA NCLUSION DE ESCALERA AEREA ADOSADA AL MURO DEL PROYECTO “BLOQUE 9”.",
+      "objeto": "Revisión y diseño estructural de las modificaciones en los proyectos CEC y Bloques 1, 2 y 9, incluyendo escaleras, muros, columnas, vigas y elementos adyacentes intervenidos.",
       "estado": "En legalización",
       "tipo": "ORDEN",
       "ccosto": "CC013-1.15",
       "detalle_ccosto": "CC013-1.15.3.3",
       "fecha_inicio": "2026-09-09",
-      "fecha_fin": "2026-09-21",
-      "valor_compromiso": 8487080.0,
+      "fecha_fin": "2026-09-28",
+      "valor_compromiso": 47648790.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 8487080.0,
+      "saldo_por_pagar": 47648790.0,
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
-      "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
-      "objeto": "REVISION ESTRUCTURAL DE LA COLUMNA C5 – D4 Y LA DEL PROYECTO BLOQUE 1",
-      "estado": "En legalización",
+      "codigo": "ORD_2026_192",
+      "contratista": "Anulado",
+      "objeto": "Anulado",
+      "estado": "Anulado",
       "tipo": "ORDEN",
-      "ccosto": "CC013-1.15",
-      "detalle_ccosto": "CC013-1.15.3.3",
-      "fecha_inicio": "2026-09-10",
-      "fecha_fin": "2026-09-17",
-      "valor_compromiso": 4284000.0,
+      "ccosto": "-",
+      "detalle_ccosto": "-",
+      "fecha_inicio": null,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 4284000.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
     },
     {
-      "codigo": null,
-      "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
-      "objeto": "DISEÑO ESTRUCTURAL MURO DE CONCRETO CIERRE DE CUBIERTA DEL PROYECTO “CEC – TORRE 1 Y 2”",
-      "estado": "En legalización",
+      "codigo": "ORD_2026_193",
+      "contratista": "Anulado",
+      "objeto": "Anulado",
+      "estado": "Anulado",
       "tipo": "ORDEN",
-      "ccosto": "CC013-1.15",
-      "detalle_ccosto": "CC013-1.15.3.3",
-      "fecha_inicio": "2026-09-10",
-      "fecha_fin": "2026-09-24",
-      "valor_compromiso": 8925000.0,
+      "ccosto": "-",
+      "detalle_ccosto": "-",
+      "fecha_inicio": null,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 8925000.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
     },
     {
-      "codigo": null,
-      "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
-      "objeto": "Revisión técnica y el diseño de reforzamiento estructural de las vigas V-D4 y V-C8 ubicadas en el nivel 1 de las Torres 1 y 2.",
-      "estado": "En legalización",
+      "codigo": "ORD_2026_194",
+      "contratista": "Anulado",
+      "objeto": "Anulado",
+      "estado": "Anulado",
       "tipo": "ORDEN",
-      "ccosto": "CC013-1.15",
-      "detalle_ccosto": "CC013-1.15.3.3",
-      "fecha_inicio": "2026-09-10",
-      "fecha_fin": "2026-09-24",
-      "valor_compromiso": 8925000.0,
+      "ccosto": "-",
+      "detalle_ccosto": "-",
+      "fecha_inicio": null,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 8925000.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
     },
     {
-      "codigo": null,
-      "contratista": "ABI INGENIERÍA Y CONSULTORIAS S.A.S.",
-      "objeto": "Diseño estructural nuevas escaleras del bloque 1 y 2 del proyecto CEC y revisión estructural de los elementos adyacentes al área intervenida por esta modificación.",
-      "estado": "En legalización",
+      "codigo": "ORD_2026_195",
+      "contratista": "Anulado",
+      "objeto": "Anulado",
+      "estado": "Anulado",
       "tipo": "ORDEN",
-      "ccosto": "CC013-1.15",
-      "detalle_ccosto": "CC013-1.15.3.3",
-      "fecha_inicio": "2026-09-10",
-      "fecha_fin": "2026-10-04",
-      "valor_compromiso": 17027710.0,
+      "ccosto": "-",
+      "detalle_ccosto": "-",
+      "fecha_inicio": null,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 17027710.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_196",
       "contratista": "DISTRIBUIDORA DE PRODUCTOS Y SERVICIOS S.A.S",
       "objeto": "Suministro elementos de cafetería",
       "estado": "En legalización",
@@ -9701,7 +9719,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_197",
       "contratista": "ROCA S.A.S.",
       "objeto": "suministro de color-roca gris otone para proyecto Fenix fase 1.",
       "estado": "En legalización",
@@ -9711,14 +9729,14 @@
       "fecha_inicio": null,
       "fecha_fin": "2026-10-09",
       "valor_compromiso": 26379920.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 26379920.0,
       "pct_ejecutado": null,
       "pct_facturado": 0.0,
-      "saldo_por_pagar": 26379920.0,
-      "pct_pagado": 0.0
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_198",
       "contratista": "OFI ESPACIOS EMPRESARIALES SAS",
       "objeto": "Suministro sillas para oficina (silla para CIVILCO debido a que fue dada de baja ya que no cumplia con condiciones seguras)",
       "estado": "En legalización",
@@ -9735,7 +9753,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_199",
       "contratista": "ROCA S.A.S.",
       "objeto": "suministro de pietratto para proyecto Fenix fase 1.",
       "estado": "En ejecución",
@@ -9752,7 +9770,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_200",
       "contratista": "ROCA S.A.S.",
       "objeto": "suministro de baldosa reticulada para proyecto Fenix fase 1",
       "estado": "En legalización",
@@ -9769,7 +9787,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_201",
       "contratista": "PEISKOS INDUSTRIAL",
       "objeto": "Suministro grifería para baño de hombres campamento",
       "estado": "En legalización",
@@ -9786,7 +9804,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_202",
       "contratista": "PEISKOS INDUSTRIAL",
       "objeto": "Suministro tornillos y puntillas para cerramiento en obra y herramientas para verificaciones varias",
       "estado": "En legalización",
@@ -9803,7 +9821,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_203",
       "contratista": "OFI ESPACIOS EMPRESARIALES SAS",
       "objeto": "Suministro sillas para oficina (silla para CIVILCO debido a que Jesus Castaño no contó con silla de \"dotacion inicial\")",
       "estado": "En legalización",
@@ -9820,7 +9838,7 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_204",
       "contratista": "REPLANTEATE S.A.S.",
       "objeto": "mantenimiento integral de las zonas ajardinadas y áreas verdes asociadas al proyecto Fénix – Ciudad Escolar Comfenalco, mediante la ejecución programada de actividades de conservación, manejo silvicultural, jardinería, con el propósito de garantizar la permanencia, funcionalidad y calidad paisajística de los espacios exteriores de la institución educativa.",
       "estado": "En ejecución",
@@ -9837,7 +9855,24 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_205",
+      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
+      "objeto": "Ejecución de los trabajos de excavación, cargue, demolición de escaleras y transporte de materiales sobrantes (interno y hacia botadero certificado) para la Subestación Eléctrica 2 y la conexión de T4 en el Proyecto Fénix - Ciudad Escolar Comfenalco Fase 1",
+      "estado": "En liquidación",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.6",
+      "detalle_ccosto": "CC013-1.6.6.1, CC013-1.6.6.2, CC013-1.6.6.3",
+      "fecha_inicio": null,
+      "fecha_fin": "2026-08-25",
+      "valor_compromiso": 56809703.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 56809703.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_206",
       "contratista": "EASY FIRST SOLUTION S.A.S",
       "objeto": "SUMINISTRO DE EQUIPO DE AIRE ACONDICIONADO PARA CONTENEDOR DE KER INGENIERIA",
       "estado": "En liquidación",
@@ -9847,14 +9882,14 @@
       "fecha_inicio": "2026-09-18",
       "fecha_fin": "2026-10-12",
       "valor_compromiso": 1564600.0,
-      "valor_pagado": 0.0,
+      "valor_pagado": 1564600.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.0,
-      "saldo_por_pagar": 1564600.0,
-      "pct_pagado": 0.0
+      "pct_facturado": 1.0,
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 100.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_207",
       "contratista": "GYJ FERRETERÍA S.A.",
       "objeto": "Suministro acero para REMATES VARIOS COVECO",
       "estado": "En ejecución",
@@ -9871,7 +9906,24 @@
       "pct_pagado": 0.0
     },
     {
-      "codigo": null,
+      "codigo": "ORD_2026_208",
+      "contratista": "Anulado",
+      "objeto": "Anulado",
+      "estado": "Anulado",
+      "tipo": "ORDEN",
+      "ccosto": "-",
+      "detalle_ccosto": "-",
+      "fecha_inicio": null,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
+    },
+    {
+      "codigo": "ORD_2026_209",
       "contratista": "INVERSIONES OÑATE MORA E HIJOS S.A.S. - MUNDO PAN",
       "objeto": "Suministro de refrigerios para la socialización del proyecto Fénix dirigida a las comunidades vecinas y circunvecinas de Comfenalco",
       "estado": "En ejecución",
@@ -9883,8 +9935,280 @@
       "valor_compromiso": 452000.0,
       "valor_pagado": 0.0,
       "pct_ejecutado": null,
-      "pct_facturado": 0.0,
+      "pct_facturado": 0.8935,
       "saldo_por_pagar": 452000.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_210",
+      "contratista": "SUMINISTROS Y CONSTRUCCIONES L&K SAS",
+      "objeto": "Excavación, cargue y transporte hasta botadero y acarreo interno en obra de material excavado, zona sureste de carreteable y retiro de material sobrante de contratistas y\npilotaje de pasarela",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.6",
+      "detalle_ccosto": "CC013-1.6.6.4 - CC013-1.6.6.12",
+      "fecha_inicio": "2026-09-19",
+      "fecha_fin": "2026-10-18",
+      "valor_compromiso": 83737003.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 83737003.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_211",
+      "contratista": "ULTRACEM SAS",
+      "objeto": "SUMINISTRO DE CONCRETO SEGÚN REQUERIMIENTO DE RESISTENCIA, TAMAÑO Y PLASTICIDAD + SERVICIO DE BOMBEO",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.4",
+      "detalle_ccosto": "CC013-1.4.1.19",
+      "fecha_inicio": "2026-09-19",
+      "fecha_fin": "2026-12-27",
+      "valor_compromiso": 209867757.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.1062,
+      "saldo_por_pagar": 209867757.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_212",
+      "contratista": "MEGACOMPUTOS Y TECNOLOGÍAS S.A.S.",
+      "objeto": "Suministro de computador portatil para personal de InterCEC",
+      "estado": "En liquidación",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.15",
+      "detalle_ccosto": "CC013-1.15.3.10",
+      "fecha_inicio": "2026-09-23",
+      "fecha_fin": "2026-10-07",
+      "valor_compromiso": 4336099.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 4336099.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_213",
+      "contratista": "SEYC SOLUCIONES ESTRUCTURALES Y CIVILES LTDA",
+      "objeto": "revisión y ajuste diseño estructural de rampa y muros en pilotes tangenciales en proyecto Fénix Colegio Comfenalco",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.4",
+      "detalle_ccosto": "CC013-1.4.1.19",
+      "fecha_inicio": "2026-09-25",
+      "fecha_fin": "2026-10-02",
+      "valor_compromiso": 4760000.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 4760000.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_214",
+      "contratista": "JONAN S.A.",
+      "objeto": "Suministro elementos de cafetería y aseo",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.15",
+      "detalle_ccosto": "CC013-1.15.3.4",
+      "fecha_inicio": "2026-09-28",
+      "fecha_fin": "2026-10-12",
+      "valor_compromiso": 291249.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 291249.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_215",
+      "contratista": null,
+      "objeto": null,
+      "estado": "EN EJECUCIÓN",
+      "tipo": "ORDEN",
+      "ccosto": "",
+      "detalle_ccosto": "",
+      "fecha_inicio": null,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
+    },
+    {
+      "codigo": "ORD_2026_216",
+      "contratista": "GYJ FERRETERÍA S.A.",
+      "objeto": "Suministro acero para VIGAS + LOSA DE CUBIERTA SUBESTACION #2",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.4",
+      "detalle_ccosto": "CC013-1.4.1.21",
+      "fecha_inicio": "2026-10-05",
+      "fecha_fin": "2026-10-29",
+      "valor_compromiso": 9856508.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 1.0,
+      "saldo_por_pagar": 9856508.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_217",
+      "contratista": "GYJ FERRETERÍA S.A.",
+      "objeto": "Suministro acero PARA JUNTAS DE PASARELA EN MURO ZONA BLOQUE 9",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.4",
+      "detalle_ccosto": "CC013-1.4.1.21",
+      "fecha_inicio": "2026-10-06",
+      "fecha_fin": "2026-10-30",
+      "valor_compromiso": 692948.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 1.0,
+      "saldo_por_pagar": 692948.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_218",
+      "contratista": "CONTRUCCIONES Y ACABADOS RR SAS",
+      "objeto": "Listones de madera para almacén de personal en obra",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.13",
+      "detalle_ccosto": "CC013-1.13.1.4",
+      "fecha_inicio": "2026-10-06",
+      "fecha_fin": "2026-10-20",
+      "valor_compromiso": 4612500.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 4612500.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_219",
+      "contratista": "ESTABLECIMIENTO PUBLICO AMBIENTAL- EPA CARTAGENA",
+      "objeto": "PAGO DE LOS VALORES LIQUIDADOS POR CONCEPTO DE SEGUIMIENTO Y CONTROL A LA EMPRESA CAJA DE COMPENSACION FAMILIAR DE FENALCO – ANDI\nCOMFENALCO CARTAGENA",
+      "estado": "En liquidación",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.1",
+      "detalle_ccosto": "CC013-1.1.2.6",
+      "fecha_inicio": "2026-10-07",
+      "fecha_fin": "2026-10-14",
+      "valor_compromiso": 2764788.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 2764788.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_220",
+      "contratista": "FERRETERIA UNIVERSAL DEL CARIBE S.A.S.",
+      "objeto": "Suministro de reflectores para zonas oscuras en obra y consumibles de obra para repración tubos de agua",
+      "estado": "En ejecución",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.15",
+      "detalle_ccosto": "CC013-1.15.3.24",
+      "fecha_inicio": "2026-10-08",
+      "fecha_fin": "2026-11-01",
+      "valor_compromiso": 817756.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 817756.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_221",
+      "contratista": "DISTRIBUIDORA DE PRODUCTOS Y SERVICIOS S.A.S",
+      "objeto": "Suministro elementos de cafeteria",
+      "estado": "En ejecución",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.15",
+      "detalle_ccosto": "CC013-1.15.3.23",
+      "fecha_inicio": "2026-10-08",
+      "fecha_fin": "2026-11-01",
+      "valor_compromiso": 423100.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 423100.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_222",
+      "contratista": null,
+      "objeto": null,
+      "estado": "EN EJECUCIÓN",
+      "tipo": "ORDEN",
+      "ccosto": "",
+      "detalle_ccosto": "",
+      "fecha_inicio": null,
+      "fecha_fin": null,
+      "valor_compromiso": 0.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 0.0,
+      "pct_pagado": 0
+    },
+    {
+      "codigo": "ORD_2026_223",
+      "contratista": "GYJ FERRETERÍA S.A.",
+      "objeto": "Suministro acero para muros paisajismo - Bloque 9",
+      "estado": "En ejecución",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.4",
+      "detalle_ccosto": "CC013-1.4.1.21",
+      "fecha_inicio": "2026-10-10",
+      "fecha_fin": "2026-11-03",
+      "valor_compromiso": 21776343.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 21776343.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_224",
+      "contratista": "PISCINAS Y ENCHAPES S.A.S.",
+      "objeto": "Suministro de aparatos sanitarios infantiles",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.11",
+      "detalle_ccosto": "CC013-1.11.2.18",
+      "fecha_inicio": null,
+      "fecha_fin": "2026-11-11",
+      "valor_compromiso": 2587600.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 2587600.0,
+      "pct_pagado": 0.0
+    },
+    {
+      "codigo": "ORD_2026_225",
+      "contratista": "ICS - INGENIERÍA CONSTRUCCIÓN Y SERVICIOS S.A.S",
+      "objeto": "instalación acometida eléctrica provisional ascensor",
+      "estado": "En legalización",
+      "tipo": "ORDEN",
+      "ccosto": "CC013-1.13",
+      "detalle_ccosto": "CC013-1.13.1.2",
+      "fecha_inicio": "2026-10-14",
+      "fecha_fin": "2026-10-21",
+      "valor_compromiso": 1759886.0,
+      "valor_pagado": 0.0,
+      "pct_ejecutado": null,
+      "pct_facturado": 0.0,
+      "saldo_por_pagar": 1759886.0,
       "pct_pagado": 0.0
     }
   ]

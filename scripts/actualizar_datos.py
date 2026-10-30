@@ -35,6 +35,7 @@ EXCEL = {
     "fondo_rot":     "COMCEC - MOV_FONDO_ROT.xlsx",
     "workplan":      "COMCEC - Control WorkPlan.xlsx",
     "trimble":       "COMCEC - CecFenix_FaseI__Files.xlsx",
+    "lluvias":       "COMCEC - Registro de LLUVIAS en obra ahr.xlsx",
 }
 
 FECHA_CORTE = datetime.now().strftime("%d-%b-%Y")
@@ -384,7 +385,7 @@ def procesar_subcontratos():
     ccostos_set = set()
 
     for _, row in df.iterrows():
-        n_cont      = _ser(row.get("Nº CONTRATO"))
+        n_cont      = _ser(row.get("N° CONTRATO") or row.get("Nº CONTRATO"))
         contratista = _ser(row.get("EMPRESA CONTRATISTA"))
         if not n_cont and not contratista:
             continue
@@ -420,6 +421,7 @@ def procesar_subcontratos():
             "pct_pagado":       round(vp / vc * 100, 1) if vc else 0,
         })
 
+    corte_val = _ser(df["FECHA DE CORTE DE INFORME"].dropna().iloc[0]) if "FECHA DE CORTE DE INFORME" in df.columns and not df["FECHA DE CORTE DE INFORME"].dropna().empty else "11/10/2026"
     _save("subcontratos", "DATA_SUBCONTRATOS", {
         "kpis": {
             "total_contratos":       len(subs),
@@ -427,7 +429,7 @@ def procesar_subcontratos():
             "total_obligado_pagado": tot_pag,
             "saldo_total":           round(tot_comp - tot_pag, 2),
             "pct_ejecucion_pagos":   round(tot_pag / tot_comp * 100, 1) if tot_comp else 0,
-            "fecha_corte":           "20/09/2026",
+            "fecha_corte":           corte_val,
         },
         "filtros": {
             "estados": sorted(list(estados_set)),
@@ -496,13 +498,14 @@ def procesar_fondo_rotatorio():
         e = m["estado_pago"] or "Revisado"
         por_estado[e] = por_estado.get(e, 0) + m["valor_neto_fr"]
 
+    corte_fr = _ser(df["Fecha de Cort"].dropna().iloc[0]) if "Fecha de Cort" in df.columns and not df["Fecha de Cort"].dropna().empty else "11/10/2026"
     _save("fondo_rotatorio", "DATA_FONDO_ROTATORIO", {
         "kpis": {
             "total_registros":  len(movs),
             "total_facturado":  tot_fact,
             "total_neto_fr":    tot_neto,
             "total_anticipos":  tot_ant,
-            "fecha_corte":      "20/09/2026",
+            "fecha_corte":      corte_fr,
         },
         "filtros": {
             "estados_pago":     sorted(list(estados_pago_set)),
@@ -523,9 +526,9 @@ def procesar_workplan():
     xl_path = os.path.join(BASE_DIR, EXCEL["workplan"])
     xl = pd.ExcelFile(xl_path)
     
-    # Buscar hoja de corte más reciente o '20sep26'
+    # Buscar hoja de corte más reciente
     target_sheet = xl.sheet_names[0]
-    for s in ['20sep26', '30ago26', '19jul26', '12jul26']:
+    for s in ['11oct26', '04oct26', '20sep26', '30ago26', '19jul26', '12jul26']:
         if s in xl.sheet_names:
             target_sheet = s
             break
@@ -591,6 +594,7 @@ def procesar_workplan():
     tot_vcont = sum(c["valor_contrato"] for c in capitulos)
     tot_vord  = sum(c["valor_ordenes"] for c in capitulos)
 
+    corte_wp = str(df["CORTE"].dropna().iloc[0]) if "CORTE" in df.columns and not df["CORTE"].dropna().empty else target_sheet
     _save("workplan", "DATA_WORKPLAN", {
         "kpis": {
             "total_items":                len(items),
@@ -600,7 +604,7 @@ def procesar_workplan():
             "total_adiciones_sustracciones": tot_adic,
             "total_valor_contratos":      tot_vcont,
             "total_valor_ordenes":        tot_vord,
-            "fecha_corte":                "20/09/2026",
+            "fecha_corte":                corte_wp,
         },
         "capitulos": capitulos,
         "items": items,
@@ -664,6 +668,49 @@ def procesar_trimble():
 
 
 # ─────────────────────────────────────────────────────────────────────
+# 9. REGISTRO LLUVIAS (LLUVIA en obra)
+# ─────────────────────────────────────────────────────────────────────
+def procesar_lluvias():
+    print("\n[+] Registro de Lluvias...")
+    df = _xls("lluvias", sheet_name=0)
+    
+    registros = []
+    tot_horas = 0.0
+    dias_lluvia = 0
+    
+    for _, row in df.iterrows():
+        fecha = _ser(row.get("FECHA - REGISTRO"))
+        if not fecha:
+            continue
+        h = _float(row.get("TOTAL HORAS"))
+        tot_horas += h
+        if h > 0:
+            dias_lluvia += 1
+            
+        registros.append({
+            "fecha": fecha,
+            "total_horas": round(h, 2),
+        })
+        
+    fechas = [r["fecha"] for r in registros]
+    fecha_min = min(fechas) if fechas else ""
+    fecha_max = max(fechas) if fechas else ""
+
+    _save("registro_lluvias", "DATA_LLUVIAS", {
+        "kpis": {
+            "total_registros": len(registros),
+            "total_horas": round(tot_horas, 2),
+            "dias_con_lluvia": dias_lluvia,
+            "fecha_min": fecha_min,
+            "fecha_max": fecha_max,
+            "default_desde": "2026-09-10",
+            "default_hasta": "2026-10-04",
+        },
+        "registros": registros
+    })
+
+
+# ─────────────────────────────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
@@ -691,6 +738,7 @@ if __name__ == "__main__":
     run(procesar_fondo_rotatorio)
     run(procesar_workplan)
     run(procesar_trimble)
+    run(procesar_lluvias)
 
     print("\n" + "=" * 60)
     if errores:

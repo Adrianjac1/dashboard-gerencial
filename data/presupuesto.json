@@ -1,30 +1,22 @@
 {
   "kpis": {
     "total_asignado": 61860448020.15449,
-    "total_contratado": 58001326995.1165,
-    "total_pagado": 36194587666.0,
-    "total_pendiente": 21806739329.1165,
-    "pct_cont_asig": 93.76,
-    "pct_pag_cont": 62.4,
-    "fecha_corte": "23-Oct-2026"
+    "total_contratado": 58759807405.7965,
+    "total_pagado": 38019861586.0,
+    "total_pendiente": 20739945819.7965,
+    "pct_cont_asig": 94.99,
+    "pct_pag_cont": 64.7,
+    "fecha_corte": "30-Oct-2026"
   },
   "por_tipo": [
     {
       "tipo": "Directos Civilco",
       "asignado": 61860448020.1545,
-      "contratado": 58001326995.1165,
-      "pagado": 36194587666.0
+      "contratado": 58759807405.7965,
+      "pagado": 38019861586.0
     }
   ],
   "historico_cortes": [
-    {
-      "corte": "25may25",
-      "asignado": 61860448020.15449,
-      "contratado": 24011407630.246502,
-      "pagado": 8632164835.0,
-      "pct_cont": 38.82,
-      "pct_pag_cont": 35.95
-    },
     {
       "corte": "26abr26",
       "asignado": 61860448020.15449,
@@ -64,6 +56,14 @@
       "pagado": 11013042594.0,
       "pct_cont": 39.53,
       "pct_pag_cont": 45.04
+    },
+    {
+      "corte": "27sep26",
+      "asignado": 61860448020.15449,
+      "contratado": 58075235186.1165,
+      "pagado": 36921544110.0,
+      "pct_cont": 93.88,
+      "pct_pag_cont": 63.58
     },
     {
       "corte": "28dic25",
@@ -144,24 +144,24 @@
       "cuenta": "PROVISIONALES PRELIMINARES FASE 1",
       "tipo": "Directos Civilco",
       "asignado": 4527570000.0,
-      "contratado": 2912960446.49,
-      "diferencia": 1614609553.51,
-      "pagado": 2587914099.0,
-      "pendiente": 325046347.4899998,
-      "pct_cont_asig": 64.34,
-      "pct_pag_cont": 88.84
+      "contratado": 2913998427.49,
+      "diferencia": 1613571572.51,
+      "pagado": 2594407533.0,
+      "pendiente": 319590894.4899998,
+      "pct_cont_asig": 64.36,
+      "pct_pag_cont": 89.03
     },
     {
       "cc": "CC013-1.02",
       "cuenta": "CARRIL DE DESACELERACIÓN FASE 1 ETAPA 1-CD Y ACCESO PRINCIPAL ETAPA 2-AP",
       "tipo": "Directos Civilco",
       "asignado": 4345749992.967821,
-      "contratado": 6159465021.4965,
-      "diferencia": -1813715028.53,
-      "pagado": 3883159020.0,
-      "pendiente": 2276306001.4965,
-      "pct_cont_asig": 141.74,
-      "pct_pag_cont": 63.04
+      "contratado": 6228745864.4965,
+      "diferencia": -1882995871.53,
+      "pagado": 3890096720.0,
+      "pendiente": 2338649144.4965,
+      "pct_cont_asig": 143.33,
+      "pct_pag_cont": 62.45
     },
     {
       "cc": "CC013-1.03",
@@ -180,36 +180,36 @@
       "cuenta": "CIMENTACIÓN Y ESTRUCTURA MURO DE CONTENCIÓN, BLOQUES, CUARTO TÉCNICO, ENFERMERÍA, BAÑOS Y PAISAJISMO FASE 1 ETAPAS 5-MC, 6-B1, 6-B1_EN, 7-B2, 7-B2_BÑ, 8-B9 Y 10-P",
       "tipo": "Directos Civilco",
       "asignado": 17914154059.466667,
-      "contratado": 19459202581.57,
-      "diferencia": -1545048522.1,
-      "pagado": 15259060597.0,
-      "pendiente": 4200141984.5699997,
-      "pct_cont_asig": 108.62,
-      "pct_pag_cont": 78.42
+      "contratado": 19807030348.2,
+      "diferencia": -1892876288.73,
+      "pagado": 15645102796.0,
+      "pendiente": 4161927552.200001,
+      "pct_cont_asig": 110.57,
+      "pct_pag_cont": 78.99
     },
     {
       "cc": "CC013-1.05",
       "cuenta": "MAMPOSTERÍA BLOQUES, CUARTO TÉCNICO, ENFERMERÍA, BAÑOS Y PAISAJISMO FASE 1 ETAPAS 5-MC, 6-B1, 6-B1_EN, 7-B2, 7-B2_BÑ, 8-B9 Y 10-P",
       "tipo": "Directos Civilco",
       "asignado": 4117014793.0,
-      "contratado": 4011973934.65,
-      "diferencia": 105040858.35,
-      "pagado": 1052534239.0,
-      "pendiente": 2959439695.65,
-      "pct_cont_asig": 97.45,
-      "pct_pag_cont": 26.23
+      "contratado": 4049994011.9,
+      "diferencia": 67020781.1,
+      "pagado": 1398696233.0,
+      "pendiente": 2651297778.9,
+      "pct_cont_asig": 98.37,
+      "pct_pag_cont": 34.54
     },
     {
       "cc": "CC013-1.06",
       "cuenta": "MORTEROS, PISOS E IMPERMEABILIZACIONES BLOQUES, CUARTO TÉCNICO, ENFERMERÍA, BAÑOS Y PAISAJISMO FASE 1 ETAPAS 6-B1, 6-B1_E",
       "tipo": "Directos Civilco",
       "asignado": 2676844124.01,
-      "contratado": 2650545440.22,
-      "diferencia": 26298683.79,
-      "pagado": 248499129.0,
-      "pendiente": 2402046311.22,
-      "pct_cont_asig": 99.02,
-      "pct_pag_cont": 9.38
+      "contratado": 2734282443.22,
+      "diferencia": -57438319.21,
+      "pagado": 437338221.0,
+      "pendiente": 2296944222.22,
+      "pct_cont_asig": 102.15,
+      "pct_pag_cont": 15.99
     },
     {
       "cc": "CC013-1.07",
@@ -240,36 +240,36 @@
       "cuenta": "CARPINTERÍA METÁLICA BLOQUES, CUARTO TÉCNICO, ENFERMERÍA, BAÑOS Y PAISAJISMO FASE 1 ETAPAS 6-B1, 6-B1_EN, 7-B2, 7-B2_BÑ, 8-B9, 9-CT Y 10-P",
       "tipo": "Directos Civilco",
       "asignado": 3500980944.2,
-      "contratado": 2464487986.0,
-      "diferencia": 1036492958.2,
+      "contratado": 2469346033.0,
+      "diferencia": 1031634911.2,
       "pagado": 455315663.0,
-      "pendiente": 2009172323.0,
-      "pct_cont_asig": 70.39,
-      "pct_pag_cont": 18.48
+      "pendiente": 2014030370.0,
+      "pct_cont_asig": 70.53,
+      "pct_pag_cont": 18.44
     },
     {
       "cc": "CC013-1.10",
       "cuenta": "INSTALACIONES ELÉCTRICAS VOZ Y DATOS BLOQUES, CUARTO TÉCNICO, ENFERMERÍA, BAÑOS Y PAISAJISMO FASE 1 ETAPAS 6-B1, 6-B1_EN, 7-B2, 7-B2_BÑ, 8-B9, 9-CT Y 10-P",
       "tipo": "Directos Civilco",
       "asignado": 3665890914.2200003,
-      "contratado": 3788062992.0,
-      "diferencia": -122172077.78,
-      "pagado": 1937744957.0,
-      "pendiente": 1850318035.0,
-      "pct_cont_asig": 103.33,
-      "pct_pag_cont": 51.15
+      "contratado": 3973801156.8,
+      "diferencia": -307910242.58,
+      "pagado": 2262336755.0,
+      "pendiente": 1711464401.8000002,
+      "pct_cont_asig": 108.4,
+      "pct_pag_cont": 56.93
     },
     {
       "cc": "CC013-1.11",
       "cuenta": "INSTALACIONES HIDRO-SANITARIAS BLOQUES CUARTO TÉCNICO, ENFERMERÍA, BAÑOS Y PAISAJISMO FASE 1 ETAPAS 6-B1, 6-B1_EN, 7-B2, 7-B2_BÑ, 8-B9, 9-CT Y 10-P",
       "tipo": "Directos Civilco",
       "asignado": 801866407.29,
-      "contratado": 1159355776.0,
-      "diferencia": -357489368.71,
-      "pagado": 439652021.0,
-      "pendiente": 719703755.0,
-      "pct_cont_asig": 144.58,
-      "pct_pag_cont": 37.92
+      "contratado": 1161943376.0,
+      "diferencia": -360076968.71,
+      "pagado": 450050986.0,
+      "pendiente": 711892390.0,
+      "pct_cont_asig": 144.9,
+      "pct_pag_cont": 38.73
     },
     {
       "cc": "CC013-1.12",
@@ -278,22 +278,22 @@
       "asignado": 680033761.0,
       "contratado": 700194342.0,
       "diferencia": -20160581.0,
-      "pagado": 383867399.0,
-      "pendiente": 316326943.0,
+      "pagado": 424442744.0,
+      "pendiente": 275751598.0,
       "pct_cont_asig": 102.96,
-      "pct_pag_cont": 54.82
+      "pct_pag_cont": 60.62
     },
     {
       "cc": "CC013-1.13",
       "cuenta": "INSTALACIÓN EQUIPOS ESPECIALES BLOQUES FASE 1 ETAPAS 6-B1 Y 7-B2.",
       "tipo": "Directos Civilco",
       "asignado": 498000000.0,
-      "contratado": 362641933.0,
-      "diferencia": 135358067.0,
+      "contratado": 265776219.0,
+      "diferencia": 232223781.0,
       "pagado": 257064231.0,
-      "pendiente": 105577702.0,
-      "pct_cont_asig": 72.82,
-      "pct_pag_cont": 70.89
+      "pendiente": 8711988.0,
+      "pct_cont_asig": 53.37,
+      "pct_pag_cont": 96.72
     },
     {
       "cc": "CC013-1.14",
@@ -302,34 +302,34 @@
       "asignado": 8014133065.0,
       "contratado": 5134195774.0,
       "diferencia": 2879937291.0,
-      "pagado": 2444607383.0,
-      "pendiente": 2689588391.0,
+      "pagado": 2954549995.0,
+      "pendiente": 2179645779.0,
       "pct_cont_asig": 64.06,
-      "pct_pag_cont": 47.61
+      "pct_pag_cont": 57.55
     },
     {
       "cc": "CC013-1.15",
       "cuenta": "COSTOS POR ADMÓN: ASEOS, EQUIPOS, GASTOS.",
       "tipo": "Directos Civilco",
       "asignado": 3366269170.0,
-      "contratado": 2264475011.2200003,
-      "diferencia": 1101794158.78,
-      "pagado": 1862515624.0,
-      "pendiente": 401959387.22000027,
-      "pct_cont_asig": 67.27,
-      "pct_pag_cont": 82.25
+      "contratado": 2385594264.2200003,
+      "diferencia": 980674905.78,
+      "pagado": 1866667016.0,
+      "pendiente": 518927248.22000027,
+      "pct_cont_asig": 70.87,
+      "pct_pag_cont": 78.25
     },
     {
       "cc": "CC013-1.16",
       "cuenta": "RESERVA DE CONTINGENCIA Y RESERVA DE GESTIÓN FASE 1",
       "tipo": "Directos Civilco",
       "asignado": 1884292935.0,
-      "contratado": 837586334.215725,
-      "diferencia": 1046706600.78,
-      "pagado": 799060012.0,
+      "contratado": 838725723.215725,
+      "diferencia": 1045567211.78,
+      "pagado": 800199401.0,
       "pendiente": 38526322.215724945,
-      "pct_cont_asig": 44.45,
-      "pct_pag_cont": 95.4
+      "pct_cont_asig": 44.51,
+      "pct_pag_cont": 95.41
     }
   ]
 }
