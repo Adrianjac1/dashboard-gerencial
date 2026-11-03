@@ -15,6 +15,11 @@ const Formatter = {
     return '$\u00a0' + new Intl.NumberFormat('es-CO', { maximumFractionDigits: 0 }).format(num);
   },
 
+  // Alias para formato compacto
+  currencyCompact: function(val) {
+    return this.currency(val, true);
+  },
+
   // Formato Porcentaje (ej: 45.2%)
   percent: function(val, decimals = 1) {
     if (val === null || val === undefined || isNaN(val)) return '0.0%';
