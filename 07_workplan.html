@@ -503,73 +503,78 @@
   }
 
   function renderMainChart(totBase, totProy, totVar, caps) {
+    // Limpiar contenedor completamente para evitar fantasmas de charts anteriores
+    const container = document.getElementById('chartCombo');
+    if (comboChart) {
+      try { comboChart.destroy(); } catch(e) {}
+      comboChart = null;
+    }
+    container.innerHTML = '';
+
     if (chartMode === 'general' || caps.length <= 1) {
       // Modo Oficial Power BI: PRESUPUESTO GENERAL PROYECTO (3 barras con totales filtrados)
+      // Usar datos planos (array de números) + categories separadas para evitar conflictos
+      const varColor = totVar >= 0 ? '#f59e0b' : '#ef4444';
       const options = {
         series: [{
           name: 'Valor',
-          data: [
-            { x: 'PRESUPUESTO BASE', y: Math.round(totBase), fillColor: '#0284c7' },
-            { x: 'PROYECCIÓN PRESUPUESTO', y: Math.round(totProy), fillColor: '#10b981' },
-            { x: 'PROYECCIÓN - BASE', y: Math.round(totVar), fillColor: totVar >= 0 ? '#f59e0b' : '#ef4444' }
-          ]
+          data: [Math.round(totBase), Math.round(totProy), Math.round(totVar)]
         }],
         chart: {
           type: 'bar',
-          height: 250,
+          height: 260,
           toolbar: { show: false },
           fontFamily: 'Segoe UI, sans-serif'
         },
         plotOptions: {
           bar: {
             horizontal: false,
-            columnWidth: '45%',
+            columnWidth: '50%',
             distributed: true,
             dataLabels: { position: 'top' }
           }
         },
         dataLabels: {
           enabled: true,
-          formatter: val => Formatter.currency(val),
-          offsetY: -20,
+          formatter: function(val) { return Formatter.currency(val); },
+          offsetY: -22,
           style: { fontSize: '11.5px', fontWeight: '700', colors: ['#0f172a'] }
         },
-        colors: ['#0284c7', '#10b981', '#f59e0b'],
+        colors: ['#0284c7', '#10b981', varColor],
         xaxis: {
           categories: ['PRESUPUESTO BASE', 'PROYECCIÓN PRESUPUESTO', 'PROYECCIÓN - BASE'],
-          labels: { style: { fontSize: '11px', fontWeight: '700', colors: '#1e293b' } }
+          labels: { style: { fontSize: '10.5px', fontWeight: '700' } }
         },
         yaxis: {
           labels: {
-            formatter: val => Formatter.currencyCompact(val),
+            formatter: function(val) { return Formatter.currencyCompact(val); },
             style: { fontSize: '10px' }
           }
         },
         legend: { show: false },
         tooltip: {
-          y: { formatter: val => Formatter.currency(val) }
+          y: { formatter: function(val) { return Formatter.currency(val); } }
         },
-        grid: { borderColor: '#f1f5f9', padding: { top: 25 } }
+        grid: { borderColor: '#f1f5f9', padding: { top: 30 } }
       };
 
-      if (comboChart) comboChart.destroy();
-      comboChart = new ApexCharts(document.getElementById('chartCombo'), options);
+      comboChart = new ApexCharts(container, options);
       comboChart.render();
     } else {
-      // Modo Desglose por Capítulos
+      // Modo Desglose por Capítulos (grouped bar)
       const sorted = [...caps].sort((a,b) => (a.edt2 || 0) - (b.edt2 || 0));
-      const categories = sorted.map(c => `EDT ${c.edt || c.edt2}`);
+      const categories = sorted.map(c => 'EDT ' + (c.edt || c.edt2));
       const dataBase   = sorted.map(c => Math.round(c.valor_base || 0));
       const dataProy   = sorted.map(c => Math.round(c.valor_proyeccion || 0));
 
       const options = {
         series: [
-          { name: 'Presupuesto Base', data: dataBase },
-          { name: 'Proyección Presupuesto', data: dataProy }
+          { name: 'Vlr. Presupuesto Base', data: dataBase },
+          { name: 'Vlr. Proyección Presupuesto', data: dataProy }
         ],
         chart: {
           type: 'bar',
-          height: 250,
+          height: 260,
           toolbar: { show: false },
           fontFamily: 'Segoe UI, sans-serif'
         },
@@ -583,17 +588,18 @@
           labels: { style: { fontSize: '10px' } }
         },
         yaxis: {
-          labels: { formatter: val => Formatter.currencyCompact(val) }
+          labels: {
+            formatter: function(val) { return Formatter.currencyCompact(val); }
+          }
         },
         legend: { position: 'top', fontSize: '11px' },
         tooltip: {
-          y: { formatter: val => Formatter.currency(val) }
+          y: { formatter: function(val) { return Formatter.currency(val); } }
         },
         grid: { borderColor: '#f1f5f9' }
       };
 
-      if (comboChart) comboChart.destroy();
-      comboChart = new ApexCharts(document.getElementById('chartCombo'), options);
+      comboChart = new ApexCharts(container, options);
       comboChart.render();
     }
   }
