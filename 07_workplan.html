@@ -379,8 +379,8 @@
 
 </div>
 
-<script src="../data/workplan.js"></script>
-<script src="../js/portal.js"></script>
+<script src="../data/workplan.js?v=20261103b"></script>
+<script src="../js/portal.js?v=20261103b"></script>
 <script>
   let allItems = [];
   let allCapitulos = [];
@@ -393,11 +393,16 @@
   let fEDT4 = null;
 
   async function init() {
-    let data = window.DATA_WORKPLAN;
-    if (!data && typeof loadData === 'function') {
-      data = await loadData('workplan');
-    }
-    if (!data) return;
+    try {
+      let data = window.DATA_WORKPLAN;
+      if (!data && typeof loadData === 'function') {
+        data = await loadData('workplan');
+      }
+      if (!data) {
+        console.error('DATA_WORKPLAN no cargó');
+        document.getElementById('chartCombo').innerHTML = '<p style="color:red;padding:20px;font-weight:bold">ERROR: No se pudieron cargar los datos de WorkPlan</p>';
+        return;
+      }
 
     allItems = data.items || [];
     allCapitulos = data.capitulos || [];
@@ -408,6 +413,10 @@
 
     renderSlicers();
     applyFilters();
+    } catch(err) {
+      console.error('Error en init():', err);
+      document.getElementById('chartCombo').innerHTML = '<p style="color:red;padding:20px;font-weight:bold">ERROR JS: ' + err.message + '</p>';
+    }
   }
 
   function renderSlicers() {
