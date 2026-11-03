@@ -3,65 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Subcontratos & Gantt — COMCEC · INTERCEC</title>
+<title>Sub-contratos & Gantt — COMCEC — INTERCEC</title>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <style>
-  :root { --bg-main: #f8fafc; --card-bg: #ffffff; --text-main: #1e293b; --border: #e2e8f0; }
+  :root {
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --border: #e2e8f0;
+    --pbi-blue: #0284c7;
+    --pbi-dark: #0f172a;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #f1f5f9; color: var(--text-main); font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; padding: 16px 20px 40px; }
-  .container { max-width: 1400px; margin: 0 auto; }
-  .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-  .back-link { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #ffffff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  body {
+    background: #f1f5f9;
+    color: var(--text-main);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    padding: 16px 20px 40px;
+  }
+  .container { max-width: 1560px; margin: 0 auto; }
+  
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
   .back-link:hover { background: #334155; }
 
-  .header-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  /* Header Card */
+  .header-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
   .header-titles { text-align: center; flex: 1; }
-  .header-titles h1 { font-size: 14px; font-weight: 800; color: #0f172a; }
-  .header-titles h2 { font-size: 12px; font-weight: 700; color: #334155; }
-  .btn-reset-text { background: none; border: none; color: #ef4444; font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; }
+  .header-titles h1 { font-size: 15px; font-weight: 800; color: #0f172a; letter-spacing: -0.3px; }
+  .header-titles h2 { font-size: 12px; font-weight: 600; color: #475569; margin-top: 2px; }
+  .btn-reset {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .btn-reset:hover { background: #fecaca; }
 
   /* KPI Grid */
-  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 16px; }
-  .kpi-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; text-align: center; }
-  .kpi-box .lbl { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
-  .kpi-box .val { font-size: clamp(13px, 1.4vw, 17px); font-weight: 800; color: #0f172a; margin-top: 2px; font-family: monospace; letter-spacing: -0.5px; }
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .kpi-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .kpi-box .lbl { font-size: 10.5px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; }
+  .kpi-box .val {
+    font-size: clamp(15px, 1.6vw, 20px);
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 4px;
+    font-family: 'Segoe UI', monospace;
+  }
   .bg-blue { background: #eff6ff; border-color: #bfdbfe; }
   .bg-green { background: #f0fdf4; border-color: #bbf7d0; }
   .bg-yellow { background: #fefce8; border-color: #fef08a; }
 
-  /* Slicers Basic (Toggle Buttons) */
-  .filters-container { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; }
-  .filter-row { display: flex; flex-direction: column; gap: 4px; }
-  .filter-row-title { font-size: 10px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; }
-  .filter-toggles { display: flex; flex-wrap: wrap; gap: 4px; }
+  /* Filters Section */
+  .filters-container {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .filter-row { display: flex; flex-direction: column; gap: 6px; }
+  .filter-row-title { font-size: 11px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; }
+  .filter-toggles { display: flex; flex-wrap: wrap; gap: 5px; }
   .f-toggle {
-    padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer;
-    border: 1px solid rgba(0,0,0,0.12); background: #f1f5f9; color: #334155; transition: all .15s;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all .15s;
     user-select: none;
   }
-  .f-toggle.active { background: #3b82f6; color: #fff; border-color: #2563eb; }
+  .f-toggle.active { background: #0284c7; color: #fff; border-color: #0369a1; }
   .f-toggle:hover:not(.active) { background: #e2e8f0; }
 
   /* Search Slicers Grid */
-  .slicers-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 16px; }
-  .search-card { border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; }
-  .search-card .sc-title { font-size: 9.5px; font-weight: 800; text-transform: uppercase; }
-  .search-card input { width: 100%; background: #ffffff; border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; padding: 4px 8px; font-size: 11.5px; font-weight: 600; outline: none; }
-  .sc-yellow { background: #fef08a; color: #854d0e; }
-  .sc-green { background: #bbf7d0; color: #166534; }
-  .sc-blue { background: #bfdbfe; color: #1e40af; }
-  .sc-purple { background: #e9d5ff; color: #6b21a8; }
-  .sc-pink { background: #fbcfe8; color: #831843; }
+  .slicers-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .search-card {
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .search-card .sc-title { font-size: 10px; font-weight: 800; text-transform: uppercase; }
+  .search-card input {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 11.5px;
+    font-weight: 600;
+    outline: none;
+  }
+  .sc-yellow { background: #fef9c3; color: #854d0e; }
+  .sc-green { background: #dcfce7; color: #166534; }
+  .sc-blue { background: #e0f2fe; color: #0369a1; }
+  .sc-purple { background: #f3e8ff; color: #6b21a8; }
+  .sc-pink { background: #fce7f3; color: #9d174d; }
 
-  .card-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 16px; }
-  .card-ttl { font-size: 12px; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; }
+  /* Panels */
+  .card-panel {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .card-ttl {
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #1e3a8a;
+    text-transform: uppercase;
+  }
+  .panel-sub { font-size: 11px; color: #64748b; font-weight: 600; }
 
-  .table-scroll { overflow-x: auto; max-height: 440px; border: 1px solid var(--border); border-radius: 6px; }
-  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
-  table.pbi-table th { background: #f8fafc; color: #475569; font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid var(--border); position: sticky; top: 0; text-align: left; }
-  table.pbi-table td { padding: 6px 10px; border-bottom: 1px solid #f1f5f9; }
-  table.pbi-table tr:hover td { background: #f0fdf4; }
-  .num { text-align: right; font-family: monospace; }
+  /* Tables */
+  .table-scroll {
+    overflow-x: auto;
+    max-height: 460px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  table.pbi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  table.pbi-table th {
+    background: #f8fafc;
+    color: #334155;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-bottom: 2px solid #cbd5e1;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    text-align: left;
+  }
+  table.pbi-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  table.pbi-table tr:hover td { background: #f8fafc; }
+  .num { text-align: right; font-family: monospace; font-weight: 600; }
+  .badge-estado {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .badge-ejecucion { background: #dcfce7; color: #15803d; }
+  .badge-liquidado { background: #e0f2fe; color: #0369a1; }
+  .badge-terminado { background: #fef3c7; color: #b45309; }
+  .badge-otro { background: #f1f5f9; color: #475569; }
+
+  /* Gantt Controls */
+  .gantt-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 11px;
+    color: #475569;
+  }
+  .gantt-controls select {
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    font-size: 11px;
+    font-weight: 600;
+  }
 </style>
 </head>
 <body>
@@ -74,23 +257,23 @@
   </div>
 
   <div class="header-box">
-    <div style="width:100px"></div>
+    <div style="width:120px"></div>
     <div class="header-titles">
-      <h1>PROGRAMACION SUB CONTRATOS - Plazo Ejecución - Esquema GANTT</h1>
+      <h1>PROGRAMACIÓN SUB CONTRATOS — Plazo Ejecución — Esquema GANTT</h1>
       <h2>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h2>
     </div>
-    <button class="btn-reset-text" onclick="resetFilters()">Borrar filtros</button>
+    <button class="btn-reset" onclick="resetFilters()">Borrar filtros</button>
   </div>
 
   <!-- KPIS ROW -->
   <div class="kpi-row">
     <div class="kpi-box bg-blue">
       <div class="lbl">Valor Compromiso Actualizado</div>
-      <div class="val" id="kpiCompromiso">$0</div>
+      <div class="val" id="kpiCompromiso" style="color:#0369a1">$0</div>
     </div>
     <div class="kpi-box bg-green">
       <div class="lbl">Valor Obligado Pagado</div>
-      <div class="val" id="kpiPagado" style="color:#16a34a">$0</div>
+      <div class="val" id="kpiPagado" style="color:#15803d">$0</div>
     </div>
     <div class="kpi-box bg-yellow">
       <div class="lbl">Cantidad Contratos</div>
@@ -98,7 +281,7 @@
     </div>
     <div class="kpi-box">
       <div class="lbl">Fecha de Corte</div>
-      <div class="val" id="kpiFechaCorte" style="font-size:14px">20/09/2026</div>
+      <div class="val" id="kpiFechaCorte" style="font-size:14px;color:#334155">—</div>
     </div>
   </div>
 
@@ -117,15 +300,15 @@
   <!-- SEARCH SLICERS ROW -->
   <div class="slicers-bar">
     <div class="search-card sc-yellow">
-      <span class="sc-title">CODIGO CONTRATO</span>
+      <span class="sc-title">N° CONTRATO</span>
       <input type="text" id="filterCodigo" placeholder="Buscar código..." oninput="applyFilters()">
     </div>
     <div class="search-card sc-green">
-      <span class="sc-title">CONTRATISTA</span>
+      <span class="sc-title">EMPRESA CONTRATISTA</span>
       <input type="text" id="filterContratista" placeholder="Buscar contratista..." oninput="applyFilters()">
     </div>
     <div class="search-card sc-blue">
-      <span class="sc-title">OBJETO CONTRATO</span>
+      <span class="sc-title">OBJETO DEL CONTRATO</span>
       <input type="text" id="filterObjeto" placeholder="Buscar objeto..." oninput="applyFilters()">
     </div>
     <div class="search-card sc-purple">
@@ -133,37 +316,77 @@
       <input type="text" id="filterCC" placeholder="Buscar centro de costo..." oninput="applyFilters()">
     </div>
     <div class="search-card sc-pink">
-      <span class="sc-title">Detalle Centro Costos</span>
+      <span class="sc-title">Detalle - CCOSTOS</span>
       <input type="text" id="filterDetalleCC" placeholder="Buscar detalle..." oninput="applyFilters()">
     </div>
   </div>
 
+  <!-- TABLA 1: CONTROL PRESUPUESTAL Y FINANCIERO -->
   <div class="card-panel">
-    <div class="card-ttl">Esquema GANTT - Plazos de Ejecución de Subcontratos</div>
-    <div id="chartGantt" style="height:280px"></div>
-  </div>
-
-  <div class="card-panel">
-    <div class="card-ttl" style="display:flex;justify-content:space-between">
-      <span>Relación de Subcontratos y Órdenes</span>
-      <span style="color:#64748b;font-size:11px" id="lblCount">Mostrando contratos</span>
+    <div class="panel-header">
+      <div class="card-ttl">Tabla 1: Relación Presupuestal y Financiera de Subcontratos</div>
+      <div class="panel-sub" id="lblCountTable1">Mostrando contratos</div>
     </div>
     <div class="table-scroll">
       <table class="pbi-table">
         <thead>
           <tr>
-            <th>Nº Contrato</th>
-            <th>Empresa Contratista</th>
-            <th>Objeto del Contrato</th>
-            <th>Fecha Inicio</th>
-            <th>Fecha Fin</th>
-            <th class="num">Compromiso Actualizado</th>
-            <th class="num">Obligado Pagado</th>
-            <th style="text-align:center">% Pagado</th>
+            <th>N° CONTRATO</th>
+            <th>EMPRESA CONTRATISTA</th>
+            <th>CCOSTOS</th>
+            <th>Detalle - CCOSTOS</th>
+            <th>OBJETO DEL CONTRATO</th>
+            <th class="num">VALOR COMPROMISO ACTUALIZADO</th>
+            <th class="num" style="text-align:center">% FACTURADO</th>
+            <th class="num" style="text-align:center">% EJECUTADO</th>
+            <th class="num">VALOR OBLIGADO PAGADO</th>
           </tr>
         </thead>
-        <tbody id="tableBody">
-          <tr><td colspan="8" style="text-align:center;padding:20px;color:#94a3b8">Cargando contratos...</td></tr>
+        <tbody id="tableBody1">
+          <tr><td colspan="9" style="text-align:center;padding:20px;color:#94a3b8">Cargando contratos...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- GANTT CHART -->
+  <div class="card-panel">
+    <div class="panel-header">
+      <div class="card-ttl">Cronograma y Plazos de Ejecución — Esquema GANTT</div>
+      <div class="gantt-controls">
+        <span>Mostrar:</span>
+        <select id="ganttLimit" onchange="renderGantt(lastFilteredItems)">
+          <option value="15">Top 15 por Plazo/Monto</option>
+          <option value="30" selected>Top 30</option>
+          <option value="50">Top 50</option>
+          <option value="100">Top 100</option>
+        </select>
+      </div>
+    </div>
+    <div id="chartGantt" style="min-height:360px"></div>
+  </div>
+
+  <!-- TABLA 2: PLAZOS Y FECHAS -->
+  <div class="card-panel">
+    <div class="panel-header">
+      <div class="card-ttl">Tabla 2: Plazos de Ejecución y Vigencia de Contratos</div>
+      <div class="panel-sub" id="lblCountTable2">Mostrando contratos</div>
+    </div>
+    <div class="table-scroll">
+      <table class="pbi-table">
+        <thead>
+          <tr>
+            <th>N° CONTRATO</th>
+            <th>EMPRESA CONTRATISTA</th>
+            <th>CCOSTOS</th>
+            <th>OBJETO DEL CONTRATO</th>
+            <th>FECHA DE INICIO</th>
+            <th>FECHA DE FINALIZACIÓN</th>
+            <th style="text-align:center">ESTADO</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody2">
+          <tr><td colspan="7" style="text-align:center;padding:20px;color:#94a3b8">Cargando datos...</td></tr>
         </tbody>
       </table>
     </div>
@@ -175,21 +398,26 @@
 <script src="../js/portal.js"></script>
 <script>
   let allSubs = [];
+  let lastFilteredItems = [];
   let ganttChart = null;
 
-  // Filtros activos tipo Basic (Sets para multiselección)
   const selEstado = new Set();
   const selTipo   = new Set();
 
   async function init() {
-    const data = await loadData('subcontratos');
+    let data = window.DATA_SUBCONTRATOS;
+    if (!data && typeof loadData === 'function') {
+      data = await loadData('subcontratos');
+    }
     if (!data) return;
 
     allSubs = data.subcontratos || [];
-    const k = data.kpis;
-    if (k.fecha_corte) document.getElementById('kpiFechaCorte').innerText = k.fecha_corte;
+    const k = data.kpis || {};
+    if (k.fecha_corte) {
+      document.getElementById('kpiFechaCorte').innerText = k.fecha_corte;
+    }
 
-    // Generar botones dinámicos para slicers Basic
+    // Build slicer toggles
     const estados = [...new Set(allSubs.map(s => s.estado).filter(Boolean))].sort();
     const tipos   = [...new Set(allSubs.map(s => s.tipo).filter(Boolean))].sort();
 
@@ -220,6 +448,20 @@
     });
   }
 
+  function resetFilters() {
+    selEstado.clear();
+    selTipo.clear();
+    document.querySelectorAll('.f-toggle.active').forEach(b => b.classList.remove('active'));
+
+    document.getElementById('filterCodigo').value = '';
+    document.getElementById('filterContratista').value = '';
+    document.getElementById('filterObjeto').value = '';
+    document.getElementById('filterCC').value = '';
+    document.getElementById('filterDetalleCC').value = '';
+
+    applyFilters();
+  }
+
   function applyFilters() {
     const sCod  = (document.getElementById('filterCodigo').value || '').toLowerCase().trim();
     const sCont = (document.getElementById('filterContratista').value || '').toLowerCase().trim();
@@ -228,11 +470,9 @@
     const sDet  = (document.getElementById('filterDetalleCC').value || '').toLowerCase().trim();
 
     const filtered = allSubs.filter(s => {
-      // Basic slicer sets
       if (selEstado.size && !selEstado.has(s.estado)) return false;
       if (selTipo.size   && !selTipo.has(s.tipo)) return false;
 
-      // Text searches
       if (sCod  && !(s.codigo || '').toLowerCase().includes(sCod)) return false;
       if (sCont && !(s.contratista || '').toLowerCase().includes(sCont)) return false;
       if (sObj  && !(s.objeto || '').toLowerCase().includes(sObj)) return false;
@@ -242,7 +482,9 @@
       return true;
     });
 
-    // Actualizar KPIs según filtros
+    lastFilteredItems = filtered;
+
+    // Actualizar KPIs
     const totComp = filtered.reduce((acc, s) => acc + (s.valor_compromiso || 0), 0);
     const totPag  = filtered.reduce((acc, s) => acc + (s.valor_pagado || 0), 0);
 
@@ -250,74 +492,158 @@
     document.getElementById('kpiPagado').innerText     = Formatter.currency(totPag);
     document.getElementById('kpiCantidad').innerText   = Formatter.number(filtered.length);
 
-    document.getElementById('lblCount').innerText = `Mostrando ${filtered.length} de ${allSubs.length} contratos`;
+    document.getElementById('lblCountTable1').innerText = `Mostrando ${filtered.length} de ${allSubs.length} registros`;
+    document.getElementById('lblCountTable2').innerText = `Mostrando ${filtered.length} de ${allSubs.length} registros`;
 
+    renderTable1(filtered);
+    renderTable2(filtered);
     renderGantt(filtered);
-    renderTable(filtered);
+  }
+
+  function renderTable1(items) {
+    const tbody = document.getElementById('tableBody1');
+    if (!items.length) {
+      tbody.innerHTML = '<tr><td colspan="9" style="text-align:center;padding:20px;color:#94a3b8">No se encontraron contratos con los filtros aplicados.</td></tr>';
+      return;
+    }
+
+    const html = items.map(s => {
+      const factPct = s.pct_facturado != null ? (s.pct_facturado * 100).toFixed(1) + '%' : '—';
+      const ejecPct = s.pct_ejecutado != null ? (s.pct_ejecutado * 100).toFixed(1) + '%' : '—';
+
+      return `<tr>
+        <td style="font-weight:700;color:#0284c7">${s.codigo || '—'}</td>
+        <td style="font-weight:600">${s.contratista || '—'}</td>
+        <td>${s.ccosto || '—'}</td>
+        <td>${s.detalle_ccosto || '—'}</td>
+        <td style="max-width:320px;overflow:hidden;text-overflow:ellipsis" title="${s.objeto || ''}">${s.objeto || '—'}</td>
+        <td class="num">${Formatter.currency(s.valor_compromiso || 0)}</td>
+        <td class="num" style="text-align:center">${factPct}</td>
+        <td class="num" style="text-align:center">${ejecPct}</td>
+        <td class="num" style="color:#15803d">${Formatter.currency(s.valor_pagado || 0)}</td>
+      </tr>`;
+    }).join('');
+
+    tbody.innerHTML = html;
+  }
+
+  function renderTable2(items) {
+    const tbody = document.getElementById('tableBody2');
+    if (!items.length) {
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;color:#94a3b8">No se encontraron contratos con los filtros aplicados.</td></tr>';
+      return;
+    }
+
+    const html = items.map(s => {
+      let badgeCls = 'badge-otro';
+      const estLower = (s.estado || '').toLowerCase();
+      if (estLower.includes('ejecu')) badgeCls = 'badge-ejecucion';
+      else if (estLower.includes('liquid')) badgeCls = 'badge-liquidado';
+      else if (estLower.includes('termin')) badgeCls = 'badge-terminado';
+
+      return `<tr>
+        <td style="font-weight:700;color:#0284c7">${s.codigo || '—'}</td>
+        <td style="font-weight:600">${s.contratista || '—'}</td>
+        <td>${s.ccosto || '—'}</td>
+        <td style="max-width:380px;overflow:hidden;text-overflow:ellipsis" title="${s.objeto || ''}">${s.objeto || '—'}</td>
+        <td>${s.fecha_inicio || '—'}</td>
+        <td>${s.fecha_fin || '—'}</td>
+        <td style="text-align:center"><span class="badge-estado ${badgeCls}">${s.estado || '—'}</span></td>
+      </tr>`;
+    }).join('');
+
+    tbody.innerHTML = html;
   }
 
   function renderGantt(items) {
-    const valid = items.filter(i => i.fecha_inicio && i.fecha_fin && i.valor_compromiso > 30000000).slice(0, 12);
-    const seriesData = valid.map(i => {
-      const d1 = new Date(i.fecha_inicio).getTime();
-      const d2 = new Date(i.fecha_fin).getTime();
+    const limit = parseInt(document.getElementById('ganttLimit').value || '30', 10);
+    
+    // Contratos con fechas válidas ordenados por mayor compromiso o fecha inicio
+    const valid = items
+      .filter(i => i.fecha_inicio && i.fecha_fin && !isNaN(new Date(i.fecha_inicio).getTime()) && !isNaN(new Date(i.fecha_fin).getTime()))
+      .sort((a, b) => (b.valor_compromiso || 0) - (a.valor_compromiso || 0))
+      .slice(0, limit);
+
+    if (!valid.length) {
+      document.getElementById('chartGantt').innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;font-size:12px">No hay contratos con fechas válidas para graficar en el Gantt.</div>';
+      return;
+    }
+
+    const seriesData = valid.map(s => {
+      let dStart = new Date(s.fecha_inicio).getTime();
+      let dEnd   = new Date(s.fecha_fin).getTime();
+      if (dEnd < dStart) {
+        const tmp = dStart; dStart = dEnd; dEnd = tmp;
+      }
       return {
-        x: i.contratista ? (i.contratista.length > 25 ? i.contratista.slice(0, 25) + '...' : i.contratista) : i.codigo,
-        y: [d1, d2]
+        x: `${s.codigo} - ${(s.contratista || '').substring(0, 25)}`,
+        y: [dStart, dEnd],
+        contratista: s.contratista,
+        objeto: s.objeto,
+        compromiso: s.valor_compromiso,
+        estado: s.estado
       };
-    }).filter(s => !isNaN(s.y[0]) && !isNaN(s.y[1]) && s.y[1] > s.y[0]);
+    });
+
+    const chartHeight = Math.max(340, Math.min(800, valid.length * 28 + 90));
 
     const options = {
-      chart: { type: 'rangeBar', height: 260, toolbar: { show: false } },
-      plotOptions: { bar: { horizontal: true, barHeight: '50%', borderRadius: 4 } },
-      series: [{ name: 'Plazo Ejecución', data: seriesData }],
-      xaxis: { type: 'datetime' },
-      colors: ['#3b82f6'],
-      grid: { padding: { top: 20 } },
-      tooltip: { x: { format: 'dd MMM yyyy' } }
+      series: [{ name: 'Plazo de Ejecución', data: seriesData }],
+      chart: {
+        type: 'rangeBar',
+        height: chartHeight,
+        toolbar: { show: true, tools: { zoom: true, zoomin: true, zoomout: true, pan: true, reset: true } },
+        fontFamily: 'Segoe UI, sans-serif'
+      },
+      plotOptions: {
+        bar: {
+          horizontal: true,
+          barHeight: '65%',
+          rangeBarGroupRows: false
+        }
+      },
+      colors: ['#0284c7'],
+      xaxis: {
+        type: 'datetime',
+        labels: {
+          format: 'MMM yyyy',
+          style: { fontSize: '11px', colors: '#64748b' }
+        }
+      },
+      yaxis: {
+        labels: {
+          style: { fontSize: '10.5px', fontWeight: 600, colors: '#334155' }
+        }
+      },
+      tooltip: {
+        custom: function({ seriesIndex, dataPointIndex, w }) {
+          const pt = w.config.series[seriesIndex].data[dataPointIndex];
+          const d1 = new Date(pt.y[0]).toLocaleDateString('es-CO');
+          const d2 = new Date(pt.y[1]).toLocaleDateString('es-CO');
+          return `
+            <div style="padding:10px 14px;background:#1e293b;color:#fff;border-radius:6px;font-size:11px;line-height:1.4">
+              <strong style="color:#38bdf8">${pt.x}</strong><br>
+              <span style="color:#94a3b8">Objeto:</span> ${pt.objeto || '—'}<br>
+              <span style="color:#94a3b8">Plazo:</span> ${d1} → ${d2}<br>
+              <span style="color:#94a3b8">Compromiso:</span> ${Formatter.currency(pt.compromiso || 0)}<br>
+              <span style="color:#94a3b8">Estado:</span> ${pt.estado || '—'}
+            </div>
+          `;
+        }
+      },
+      grid: { borderColor: '#f1f5f9' }
     };
 
-    if (ganttChart) ganttChart.destroy();
-    ganttChart = new ApexCharts(document.querySelector("#chartGantt"), options);
+    if (ganttChart) {
+      ganttChart.destroy();
+    }
+    document.getElementById('chartGantt').innerHTML = '';
+    ganttChart = new ApexCharts(document.getElementById('chartGantt'), options);
     ganttChart.render();
   }
 
-  function renderTable(items) {
-    const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = '';
-    const slice = items.slice(0, 100);
-
-    slice.forEach(s => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td style="font-family:monospace;font-weight:700;color:#0284c7">${s.codigo || '-'}</td>
-        <td style="font-weight:600;color:#0f172a">${s.contratista || '-'}</td>
-        <td style="color:#64748b;font-size:11px">${s.objeto || '-'}</td>
-        <td style="font-family:monospace;font-size:11px">${s.fecha_inicio || '-'}</td>
-        <td style="font-family:monospace;font-size:11px">${s.fecha_fin || '-'}</td>
-        <td class="num">${Formatter.currency(s.valor_compromiso)}</td>
-        <td class="num" style="color:#16a34a;font-weight:700">${Formatter.currency(s.valor_pagado)}</td>
-        <td style="text-align:center"><span style="background:#e0f2fe;color:#0369a1;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">${s.pct_pagado}%</span></td>
-      `;
-      tbody.appendChild(tr);
-    });
-  }
-
-  function resetFilters() {
-    selEstado.clear();
-    selTipo.clear();
-    document.querySelectorAll('.f-toggle.active').forEach(b => b.classList.remove('active'));
-
-    document.getElementById('filterCodigo').value      = '';
-    document.getElementById('filterContratista').value = '';
-    document.getElementById('filterObjeto').value      = '';
-    document.getElementById('filterCC').value          = '';
-    document.getElementById('filterDetalleCC').value   = '';
-
-    applyFilters();
-  }
-
-  init();
+  window.addEventListener('DOMContentLoaded', init);
 </script>
+
 </body>
 </html>

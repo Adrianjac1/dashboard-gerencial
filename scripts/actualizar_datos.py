@@ -353,20 +353,69 @@ def procesar_actividades():
 
 
 # ─────────────────────────────────────────────────────────────────────
-# 4. HITOS PDT
+# 4. HITOS PDT (Fuente real en Power BI: Activities_WBS)
 # ─────────────────────────────────────────────────────────────────────
-def procesar_hitos(actividades):
-    print("\n[4/7] Hitos PDT...")
-    hitos = [
-        a for a in actividades
-        if "HITO" in (a["name"] or "").upper()
-        or "ENTREGA" in (a["name"] or "").upper()
-        or a["duration"] == 0
-    ][:60]
+def procesar_hitos(actividades=None):
+    print("\n[4/7] Hitos PDT (Activities_WBS)...")
+    try:
+        df_wbs = _xls("actividades", sheet_name="ACTIVITIES WBS")
+        if df_wbs.iloc[0]["Activity ID"] == "Activity ID":
+            df_wbs = df_wbs.iloc[1:].reset_index(drop=True)
+    except Exception as e:
+        print(f"   [WARN] No se pudo leer ACTIVITIES WBS: {e}")
+        df_wbs = pd.DataFrame()
+
+    hitos = []
+    fecha_corte_hitos = None
+    if not df_wbs.empty:
+        for _, row in df_wbs.iterrows():
+            act_id = _ser(row.get("Activity ID"))
+            if not act_id:
+                continue
+            cumple = str(row.get("CUMPLE vs. ATRASADO") or "").strip().upper()
+            if not fecha_corte_hitos and pd.notna(row.get("Data Date")):
+                fecha_corte_hitos = _ser(row.get("Data Date"))
+            hitos.append({
+                "fenix":            _ser(row.get("FENIX")),
+                "num":              _ser(row.get("#")),
+                "activity_id":      act_id,
+                "bl_start":         _ser(row.get("BL Project Start")),
+                "bl_finish":        _ser(row.get("BL Project Finish")),
+                "planned_duration": _ser(row.get("Planned Duration")),
+                "start":            _ser(row.get("Start")),
+                "finish":           _ser(row.get("Finish")),
+                "total_float":      _ser(row.get("Total Float")),
+                "estado":           cumple if cumple in ["CUMPLE", "ATRASADO"] else "CUMPLE",
+                "cumple_vs_atrasado": cumple,
+            })
+    else:
+        # Fallback si no está la hoja
+        hitos = [
+            {
+                "fenix": "FENIX",
+                "num": str(idx + 1).zfill(2),
+                "activity_id": a["id"],
+                "bl_start": a["planned_start"],
+                "bl_finish": a["planned_finish"],
+                "planned_duration": f"{a['duration']}d",
+                "start": a["planned_start"],
+                "finish": a["planned_finish"],
+                "total_float": str(a.get("total_float", "0d")),
+                "estado": "CUMPLE" if a["status"] == "Completed" else "ATRASADO",
+                "cumple_vs_atrasado": "CUMPLE" if a["status"] == "Completed" else "ATRASADO",
+            }
+            for idx, a in enumerate(actividades or [])
+            if "HITO" in (a["name"] or "").upper() or "ENTREGA" in (a["name"] or "").upper() or a["duration"] == 0
+        ]
+
+    tot_cumple = sum(1 for h in hitos if h["estado"] == "CUMPLE")
+    tot_atraso = sum(1 for h in hitos if h["estado"] == "ATRASADO")
     _save("hitos_pdt", "DATA_HITOS", {
         "kpis": {
             "total_hitos": len(hitos),
-            "cumplidos":   sum(1 for h in hitos if h["status"] == "Completed"),
+            "cumplidos":   tot_cumple,
+            "atrasados":   tot_atraso,
+            "fecha_corte": fecha_corte_hitos or FECHA_CORTE,
         },
         "hitos": hitos,
     })

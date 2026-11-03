@@ -6,67 +6,266 @@
 <title>01-PDT Actividades — COMCEC · INTERCEC</title>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <style>
-  :root { --bg-main: #f8fafc; --card-bg: #ffffff; --text-main: #1e293b; --border: #e2e8f0; }
+  :root {
+    --bg-main: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --border: #e2e8f0;
+    --pbi-blue: #0284c7;
+    --pbi-dark: #0f172a;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #f1f5f9; color: var(--text-main); font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; padding: 16px 20px 40px; }
-  .container { max-width: 1400px; margin: 0 auto; }
-  .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-  .back-link { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #ffffff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  body {
+    background: #f1f5f9;
+    color: var(--text-main);
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    padding: 16px 20px 40px;
+  }
+  .container { max-width: 1560px; margin: 0 auto; }
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
   .back-link:hover { background: #334155; }
 
-  .header-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .header-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
   .header-titles { text-align: center; flex: 1; }
-  .header-titles h1 { font-size: 14px; font-weight: 800; color: #0f172a; }
-  .header-titles h2 { font-size: 12px; font-weight: 700; color: #334155; }
-  .btn-reset-text { background: none; border: none; color: #ef4444; font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; }
+  .header-titles h1 { font-size: 15px; font-weight: 800; color: #0f172a; letter-spacing: -0.3px; }
+  .header-titles h2 { font-size: 12px; font-weight: 600; color: #475569; margin-top: 2px; }
+  .btn-reset {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .btn-reset:hover { background: #fecaca; }
 
-  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 16px; }
-  .kpi-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; text-align: center; }
-  .kpi-box .lbl { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
-  .kpi-box .val { font-size: 20px; font-weight: 800; color: #0f172a; margin-top: 2px; font-family: monospace; }
+  /* KPI Grid */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .kpi-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .kpi-box .lbl { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; }
+  .kpi-box .val {
+    font-size: clamp(16px, 1.6vw, 22px);
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 4px;
+    font-family: 'Segoe UI', monospace;
+  }
   .bg-green { background: #f0fdf4; border-color: #bbf7d0; }
   .bg-yellow { background: #fefce8; border-color: #fef08a; }
   .bg-blue { background: #eff6ff; border-color: #bfdbfe; }
   .bg-gray { background: #f8fafc; border-color: #e2e8f0; }
 
-  /* Slicers Basic (Toggle Buttons) */
-  .filters-container { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; }
-  .filter-row { display: flex; flex-direction: column; gap: 4px; }
-  .filter-row-title { font-size: 10px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; }
-  .filter-toggles { display: flex; flex-wrap: wrap; gap: 4px; }
+  /* Slicers */
+  .filters-container {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .filter-row { display: flex; flex-direction: column; gap: 6px; }
+  .filter-row-title { font-size: 11px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; }
+  .filter-toggles { display: flex; flex-wrap: wrap; gap: 5px; }
   .f-toggle {
-    padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer;
-    border: 1px solid rgba(0,0,0,0.12); background: #f1f5f9; color: #334155; transition: all .15s;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all .15s;
     user-select: none;
   }
-  .f-toggle.active { background: #3b82f6; color: #fff; border-color: #2563eb; }
+  .f-toggle.active { background: #0284c7; color: #fff; border-color: #0369a1; }
   .f-toggle:hover:not(.active) { background: #e2e8f0; }
 
-  .slicers-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 12px; }
-  .search-card { border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; background: #ffffff; border: 1px solid var(--border); }
-  .search-card .sc-title { font-size: 9.5px; font-weight: 800; text-transform: uppercase; color: #1e3a8a; }
-  .search-card input, .search-card select { width: 100%; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; font-size: 11.5px; outline: none; }
+  .slicers-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .search-card {
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+  }
+  .search-card .sc-title { font-size: 10px; font-weight: 800; text-transform: uppercase; color: #1e3a8a; }
+  .search-card input, .search-card select {
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 11.5px;
+    outline: none;
+    font-weight: 600;
+  }
 
   /* Date Range Slicers */
-  .date-filters-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 16px; }
-  .date-card { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; }
-  .date-card-title { font-size: 9.5px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 6px; }
-  .date-inputs { display: flex; gap: 6px; align-items: center; }
+  .date-filters-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .date-card {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .date-card-title { font-size: 10px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 6px; }
+  .date-inputs { display: flex; gap: 8px; align-items: center; }
   .date-inputs input[type="date"] {
-    flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 11px; outline: none;
+    flex: 1;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 11px;
+    outline: none;
   }
   .date-inputs .sep { font-size: 11px; color: #94a3b8; font-weight: 700; }
 
-  .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  /* Charts */
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
   @media (max-width: 900px) { .charts-grid { grid-template-columns: 1fr; } }
-  .card-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
-  .card-ttl { font-size: 12px; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; }
+  .card-panel {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .card-ttl {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1e3a8a;
+    text-transform: uppercase;
+  }
 
-  .table-scroll { overflow-x: auto; max-height: 440px; border: 1px solid var(--border); border-radius: 6px; }
-  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
-  table.pbi-table th { background: #f8fafc; color: #475569; font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid var(--border); position: sticky; top: 0; text-align: left; }
-  table.pbi-table td { padding: 6px 10px; border-bottom: 1px solid #f1f5f9; }
-  table.pbi-table tr:hover td { background: #f0fdf4; }
+  /* Table */
+  .table-scroll {
+    overflow-x: auto;
+    max-height: 520px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  table.pbi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  table.pbi-table th {
+    background: #f8fafc;
+    color: #334155;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-bottom: 2px solid #cbd5e1;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    text-align: left;
+  }
+  table.pbi-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  table.pbi-table tr:hover td { background: #f8fafc; }
+  .num { text-align: right; font-family: monospace; font-weight: 600; }
+
+  /* Pagination */
+  .pagination-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    font-size: 11.5px;
+    color: #64748b;
+  }
+  .pagination-btns { display: flex; gap: 6px; align-items: center; }
+  .btn-page {
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 11px;
+  }
+  .btn-page:hover:not(:disabled) { background: #f1f5f9; }
+  .btn-page:disabled { opacity: 0.5; cursor: not-allowed; }
 </style>
 </head>
 <body>
@@ -79,66 +278,71 @@
   </div>
 
   <div class="header-box">
-    <div style="width:100px"></div>
+    <div style="width:120px"></div>
     <div class="header-titles">
       <h1>CONTROL CRONOGRAMA MAESTRO DE ACTIVIDADES (PDT)</h1>
       <h2>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h2>
     </div>
-    <button class="btn-reset-text" onclick="resetFilters()">Borrar filtros</button>
+    <button class="btn-reset" onclick="resetFilters()">Borrar filtros</button>
   </div>
 
+  <!-- KPIS ROW -->
   <div class="kpi-row">
     <div class="kpi-box bg-green">
       <div class="lbl">Completed</div>
-      <div class="val" id="kpiCompleted" style="color:#16a34a">0</div>
+      <div class="val" id="kpiCompleted" style="color:#15803d">0</div>
     </div>
     <div class="kpi-box bg-yellow">
       <div class="lbl">In Progress</div>
-      <div class="val" id="kpiProgress" style="color:#d97706">0</div>
+      <div class="val" id="kpiProgress" style="color:#b45309">0</div>
     </div>
     <div class="kpi-box bg-gray">
       <div class="lbl">Not Started</div>
       <div class="val" id="kpiNotStarted" style="color:#64748b">0</div>
     </div>
     <div class="kpi-box bg-blue">
-      <div class="lbl">PAC % (Completado)</div>
+      <div class="lbl">% Avance (Completed / Total)</div>
       <div class="val" id="kpiPAC" style="color:#0284c7">0%</div>
     </div>
     <div class="kpi-box">
       <div class="lbl">Total Actividades</div>
       <div class="val" id="kpiTotal">0</div>
     </div>
+    <div class="kpi-box">
+      <div class="lbl">Fecha de Corte</div>
+      <div class="val" id="kpiFechaCorte" style="font-size:14px;color:#334155">—</div>
+    </div>
   </div>
 
   <!-- BASIC SLICERS (Toggle Buttons como en Power BI) -->
   <div class="filters-container">
     <div class="filter-row">
-      <div class="filter-row-title">PAQUETES DE OBRA (Slicers PBIX)</div>
-      <div class="filter-toggles" id="togglesPaquetes"></div>
-    </div>
-    <div class="filter-row">
       <div class="filter-row-title">ACTIVITY STATUS (Slicer PBIX)</div>
       <div class="filter-toggles" id="togglesStatus"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-row-title">PAQUETES DE OBRA (Slicer PBIX)</div>
+      <div class="filter-toggles" id="togglesPaquetes"></div>
     </div>
   </div>
 
   <!-- SEARCH SLICERS ROW -->
   <div class="slicers-bar">
     <div class="search-card">
-      <span class="sc-title">Activity Name (Búsqueda por Texto)</span>
-      <input type="text" id="filterActName" placeholder="Buscar actividad..." oninput="applyFilters()">
+      <span class="sc-title">Activity Name (Búsqueda)</span>
+      <input type="text" id="filterActName" placeholder="Buscar actividad..." oninput="onFilterChange()">
     </div>
     <div class="search-card">
-      <span class="sc-title">WBS Name (Búsqueda por Texto)</span>
-      <input type="text" id="filterWBSName" placeholder="Buscar WBS..." oninput="applyFilters()">
+      <span class="sc-title">WBS Name (Búsqueda)</span>
+      <input type="text" id="filterWBSName" placeholder="Buscar WBS..." oninput="onFilterChange()">
     </div>
     <div class="search-card">
-      <span class="sc-title">WBS Code (Búsqueda por Texto)</span>
-      <input type="text" id="filterWBSCode" placeholder="Buscar código EDT..." oninput="applyFilters()">
+      <span class="sc-title">Activity ID (Búsqueda)</span>
+      <input type="text" id="filterActID" placeholder="Buscar ID..." oninput="onFilterChange()">
     </div>
     <div class="search-card">
-      <span class="sc-title">EDT CODE (Dropdown Slicer)</span>
-      <select id="filterEDT" onchange="applyFilters()">
+      <span class="sc-title">EDT CODE (Dropdown)</span>
+      <select id="filterEDT" onchange="onFilterChange()">
         <option value="ALL">Todos los códigos EDT</option>
       </select>
     </div>
@@ -149,21 +353,22 @@
     <div class="date-card">
       <div class="date-card-title">Planned Start (Between)</div>
       <div class="date-inputs">
-        <input type="date" id="startDesde" onchange="applyFilters()">
+        <input type="date" id="startDesde" onchange="onFilterChange()">
         <span class="sep">a</span>
-        <input type="date" id="startHasta" onchange="applyFilters()">
+        <input type="date" id="startHasta" onchange="onFilterChange()">
       </div>
     </div>
     <div class="date-card">
       <div class="date-card-title">Planned Finish (Between)</div>
       <div class="date-inputs">
-        <input type="date" id="finishDesde" onchange="applyFilters()">
+        <input type="date" id="finishDesde" onchange="onFilterChange()">
         <span class="sep">a</span>
-        <input type="date" id="finishHasta" onchange="applyFilters()">
+        <input type="date" id="finishHasta" onchange="onFilterChange()">
       </div>
     </div>
   </div>
 
+  <!-- CHARTS ROW -->
   <div class="charts-grid">
     <div class="card-panel">
       <div class="card-ttl">Cantidad de Actividades por fecha de START programada</div>
@@ -175,28 +380,50 @@
     </div>
   </div>
 
+  <!-- TABLE -->
   <div class="card-panel">
-    <div class="card-ttl" style="display:flex;justify-content:space-between">
-      <span>Tabla Maestra de Actividades PDT</span>
-      <span style="color:#64748b;font-size:11px" id="lblCount">Mostrando actividades</span>
+    <div class="panel-header">
+      <div class="card-ttl">Tabla Maestra de Actividades (Activities)</div>
+      <div style="font-size:11px;color:#64748b;font-weight:600" id="lblCount">Mostrando actividades</div>
     </div>
     <div class="table-scroll">
       <table class="pbi-table">
         <thead>
           <tr>
             <th>Activity ID</th>
-            <th>Activity Name</th>
-            <th>WBS Name</th>
-            <th>Activity Status</th>
             <th>Planned Start</th>
             <th>Planned Finish</th>
-            <th style="text-align:center">% Complete</th>
+            <th class="num">Original Duration</th>
+            <th class="num" style="text-align:center">Schedule % Complete</th>
+            <th style="text-align:center">Activity Status</th>
+            <th class="num">Total Float</th>
+            <th>EDT CODE</th>
+            <th>WBS Name</th>
+            <th>Activity Name</th>
           </tr>
         </thead>
         <tbody id="tableBody">
-          <tr><td colspan="7" style="text-align:center;padding:20px;color:#94a3b8">Cargando actividades...</td></tr>
+          <tr><td colspan="10" style="text-align:center;padding:20px;color:#94a3b8">Cargando actividades...</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- PAGINACIÓN -->
+    <div class="pagination-bar">
+      <div>
+        <span>Filas por página:</span>
+        <select id="pageSizeSelect" onchange="currentPage = 1; renderTable(currentFiltered);">
+          <option value="50">50</option>
+          <option value="100" selected>100</option>
+          <option value="250">250</option>
+          <option value="1000">1000</option>
+        </select>
+      </div>
+      <div class="pagination-btns">
+        <button class="btn-page" id="btnPrev" onclick="prevPage()">Anterior</button>
+        <span id="pageIndicator" style="font-weight:700">Pág 1 de 1</span>
+        <button class="btn-page" id="btnNext" onclick="nextPage()">Siguiente</button>
+      </div>
     </div>
   </div>
 
@@ -206,10 +433,12 @@
 <script src="../js/portal.js"></script>
 <script>
   let allActs = [];
+  let currentFiltered = [];
+  let currentPage = 1;
+
   let chartStart = null;
   let chartFinish = null;
 
-  // Filtros activos tipo Basic
   const selStatus   = new Set();
   const selPaquetes = new Set();
 
@@ -226,16 +455,23 @@
   ];
 
   async function init() {
-    const data = await loadData('actividades_pdt');
+    let data = window.DATA_ACTIVIDADES_PDT;
+    if (!data && typeof loadData === 'function') {
+      data = await loadData('actividades_pdt');
+    }
     if (!data) return;
 
     allActs = data.actividades || [];
+    const k = data.kpis || {};
+    if (k.fecha_corte) {
+      document.getElementById('kpiFechaCorte').innerText = k.fecha_corte;
+    }
 
-    // Llenar toggles de Status
+    // Status toggles
     const statuses = ['Completed', 'In Progress', 'Not Started'];
     renderToggles('togglesStatus', statuses, selStatus);
 
-    // Llenar toggles de Paquetes
+    // Paquetes toggles
     renderToggles('togglesPaquetes', PAQUETES_LIST, selPaquetes);
 
     // Llenar dropdown EDT CODE
@@ -248,7 +484,7 @@
       edtSelect.appendChild(opt);
     });
 
-    applyFilters();
+    onFilterChange();
   }
 
   function renderToggles(containerId, list, targetSet) {
@@ -266,16 +502,39 @@
           targetSet.add(val);
           btn.classList.add('active');
         }
-        applyFilters();
+        onFilterChange();
       });
       cont.appendChild(btn);
     });
   }
 
+  function resetFilters() {
+    selStatus.clear();
+    selPaquetes.clear();
+    document.querySelectorAll('.f-toggle.active').forEach(b => b.classList.remove('active'));
+
+    document.getElementById('filterActName').value = '';
+    document.getElementById('filterWBSName').value = '';
+    document.getElementById('filterActID').value   = '';
+    document.getElementById('filterEDT').value     = 'ALL';
+
+    document.getElementById('startDesde').value  = '';
+    document.getElementById('startHasta').value  = '';
+    document.getElementById('finishDesde').value = '';
+    document.getElementById('finishHasta').value = '';
+
+    onFilterChange();
+  }
+
+  function onFilterChange() {
+    currentPage = 1;
+    applyFilters();
+  }
+
   function applyFilters() {
     const sName  = (document.getElementById('filterActName').value || '').toLowerCase().trim();
     const sWBS   = (document.getElementById('filterWBSName').value || '').toLowerCase().trim();
-    const sCode  = (document.getElementById('filterWBSCode').value || '').toLowerCase().trim();
+    const sID    = (document.getElementById('filterActID').value || '').toLowerCase().trim();
     const selEDT = document.getElementById('filterEDT').value;
 
     const sDesde = document.getElementById('startDesde').value;
@@ -283,8 +542,7 @@
     const fDesde = document.getElementById('finishDesde').value;
     const fHasta = document.getElementById('finishHasta').value;
 
-    const filtered = allActs.filter(a => {
-      // Basic slicer sets
+    currentFiltered = allActs.filter(a => {
       if (selStatus.size && !selStatus.has(a.status)) return false;
       if (selPaquetes.size) {
         const pList = a.paquetes || [];
@@ -292,15 +550,12 @@
         if (!hasAny) return false;
       }
 
-      // Dropdown EDT
       if (selEDT !== 'ALL' && (a.edt_code !== selEDT && a.wbs_code !== selEDT)) return false;
 
-      // Text searches
       if (sName && !(a.name || '').toLowerCase().includes(sName)) return false;
       if (sWBS  && !(a.wbs_name || '').toLowerCase().includes(sWBS)) return false;
-      if (sCode && !(a.id || '').toLowerCase().includes(sCode) && !(a.edt_code || '').toLowerCase().includes(sCode) && !(a.wbs_code || '').toLowerCase().includes(sCode)) return false;
+      if (sID   && !(a.id || '').toLowerCase().includes(sID)) return false;
 
-      // Date ranges (Between)
       if (sDesde && (!a.planned_start || a.planned_start < sDesde)) return false;
       if (sHasta && (!a.planned_start || a.planned_start > sHasta)) return false;
       if (fDesde && (!a.planned_finish || a.planned_finish < fDesde)) return false;
@@ -309,11 +564,11 @@
       return true;
     });
 
-    // Actualizar KPIs según filtros
-    const comp = filtered.filter(a => a.status === 'Completed').length;
-    const prog = filtered.filter(a => a.status === 'In Progress').length;
-    const nots = filtered.filter(a => a.status === 'Not Started').length;
-    const tot  = filtered.length;
+    // Actualizar KPIs
+    const comp = currentFiltered.filter(a => a.status === 'Completed').length;
+    const prog = currentFiltered.filter(a => a.status === 'In Progress').length;
+    const nots = currentFiltered.filter(a => a.status === 'Not Started').length;
+    const tot  = currentFiltered.length;
     const pac  = tot > 0 ? (comp / tot * 100).toFixed(1) : 0;
 
     document.getElementById('kpiCompleted').innerText  = Formatter.number(comp);
@@ -322,10 +577,10 @@
     document.getElementById('kpiPAC').innerText        = `${pac}%`;
     document.getElementById('kpiTotal').innerText      = Formatter.number(tot);
 
-    document.getElementById('lblCount').innerText = `Mostrando ${filtered.length} de ${allActs.length} actividades`;
+    document.getElementById('lblCount').innerText = `Mostrando ${currentFiltered.length} de ${allActs.length} actividades`;
 
-    renderCharts(filtered);
-    renderTable(filtered);
+    renderCharts(currentFiltered);
+    renderTable(currentFiltered);
   }
 
   function renderCharts(items) {
@@ -342,17 +597,18 @@
       }
     });
 
-    const sCats = Object.keys(startMap).sort().slice(-12);
+    const sCats = Object.keys(startMap).sort();
     const sData = sCats.map(c => startMap[c]);
-    const fCats = Object.keys(finishMap).sort().slice(-12);
+    const fCats = Object.keys(finishMap).sort();
     const fData = fCats.map(c => finishMap[c]);
 
     const optS = {
       chart: { type: 'bar', height: 220, toolbar: { show: false } },
       series: [{ name: 'Actividades', data: sData }],
-      xaxis: { categories: sCats, labels: { style: { fontSize: '9px' }, rotate: -35 } },
+      xaxis: { categories: sCats, labels: { style: { fontSize: '10px' }, rotate: -35 } },
       colors: ['#0284c7'],
-      grid: { padding: { top: 20 } }
+      grid: { borderColor: '#f1f5f9' },
+      dataLabels: { enabled: false }
     };
     if (chartStart) chartStart.destroy();
     chartStart = new ApexCharts(document.querySelector("#chartStart"), optS);
@@ -361,9 +617,10 @@
     const optF = {
       chart: { type: 'bar', height: 220, toolbar: { show: false } },
       series: [{ name: 'Actividades', data: fData }],
-      xaxis: { categories: fCats, labels: { style: { fontSize: '9px' }, rotate: -35 } },
+      xaxis: { categories: fCats, labels: { style: { fontSize: '10px' }, rotate: -35 } },
       colors: ['#10b981'],
-      grid: { padding: { top: 20 } }
+      grid: { borderColor: '#f1f5f9' },
+      dataLabels: { enabled: false }
     };
     if (chartFinish) chartFinish.destroy();
     chartFinish = new ApexCharts(document.querySelector("#chartFinish"), optF);
@@ -371,45 +628,67 @@
   }
 
   function renderTable(items) {
+    const pageSize = parseInt(document.getElementById('pageSizeSelect').value || '100', 10);
+    const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const startIdx = (currentPage - 1) * pageSize;
+    const endIdx   = Math.min(startIdx + pageSize, items.length);
+    const pageItems = items.slice(startIdx, endIdx);
+
+    document.getElementById('pageIndicator').innerText = `Pág ${currentPage} de ${totalPages} (${items.length} regs)`;
+    document.getElementById('btnPrev').disabled = currentPage <= 1;
+    document.getElementById('btnNext').disabled = currentPage >= totalPages;
+
     const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = '';
-    const slice = items.slice(0, 100);
+    if (!pageItems.length) {
+      tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;padding:20px;color:#94a3b8">No se encontraron actividades con los filtros aplicados.</td></tr>';
+      return;
+    }
 
-    slice.forEach(a => {
-      const tr = document.createElement('tr');
-      let stColor = a.status === 'Completed' ? '#16a34a' : (a.status === 'In Progress' ? '#d97706' : '#64748b');
-      tr.innerHTML = `
-        <td style="font-family:monospace;font-weight:700;color:#0284c7">${a.id || '-'}</td>
-        <td style="font-weight:600;color:#0f172a">${a.name || '-'}</td>
-        <td style="color:#64748b;font-size:11px">${a.wbs_name || '-'}</td>
-        <td><span style="color:${stColor};font-weight:700">${a.status}</span></td>
-        <td style="font-family:monospace;font-size:11px">${a.planned_start || '-'}</td>
-        <td style="font-family:monospace;font-size:11px">${a.planned_finish || '-'}</td>
-        <td style="text-align:center;font-weight:700">${a.pct_complete || 0}%</td>
-      `;
-      tbody.appendChild(tr);
-    });
+    const html = pageItems.map(a => {
+      let stColor = a.status === 'Completed' ? '#15803d' : (a.status === 'In Progress' ? '#b45309' : '#64748b');
+      let stBg    = a.status === 'Completed' ? '#dcfce7' : (a.status === 'In Progress' ? '#fef3c7' : '#f1f5f9');
+
+      return `<tr>
+        <td style="font-family:monospace;font-weight:700;color:#0284c7">${a.id || '—'}</td>
+        <td style="font-family:monospace;font-size:11px">${a.planned_start || '—'}</td>
+        <td style="font-family:monospace;font-size:11px">${a.planned_finish || '—'}</td>
+        <td class="num">${a.duration != null ? a.duration : '—'}</td>
+        <td class="num" style="text-align:center;font-weight:700">${a.pct_complete != null ? a.pct_complete + '%' : '0%'}</td>
+        <td style="text-align:center">
+          <span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;background:${stBg};color:${stColor}">
+            ${a.status}
+          </span>
+        </td>
+        <td class="num">${a.total_float != null ? a.total_float : '—'}</td>
+        <td style="font-weight:600;color:#475569">${a.edt_code || a.wbs_code || '—'}</td>
+        <td style="max-width:260px;overflow:hidden;text-overflow:ellipsis;color:#64748b" title="${a.wbs_name || ''}">${a.wbs_name || '—'}</td>
+        <td style="max-width:340px;overflow:hidden;text-overflow:ellipsis;font-weight:600;color:#0f172a" title="${a.name || ''}">${a.name || '—'}</td>
+      </tr>`;
+    }).join('');
+
+    tbody.innerHTML = html;
   }
 
-  function resetFilters() {
-    selStatus.clear();
-    selPaquetes.clear();
-    document.querySelectorAll('.f-toggle.active').forEach(b => b.classList.remove('active'));
-
-    document.getElementById('filterActName').value = '';
-    document.getElementById('filterWBSName').value = '';
-    document.getElementById('filterWBSCode').value = '';
-    document.getElementById('filterEDT').value     = 'ALL';
-
-    document.getElementById('startDesde').value  = '';
-    document.getElementById('startHasta').value  = '';
-    document.getElementById('finishDesde').value = '';
-    document.getElementById('finishHasta').value = '';
-
-    applyFilters();
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderTable(currentFiltered);
+    }
   }
 
-  init();
+  function nextPage() {
+    const pageSize = parseInt(document.getElementById('pageSizeSelect').value || '100', 10);
+    const totalPages = Math.ceil(currentFiltered.length / pageSize);
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderTable(currentFiltered);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', init);
 </script>
+
 </body>
 </html>

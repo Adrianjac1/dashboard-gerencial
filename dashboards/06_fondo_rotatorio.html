@@ -11,6 +11,8 @@
     --card-bg: #ffffff;
     --text-main: #1e293b;
     --border: #e2e8f0;
+    --pbi-blue: #0284c7;
+    --pbi-dark: #0f172a;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -19,123 +21,299 @@
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
     padding: 16px 20px 40px;
   }
-  .container { max-width: 1400px; margin: 0 auto; }
-  .top-nav { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-  .back-link { display: inline-flex; align-items: center; gap: 6px; background: #1e293b; color: #ffffff; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 600; }
+  .container { max-width: 1560px; margin: 0 auto; }
+  
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
   .back-link:hover { background: #334155; }
 
-  .header-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .header-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
   .header-titles { text-align: center; flex: 1; }
-  .header-titles h1 { font-size: 14px; font-weight: 800; color: #0f172a; }
-  .header-titles h2 { font-size: 12px; font-weight: 700; color: #334155; }
-  .btn-reset-text { background: none; border: none; color: #ef4444; font-size: 11px; font-weight: 700; cursor: pointer; text-decoration: underline; }
+  .header-titles h1 { font-size: 15px; font-weight: 800; color: #0f172a; letter-spacing: -0.3px; }
+  .header-titles h2 { font-size: 12px; font-weight: 600; color: #475569; margin-top: 2px; }
+  .btn-reset {
+    background: #fee2e2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .btn-reset:hover { background: #fecaca; }
 
   /* KPI Grid */
-  .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 16px; }
-  .kpi-box { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; text-align: center; }
-  .kpi-box .lbl { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; }
-  .kpi-box .val { font-size: clamp(13px, 1.4vw, 17px); font-weight: 800; color: #0f172a; margin-top: 2px; font-family: monospace; letter-spacing: -0.5px; }
-  .bg-pink { background: #fdf2f8; border-color: #fbcfe8; }
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .kpi-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .kpi-box .lbl { font-size: 10px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; }
+  .kpi-box .val {
+    font-size: clamp(15px, 1.5vw, 19px);
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 4px;
+    font-family: 'Segoe UI', monospace;
+  }
   .bg-yellow { background: #fefce8; border-color: #fef08a; }
-  .bg-blue { background: #eff6ff; border-color: #bfdbfe; }
-  .bg-green { background: #f0fdf4; border-color: #bbf7d0; }
+  .bg-blue   { background: #eff6ff; border-color: #bfdbfe; }
+  .bg-green  { background: #f0fdf4; border-color: #bbf7d0; }
+  .bg-pink   { background: #fdf2f8; border-color: #fbcfe8; }
 
   /* Filter Toggles Sections */
-  .filters-container { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; }
-  .filter-row { display: flex; flex-direction: column; gap: 4px; }
-  .filter-row-title { font-size: 10px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; }
-  .filter-toggles { display: flex; flex-wrap: wrap; gap: 4px; }
+  .filters-container {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .filter-row { display: flex; flex-direction: column; gap: 6px; }
+  .filter-row-title { font-size: 11px; font-weight: 800; color: #1e3a8a; text-transform: uppercase; }
+  .filter-toggles { display: flex; flex-wrap: wrap; gap: 5px; }
   .f-toggle {
-    padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer;
-    border: 1px solid rgba(0,0,0,0.12); background: #f1f5f9; color: #334155; transition: all .15s;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    color: #334155;
+    transition: all .15s;
     user-select: none;
   }
-  .f-toggle.active { background: #3b82f6; color: #fff; border-color: #2563eb; }
+  .f-toggle.active { background: #0284c7; color: #fff; border-color: #0369a1; }
   .f-toggle:hover:not(.active) { background: #e2e8f0; }
 
   /* Slicers Grid */
-  .slicers-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 12px; }
-  .search-card { border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px; }
-  .search-card .sc-title { font-size: 9.5px; font-weight: 800; text-transform: uppercase; }
-  .search-card input { width: 100%; background: #ffffff; border: 1px solid rgba(0,0,0,0.15); border-radius: 4px; padding: 4px 8px; font-size: 11.5px; font-weight: 600; outline: none; }
-  .sc-yellow { background: #fef08a; color: #854d0e; }
-  .sc-green { background: #bbf7d0; color: #166534; }
-  .sc-blue { background: #bfdbfe; color: #1e40af; }
-  .sc-pink { background: #fbcfe8; color: #831843; }
-  .sc-purple { background: #e9d5ff; color: #6b21a8; }
-
-  /* Date Range Slicers */
-  .date-filters-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 16px; }
-  .date-card { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; }
-  .date-card-title { font-size: 9.5px; font-weight: 800; color: #475569; text-transform: uppercase; margin-bottom: 6px; }
-  .date-inputs { display: flex; gap: 6px; align-items: center; }
-  .date-inputs input[type="date"] {
-    flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; font-size: 11px; outline: none;
+  .slicers-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
   }
-  .date-inputs .sep { font-size: 11px; color: #94a3b8; font-weight: 700; }
+  .search-card {
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .search-card .sc-title { font-size: 10px; font-weight: 800; text-transform: uppercase; }
+  .search-card input {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.18);
+    border-radius: 4px;
+    padding: 5px 8px;
+    font-size: 11.5px;
+    font-weight: 600;
+    outline: none;
+  }
+  .sc-yellow { background: #fef9c3; color: #854d0e; }
+  .sc-green  { background: #dcfce7; color: #166534; }
+  .sc-blue   { background: #e0f2fe; color: #0369a1; }
+  .sc-pink   { background: #fce7f3; color: #9d174d; }
+  .sc-purple { background: #f3e8ff; color: #6b21a8; }
 
-  /* Main Panels */
-  .panel-grid { display: grid; grid-template-columns: 320px 1fr; gap: 16px; margin-bottom: 16px; }
-  @media (max-width: 900px) { .panel-grid { grid-template-columns: 1fr; } }
-  .card-panel { background: #ffffff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; }
-  .card-ttl { font-size: 12px; font-weight: 800; color: #1e3a8a; border-bottom: 2px solid #93c5fd; padding-bottom: 4px; margin-bottom: 10px; text-transform: uppercase; }
+  /* Pivot & Charts Panel */
+  .pivot-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 1024px) { .pivot-grid { grid-template-columns: 1fr; } }
 
-  .table-scroll { overflow-x: auto; max-height: 440px; border: 1px solid var(--border); border-radius: 6px; }
-  table.pbi-table { width: 100%; border-collapse: collapse; font-size: 11.5px; }
-  table.pbi-table th { background: #f8fafc; color: #475569; font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid var(--border); position: sticky; top: 0; text-align: left; }
-  table.pbi-table td { padding: 6px 10px; border-bottom: 1px solid #f1f5f9; }
-  table.pbi-table tr:hover td { background: #f0fdf4; }
-  .num { text-align: right; font-family: monospace; }
+  .card-panel {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+  .card-ttl {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1e3a8a;
+    text-transform: uppercase;
+  }
+
+  /* Table styling */
+  .table-scroll {
+    overflow-x: auto;
+    max-height: 480px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  table.pbi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  table.pbi-table th {
+    background: #f8fafc;
+    color: #334155;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px 10px;
+    border-bottom: 2px solid #cbd5e1;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    text-align: left;
+  }
+  table.pbi-table td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  table.pbi-table tr:hover td { background: #f8fafc; }
+  table.pbi-table tr.total-row td {
+    background: #e2e8f0;
+    font-weight: 800;
+    color: #0f172a;
+    border-top: 2px solid #94a3b8;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+  }
+  .num { text-align: right; font-family: monospace; font-weight: 600; }
+  .badge-pago {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  /* Pagination */
+  .pagination-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    font-size: 11px;
+    color: #64748b;
+  }
+  .btn-page {
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 11px;
+  }
+  .btn-page:hover:not(:disabled) { background: #f1f5f9; }
+  .btn-page:disabled { opacity: 0.5; cursor: not-allowed; }
 </style>
 </head>
 <body>
 
 <div class="container">
 
-  <!-- TOP NAV -->
   <div class="top-nav">
     <a href="../index.html" class="back-link">← Volver al Hub de Dashboards</a>
     <span style="font-size:11px;color:#64748b;font-weight:600">Power BI Page: <b>FONDO ROTATORIO</b></span>
   </div>
 
-  <!-- HEADER -->
   <div class="header-box">
-    <div style="width:100px"></div>
+    <div style="width:120px"></div>
     <div class="header-titles">
-      <h1>FONDO ROTATORIO - ESTADO DE PAGO CONTRATOS Y ORDENES DE SERVICIO</h1>
+      <h1>FONDO ROTATORIO — ESTADO DE PAGO CONTRATOS Y ÓRDENES DE SERVICIO</h1>
       <h2>PROYECTO "CONSTRUCCIÓN DE LA FASE 1 DE LA NUEVA CIUDAD ESCOLAR COMFENALCO"</h2>
     </div>
-    <button class="btn-reset-text" onclick="resetFilters()">Borrar filtros</button>
+    <button class="btn-reset" onclick="resetFilters()">Borrar filtros</button>
   </div>
 
   <!-- KPIS ROW -->
   <div class="kpi-row">
     <div class="kpi-box bg-yellow">
-      <div class="lbl">Total Facturado</div>
-      <div class="val" id="kpiFacturado">$0</div>
-    </div>
-    <div class="kpi-box bg-green">
-      <div class="lbl">Valor Neto FR</div>
-      <div class="val" id="kpiNetoFR">$0</div>
-    </div>
-    <div class="kpi-box bg-pink">
-      <div class="lbl">Total Anticipos</div>
-      <div class="val" id="kpiAnticipos">$0</div>
+      <div class="lbl">Total Factura (Sum)</div>
+      <div class="val" id="kpiFactura" style="color:#854d0e">$0</div>
     </div>
     <div class="kpi-box bg-blue">
-      <div class="lbl">Cantidad Registros</div>
+      <div class="lbl">Valor Neto (Sum)</div>
+      <div class="val" id="kpiNeto" style="color:#0369a1">$0</div>
+    </div>
+    <div class="kpi-box bg-green">
+      <div class="lbl">Valor Neto FR (Sum)</div>
+      <div class="val" id="kpiNetoFR" style="color:#15803d">$0</div>
+    </div>
+    <div class="kpi-box bg-pink">
+      <div class="lbl">Anticipo (Sum)</div>
+      <div class="val" id="kpiAnticipo" style="color:#9d174d">$0</div>
+    </div>
+    <div class="kpi-box">
+      <div class="lbl">Total Registros</div>
       <div class="val" id="kpiRegistros">0</div>
     </div>
     <div class="kpi-box">
       <div class="lbl">Fecha de Corte</div>
-      <div class="val" id="kpiFechaCorte" style="font-size:14px">20/09/2026</div>
+      <div class="val" id="kpiFechaCorte" style="font-size:14px;color:#334155">—</div>
     </div>
   </div>
 
   <!-- BASIC SLICERS (Toggle Buttons como en Power BI) -->
   <div class="filters-container">
     <div class="filter-row">
-      <div class="filter-row-title">ESTADO DE PAGO CONTRATOS Y ÓRDENES (Slicer PBIX)</div>
+      <div class="filter-row-title">ESTADO DE PAGO (Slicer PBIX)</div>
       <div class="filter-toggles" id="togglesEstadoPago"></div>
     </div>
     <div class="filter-row">
@@ -147,7 +325,7 @@
       <div class="filter-toggles" id="togglesFuentePago"></div>
     </div>
     <div class="filter-row">
-      <div class="filter-row-title">EN REVISIÓN POR (Slicer PBIX)</div>
+      <div class="filter-row-title">ESTADO REVISIÓN (Slicer PBIX)</div>
       <div class="filter-toggles" id="togglesRevision"></div>
     </div>
   </div>
@@ -155,80 +333,132 @@
   <!-- TEXT SEARCH SLICERS ROW -->
   <div class="slicers-bar">
     <div class="search-card sc-yellow">
-      <span class="sc-title">CODIGO CONTRATO (CONT/ORD)</span>
-      <input type="text" id="filterContrato" placeholder="Buscar código..." oninput="applyFilters()">
+      <span class="sc-title">CONT/ORD</span>
+      <input type="text" id="filterContrato" placeholder="Buscar contrato..." oninput="onFilterChange()">
     </div>
     <div class="search-card sc-green">
-      <span class="sc-title">CENTRO DE COSTO</span>
-      <input type="text" id="filterCC" placeholder="Buscar CC..." oninput="applyFilters()">
+      <span class="sc-title">CENTRO DE COSTOS</span>
+      <input type="text" id="filterCC" placeholder="Buscar CC..." oninput="onFilterChange()">
     </div>
     <div class="search-card sc-blue">
-      <span class="sc-title">Nombre Contratista (Tercero)</span>
-      <input type="text" id="filterTercero" placeholder="Buscar contratista..." oninput="applyFilters()">
+      <span class="sc-title">TERCERO (Contratista)</span>
+      <input type="text" id="filterTercero" placeholder="Buscar tercero..." oninput="onFilterChange()">
     </div>
     <div class="search-card sc-pink">
-      <span class="sc-title">DOC REEMB #</span>
-      <input type="text" id="filterReemb" placeholder="Buscar documento..." oninput="applyFilters()">
+      <span class="sc-title">Doc. REEMBOLSO</span>
+      <input type="text" id="filterReemb" placeholder="Buscar reembolso..." oninput="onFilterChange()">
     </div>
     <div class="search-card sc-purple">
-      <span class="sc-title">DESCRIPCION</span>
-      <input type="text" id="filterDesc" placeholder="Buscar en descripción..." oninput="applyFilters()">
+      <span class="sc-title">DESCRIPCIÓN</span>
+      <input type="text" id="filterDesc" placeholder="Buscar en texto..." oninput="onFilterChange()">
     </div>
   </div>
 
-  <!-- DATE RANGE SLICERS (Between Slicers de Power BI) -->
-  <div class="date-filters-bar">
-    <div class="date-card">
-      <div class="date-card-title">Fecha Pago FR (Between)</div>
-      <div class="date-inputs">
-        <input type="date" id="pagoDesde" onchange="applyFilters()">
-        <span class="sep">a</span>
-        <input type="date" id="pagoHasta" onchange="applyFilters()">
+  <!-- PIVOT TABLE & CHART ROW -->
+  <div class="pivot-grid">
+    <!-- Tabla Pivote: ESTADO DE PAGO -->
+    <div class="card-panel">
+      <div class="panel-header">
+        <div class="card-ttl">Resumen Matriz: ESTADO DE PAGO</div>
       </div>
+      <table class="pbi-table" id="tablePivot">
+        <thead>
+          <tr>
+            <th>ESTADO DE PAGO</th>
+            <th class="num">VALOR TOTAL FACTURA</th>
+            <th class="num">VALOR NETO FR</th>
+            <th class="num">ANTICIPO</th>
+          </tr>
+        </thead>
+        <tbody id="pivotBody">
+          <tr><td colspan="4" style="text-align:center;padding:20px;color:#94a3b8">Cargando matriz...</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="date-card">
-      <div class="date-card-title">Fecha Radicado Certificado (Between)</div>
-      <div class="date-inputs">
-        <input type="date" id="radDesde" onchange="applyFilters()">
-        <span class="sep">a</span>
-        <input type="date" id="radHasta" onchange="applyFilters()">
+
+    <!-- Gráfico Comparativo -->
+    <div class="card-panel">
+      <div class="panel-header">
+        <div class="card-ttl">Distribución Valor Neto FR por Estado</div>
+      </div>
+      <div id="chartEstados" style="height:220px"></div>
+    </div>
+  </div>
+
+  <!-- TABLA 1: MOVIMIENTOS Y FACTURACIÓN FONDO ROTATORIO -->
+  <div class="card-panel">
+    <div class="panel-header">
+      <div class="card-ttl">Tabla 1: Movimientos y Facturación Fondo Rotatorio (MOV_FONDO_ROT)</div>
+      <div style="font-size:11px;color:#64748b;font-weight:600" id="lblCountTable1">Mostrando registros</div>
+    </div>
+    <div class="table-scroll">
+      <table class="pbi-table">
+        <thead>
+          <tr>
+            <th>CONT/ORD</th>
+            <th>CENTRO DE COSTOS</th>
+            <th>TERCERO</th>
+            <th>DESCRIPCIÓN</th>
+            <th>ESTADO DE PAGO</th>
+            <th>ESTADO FR</th>
+            <th>ESTADO REVISIÓN</th>
+            <th>Doc. REEMBOLSO</th>
+            <th class="num">VALOR TOTAL FACTURA</th>
+            <th>FUENTE DE PAGO</th>
+            <th class="num">VALOR NETO</th>
+            <th class="num">VALOR NETO FR</th>
+            <th class="num">ANTICIPO</th>
+            <th>FECHA PAGO FR</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody1">
+          <tr><td colspan="14" style="text-align:center;padding:20px;color:#94a3b8">Cargando datos...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Paginación Tabla 1 -->
+    <div class="pagination-bar">
+      <div>
+        <span>Filas por página:</span>
+        <select id="pageSizeSelect" onchange="currentPage = 1; renderTable1(currentFiltered);">
+          <option value="50">50</option>
+          <option value="100" selected>100</option>
+          <option value="250">250</option>
+          <option value="1000">1000</option>
+        </select>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center">
+        <button class="btn-page" id="btnPrev" onclick="prevPage()">Anterior</button>
+        <span id="pageIndicator" style="font-weight:700">Pág 1 de 1</span>
+        <button class="btn-page" id="btnNext" onclick="nextPage()">Siguiente</button>
       </div>
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
-  <div class="panel-grid">
-    <!-- Resumen Estado de Pagos -->
-    <div class="card-panel">
-      <div class="card-ttl">ESTADO GENERAL DE PAGOS</div>
-      <div id="chartEstados" style="height:260px"></div>
+  <!-- TABLA 2: CONTROL DE REEMBOLSOS Y CERTIFICACIONES -->
+  <div class="card-panel">
+    <div class="panel-header">
+      <div class="card-ttl">Tabla 2: Control de Reembolsos y Certificaciones</div>
+      <div style="font-size:11px;color:#64748b;font-weight:600" id="lblCountTable2">Mostrando registros</div>
     </div>
-
-    <!-- Table -->
-    <div class="card-panel">
-      <div class="card-ttl" style="display:flex;justify-content:space-between">
-        <span>Movimientos y Facturación Fondo Rotatorio</span>
-        <span style="color:#64748b;font-size:11px" id="lblCount">Mostrando registros</span>
-      </div>
-      <div class="table-scroll">
-        <table class="pbi-table">
-          <thead>
-            <tr>
-              <th>Reg #</th>
-              <th>Contrato / Orden</th>
-              <th>Tercero / Contratista</th>
-              <th>Descripción</th>
-              <th>Doc Reembolso</th>
-              <th class="num">Total Factura</th>
-              <th class="num">Neto FR</th>
-              <th>Estado Pago</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <tr><td colspan="8" style="text-align:center;padding:20px;color:#94a3b8">Cargando datos...</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="table-scroll" style="max-height:360px">
+      <table class="pbi-table">
+        <thead>
+          <tr>
+            <th>Doc. REEMBOLSO</th>
+            <th>ESTADO REVISIÓN</th>
+            <th>CONT/ORD</th>
+            <th class="num">VALOR NETO FR</th>
+            <th>FUENTE RECURSOS / PAGO</th>
+            <th>FECHA Rad. Cert.</th>
+            <th>FECHA PAGO FR</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody2">
+          <tr><td colspan="7" style="text-align:center;padding:20px;color:#94a3b8">Cargando datos...</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -238,34 +468,49 @@
 <script src="../js/portal.js"></script>
 <script>
   let allMovs = [];
-  let chartInstance = null;
+  let currentFiltered = [];
+  let currentPage = 1;
+  let chartEstados = null;
 
-  // Filtros activos tipo Basic (Sets para multiselección)
   const selEstadoPago = new Set();
   const selEstadoFR   = new Set();
   const selFuentePago = new Set();
   const selRevision   = new Set();
 
+  function formatExcelDate(val) {
+    if (!val) return '—';
+    if (typeof val === 'number') {
+      const d = new Date((val - 25569) * 86400 * 1000);
+      if (!isNaN(d.getTime())) return d.toISOString().split('T')[0];
+    }
+    return String(val);
+  }
+
   async function init() {
-    const data = await loadData('fondo_rotatorio');
+    let data = window.DATA_FONDO_ROTATORIO;
+    if (!data && typeof loadData === 'function') {
+      data = await loadData('fondo_rotatorio');
+    }
     if (!data) return;
 
     allMovs = data.movimientos || [];
-    const k = data.kpis;
-    if (k.fecha_corte) document.getElementById('kpiFechaCorte').innerText = k.fecha_corte;
+    const k = data.kpis || {};
+    if (k.fecha_corte) {
+      document.getElementById('kpiFechaCorte').innerText = k.fecha_corte;
+    }
 
-    // Generar botones dinámicos para slicers Basic
+    // Llenar toggles de slicers
     const estadosPago = [...new Set(allMovs.map(m => m.estado_pago).filter(Boolean))].sort();
     const estadosFR   = [...new Set(allMovs.map(m => m.estado_fr).filter(Boolean))].sort();
-    const fuentesPago = [...new Set(allMovs.map(m => m.fuente_pago).filter(Boolean))].sort();
+    const fuentes     = [...new Set(allMovs.map(m => m.fuente_pago).filter(Boolean))].sort();
     const revisiones  = [...new Set(allMovs.map(m => m.estado_revision).filter(Boolean))].sort();
 
     renderToggles('togglesEstadoPago', estadosPago, selEstadoPago);
     renderToggles('togglesEstadoFR',   estadosFR,   selEstadoFR);
-    renderToggles('togglesFuentePago', fuentesPago, selFuentePago);
+    renderToggles('togglesFuentePago', fuentes,     selFuentePago);
     renderToggles('togglesRevision',   revisiones,  selRevision);
 
-    applyFilters();
+    onFilterChange();
   }
 
   function renderToggles(containerId, list, targetSet) {
@@ -283,106 +528,9 @@
           targetSet.add(val);
           btn.classList.add('active');
         }
-        applyFilters();
+        onFilterChange();
       });
       cont.appendChild(btn);
-    });
-  }
-
-  function applyFilters() {
-    const sCont   = (document.getElementById('filterContrato').value || '').toLowerCase().trim();
-    const sCC     = (document.getElementById('filterCC').value || '').toLowerCase().trim();
-    const sTerc   = (document.getElementById('filterTercero').value || '').toLowerCase().trim();
-    const sReemb  = (document.getElementById('filterReemb').value || '').toLowerCase().trim();
-    const sDesc   = (document.getElementById('filterDesc').value || '').toLowerCase().trim();
-
-    const pDesde = document.getElementById('pagoDesde').value;
-    const pHasta = document.getElementById('pagoHasta').value;
-    const rDesde = document.getElementById('radDesde').value;
-    const rHasta = document.getElementById('radHasta').value;
-
-    const filtered = allMovs.filter(m => {
-      // Basic slicer sets
-      if (selEstadoPago.size && !selEstadoPago.has(m.estado_pago)) return false;
-      if (selEstadoFR.size   && !selEstadoFR.has(m.estado_fr)) return false;
-      if (selFuentePago.size && !selFuentePago.has(m.fuente_pago)) return false;
-      if (selRevision.size   && !selRevision.has(m.estado_revision)) return false;
-
-      // Text searches
-      if (sCont  && !(m.contrato_orden || '').toLowerCase().includes(sCont)) return false;
-      if (sCC    && !(m.ccosto || '').toLowerCase().includes(sCC)) return false;
-      if (sTerc  && !(m.tercero || '').toLowerCase().includes(sTerc)) return false;
-      if (sReemb && !(m.doc_reembolso || '').toLowerCase().includes(sReemb)) return false;
-      if (sDesc  && !(m.descripcion || '').toLowerCase().includes(sDesc)) return false;
-
-      // Date ranges (Between)
-      if (pDesde && (!m.fecha_pago || m.fecha_pago < pDesde)) return false;
-      if (pHasta && (!m.fecha_pago || m.fecha_pago > pHasta)) return false;
-      if (rDesde && (!m.fecha_radicado || m.fecha_radicado < rDesde)) return false;
-      if (rHasta && (!m.fecha_radicado || m.fecha_radicado > rHasta)) return false;
-
-      return true;
-    });
-
-    // Actualizar KPIs según filtros
-    const totFact = filtered.reduce((acc, m) => acc + (m.valor_factura || 0), 0);
-    const totNeto = filtered.reduce((acc, m) => acc + (m.valor_neto_fr || 0), 0);
-    const totAnt  = filtered.reduce((acc, m) => acc + (m.anticipo || 0), 0);
-
-    document.getElementById('kpiFacturado').innerText = Formatter.currency(totFact);
-    document.getElementById('kpiNetoFR').innerText    = Formatter.currency(totNeto);
-    document.getElementById('kpiAnticipos').innerText = Formatter.currency(totAnt);
-    document.getElementById('kpiRegistros').innerText = Formatter.number(filtered.length);
-
-    document.getElementById('lblCount').innerText = `Mostrando ${filtered.length} de ${allMovs.length} registros`;
-
-    renderChart(filtered);
-    renderTable(filtered);
-  }
-
-  function renderChart(items) {
-    const grp = {};
-    items.forEach(i => {
-      const ep = i.estado_pago || 'Revisado';
-      grp[ep] = (grp[ep] || 0) + (i.valor_neto_fr || 0);
-    });
-
-    const labels = Object.keys(grp);
-    const series = Object.values(grp);
-
-    const options = {
-      chart: { type: 'pie', height: 260 },
-      labels: labels,
-      series: series.length > 0 ? series : [0],
-      colors: ['#22c55e', '#f59e0b', '#0ea5e9', '#f43f5e', '#8b5cf6'],
-      grid: { padding: { top: 20 } },
-      legend: { position: 'bottom', fontSize: '11px' },
-      tooltip: { y: { formatter: v => Formatter.currency(v) } }
-    };
-
-    if (chartInstance) chartInstance.destroy();
-    chartInstance = new ApexCharts(document.querySelector("#chartEstados"), options);
-    chartInstance.render();
-  }
-
-  function renderTable(items) {
-    const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = '';
-    const slice = items.slice(0, 100);
-
-    slice.forEach(m => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td style="font-family:monospace;font-weight:700;color:#0284c7">${m.registro_no || '-'}</td>
-        <td style="font-weight:600">${m.contrato_orden || '-'}</td>
-        <td style="font-weight:600;color:#0f172a">${m.tercero || '-'}</td>
-        <td style="color:#64748b;font-size:11px">${m.descripcion || '-'}</td>
-        <td style="font-family:monospace;font-size:11px">${m.doc_reembolso || '-'}</td>
-        <td class="num">${Formatter.currency(m.valor_factura)}</td>
-        <td class="num" style="color:#16a34a;font-weight:700">${Formatter.currency(m.valor_neto_fr)}</td>
-        <td><span style="background:#dcfce7;color:#166534;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">${m.estado_pago || 'Revisado'}</span></td>
-      `;
-      tbody.appendChild(tr);
     });
   }
 
@@ -399,15 +547,208 @@
     document.getElementById('filterReemb').value    = '';
     document.getElementById('filterDesc').value     = '';
 
-    document.getElementById('pagoDesde').value = '';
-    document.getElementById('pagoHasta').value = '';
-    document.getElementById('radDesde').value  = '';
-    document.getElementById('radHasta').value  = '';
+    onFilterChange();
+  }
 
+  function onFilterChange() {
+    currentPage = 1;
     applyFilters();
   }
 
-  init();
+  function applyFilters() {
+    const sCont  = (document.getElementById('filterContrato').value || '').toLowerCase().trim();
+    const sCC    = (document.getElementById('filterCC').value || '').toLowerCase().trim();
+    const sTerc  = (document.getElementById('filterTercero').value || '').toLowerCase().trim();
+    const sReemb = (document.getElementById('filterReemb').value || '').toLowerCase().trim();
+    const sDesc  = (document.getElementById('filterDesc').value || '').toLowerCase().trim();
+
+    currentFiltered = allMovs.filter(m => {
+      if (selEstadoPago.size && !selEstadoPago.has(m.estado_pago)) return false;
+      if (selEstadoFR.size   && !selEstadoFR.has(m.estado_fr)) return false;
+      if (selFuentePago.size && !selFuentePago.has(m.fuente_pago)) return false;
+      if (selRevision.size   && !selRevision.has(m.estado_revision)) return false;
+
+      if (sCont  && !(m.contrato_orden || '').toLowerCase().includes(sCont)) return false;
+      if (sCC    && !(m.ccosto || '').toLowerCase().includes(sCC)) return false;
+      if (sTerc  && !(m.tercero || '').toLowerCase().includes(sTerc)) return false;
+      if (sReemb && !(m.doc_reembolso || '').toLowerCase().includes(sReemb)) return false;
+      if (sDesc  && !(m.descripcion || '').toLowerCase().includes(sDesc)) return false;
+
+      return true;
+    });
+
+    // Actualizar KPIs
+    let totFact = 0, totNeto = 0, totNetoFR = 0, totAnt = 0;
+    currentFiltered.forEach(m => {
+      totFact   += (m.valor_factura || 0);
+      totNeto   += (m.valor_factura || 0); // O campo neto si existe
+      totNetoFR += (m.valor_neto_fr || 0);
+      totAnt    += (m.anticipo || 0);
+    });
+
+    document.getElementById('kpiFactura').innerText   = Formatter.currency(totFact);
+    document.getElementById('kpiNeto').innerText      = Formatter.currency(totNeto);
+    document.getElementById('kpiNetoFR').innerText    = Formatter.currency(totNetoFR);
+    document.getElementById('kpiAnticipo').innerText  = Formatter.currency(totAnt);
+    document.getElementById('kpiRegistros').innerText = Formatter.number(currentFiltered.length);
+
+    document.getElementById('lblCountTable1').innerText = `Mostrando ${currentFiltered.length} de ${allMovs.length} registros`;
+    document.getElementById('lblCountTable2').innerText = `Mostrando ${currentFiltered.length} de ${allMovs.length} registros`;
+
+    renderPivot(currentFiltered);
+    renderChart(currentFiltered);
+    renderTable1(currentFiltered);
+    renderTable2(currentFiltered);
+  }
+
+  function renderPivot(items) {
+    const map = {};
+    items.forEach(m => {
+      const st = m.estado_pago || 'SIN ASIGNAR';
+      if (!map[st]) map[st] = { fact: 0, netoFR: 0, ant: 0 };
+      map[st].fact   += (m.valor_factura || 0);
+      map[st].netoFR += (m.valor_neto_fr || 0);
+      map[st].ant    += (m.anticipo || 0);
+    });
+
+    const tbody = document.getElementById('pivotBody');
+    let sumFact = 0, sumNetoFR = 0, sumAnt = 0;
+
+    const rows = Object.keys(map).sort().map(st => {
+      const d = map[st];
+      sumFact   += d.fact;
+      sumNetoFR += d.netoFR;
+      sumAnt    += d.ant;
+
+      return `<tr>
+        <td style="font-weight:700">${st}</td>
+        <td class="num">${Formatter.currency(d.fact)}</td>
+        <td class="num" style="color:#15803d">${Formatter.currency(d.netoFR)}</td>
+        <td class="num" style="color:#9d174d">${Formatter.currency(d.ant)}</td>
+      </tr>`;
+    }).join('');
+
+    const totRow = `<tr class="total-row">
+      <td>TOTAL</td>
+      <td class="num">${Formatter.currency(sumFact)}</td>
+      <td class="num" style="color:#15803d">${Formatter.currency(sumNetoFR)}</td>
+      <td class="num" style="color:#9d174d">${Formatter.currency(sumAnt)}</td>
+    </tr>`;
+
+    tbody.innerHTML = rows + totRow;
+  }
+
+  function renderChart(items) {
+    const map = {};
+    items.forEach(m => {
+      const st = m.estado_pago || 'SIN ASIGNAR';
+      map[st] = (map[st] || 0) + (m.valor_neto_fr || 0);
+    });
+
+    const cats = Object.keys(map);
+    const data = cats.map(k => Math.round(map[k]));
+
+    const options = {
+      series: [{ name: 'Valor Neto FR', data: data }],
+      chart: { type: 'bar', height: 220, toolbar: { show: false } },
+      plotOptions: { bar: { horizontal: true, barHeight: '55%' } },
+      xaxis: {
+        labels: { formatter: val => Formatter.currencyCompact(val) }
+      },
+      yaxis: { labels: { style: { fontSize: '10px', fontWeight: 600 } } },
+      colors: ['#0284c7'],
+      tooltip: { y: { formatter: val => Formatter.currency(val) } },
+      grid: { borderColor: '#f1f5f9' }
+    };
+
+    if (chartEstados) chartEstados.destroy();
+    chartEstados = new ApexCharts(document.getElementById('chartEstados'), options);
+    chartEstados.render();
+  }
+
+  function renderTable1(items) {
+    const pageSize = parseInt(document.getElementById('pageSizeSelect').value || '100', 10);
+    const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    const startIdx = (currentPage - 1) * pageSize;
+    const endIdx   = Math.min(startIdx + pageSize, items.length);
+    const pageItems = items.slice(startIdx, endIdx);
+
+    document.getElementById('pageIndicator').innerText = `Pág ${currentPage} de ${totalPages} (${items.length} regs)`;
+    document.getElementById('btnPrev').disabled = currentPage <= 1;
+    document.getElementById('btnNext').disabled = currentPage >= totalPages;
+
+    const tbody = document.getElementById('tableBody1');
+    if (!pageItems.length) {
+      tbody.innerHTML = '<tr><td colspan="14" style="text-align:center;padding:20px;color:#94a3b8">No hay registros con los filtros seleccionados.</td></tr>';
+      return;
+    }
+
+    const html = pageItems.map(m => {
+      return `<tr>
+        <td style="font-weight:700;color:#0284c7">${m.contrato_orden || '—'}</td>
+        <td>${m.ccosto || '—'}</td>
+        <td style="font-weight:600">${m.tercero || '—'}</td>
+        <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis" title="${m.descripcion || ''}">${m.descripcion || '—'}</td>
+        <td><span class="badge-pago" style="background:#eff6ff;color:#1e40af">${m.estado_pago || '—'}</span></td>
+        <td>${m.estado_fr || '—'}</td>
+        <td>${m.estado_revision || '—'}</td>
+        <td>${m.doc_reembolso || '—'}</td>
+        <td class="num">${Formatter.currency(m.valor_factura || 0)}</td>
+        <td>${m.fuente_pago || '—'}</td>
+        <td class="num">${Formatter.currency(m.valor_factura || 0)}</td>
+        <td class="num" style="color:#15803d">${Formatter.currency(m.valor_neto_fr || 0)}</td>
+        <td class="num" style="color:#9d174d">${Formatter.currency(m.anticipo || 0)}</td>
+        <td>${formatExcelDate(m.fecha_pago)}</td>
+      </tr>`;
+    }).join('');
+
+    tbody.innerHTML = html;
+  }
+
+  function renderTable2(items) {
+    const tbody = document.getElementById('tableBody2');
+    const slice = items.slice(0, 150);
+
+    if (!slice.length) {
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;color:#94a3b8">No hay registros para mostrar.</td></tr>';
+      return;
+    }
+
+    const html = slice.map(m => {
+      return `<tr>
+        <td style="font-weight:700;color:#0284c7">${m.doc_reembolso || '—'}</td>
+        <td>${m.estado_revision || '—'}</td>
+        <td style="font-weight:600">${m.contrato_orden || '—'}</td>
+        <td class="num" style="color:#15803d">${Formatter.currency(m.valor_neto_fr || 0)}</td>
+        <td>${m.fuente_pago || '—'}</td>
+        <td>${formatExcelDate(m.fecha_radicado)}</td>
+        <td>${formatExcelDate(m.fecha_pago)}</td>
+      </tr>`;
+    }).join('');
+
+    tbody.innerHTML = html;
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      renderTable1(currentFiltered);
+    }
+  }
+
+  function nextPage() {
+    const pageSize = parseInt(document.getElementById('pageSizeSelect').value || '100', 10);
+    const totalPages = Math.ceil(currentFiltered.length / pageSize);
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderTable1(currentFiltered);
+    }
+  }
+
+  window.addEventListener('DOMContentLoaded', init);
 </script>
+
 </body>
 </html>

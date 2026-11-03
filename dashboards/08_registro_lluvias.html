@@ -270,7 +270,10 @@
   const PBI_DEFAULT_HASTA = "2026-10-04";
 
   async function init() {
-    const data = await loadData('registro_lluvias');
+    let data = window.DATA_REGISTRO_LLUVIAS;
+    if (!data && typeof loadData === 'function') {
+      data = await loadData('registro_lluvias');
+    }
     if (!data) return;
 
     rawData = data;

@@ -547,7 +547,10 @@
   let selectedCreUser = null;
 
   async function init() {
-    const data = await loadData('archivos_trimble');
+    let data = window.DATA_ARCHIVOS_TRIMBLE;
+    if (!data && typeof loadData === 'function') {
+      data = await loadData('archivos_trimble');
+    }
     if (!data) return;
 
     allFiles = data.sample_files || [];
